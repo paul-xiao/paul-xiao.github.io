@@ -1,7 +1,7 @@
 {
   "name": "gh_pages",
   "version": "0.1.0",
-  "homepage": "https://paul-xiao.github.io/react",
+  "homepage": "https://paul-xiao.github.io/",
   "private": true,
   "dependencies": {
     "gh-pages": "^2.0.1",
