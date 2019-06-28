@@ -3,12 +3,16 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 const menu = [
   {
-    name: 'About',
-    url: '#About'
+    name: 'Projects',
+    url: '#Projects'
   },
   {
     name: 'Blog',
     url: '#Blog'
+  },
+  {
+    name: 'About',
+    url: '#About'
   }
 ]
 class App extends React.Component {

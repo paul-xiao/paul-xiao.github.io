@@ -7,6 +7,7 @@
   }
 .container{
     padding: 0 $padding-base;
+    height: 100vh;
 }
 .header{
     height: $header-height;
@@ -44,6 +45,9 @@
     text-align: center;
     border-top: 1px solid $border-color-base;
     color: lighten($color: $font-color-base, $amount: 50%)
+}
+.main{
+    min-height: calc(100% - #{$padding-base*2} - #{$header-height*2} - 2px)
 }
 .card{
     box-shadow: 0 1px 1px 1px $border-color-base;

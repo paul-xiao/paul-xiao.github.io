@@ -1,12 +1,12 @@
 import React from 'react';
 
-class Info extends React.Component {
+class Projects extends React.Component {
   componentDidMount(){
     document.title = "info"
   }
   render() {
-    return <div>Info here</div>
+    return <div>Projects here</div>
   }
 }
 
-export default Info;
+export default Projects;
