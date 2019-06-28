@@ -1,5 +1,55 @@
-.menu{
-    li{
-        color: red
+@import './variables.scss';
+@media screen and (min-width: 1200px) {
+    .container{
+        width: 1200px;
+        margin: 0 auto;
+    }
+  }
+.container{
+    padding: 0 $padding-base;
+}
+.header{
+    height: $header-height;
+    line-height: $header-height;
+    color:$font-color-base;
+    border-bottom:1px solid $border-color-base;
+    display: flex;
+    .logo{
+        flex:1;
+        .img{
+            width: 200px;
+            border: 1px solid $border-color-base;
+            text-align: center;
+        }
+    }
+    .menu{
+        flex:1;
+        ul{
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            .menu-item{
+                width: $header-height;
+                color: red;
+                list-style: none;
+                border: 1px solid $border-color-base;
+                text-align: center;
+            }
+        }
+    }
+}
+.footer{
+    height:$footer-height;
+    line-height:$footer-height;
+    text-align: center;
+    border-top: 1px solid $border-color-base;
+    color: lighten($color: $font-color-base, $amount: 50%)
+}
+.card{
+    box-shadow: 0 1px 1px 1px $border-color-base;
+    margin-bottom: $padding-base;
+    padding: $padding-base;
+    &:first-child{
+        margin-top: $padding-base;
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './styles/common.scss';
 // import * as serviceWorker from './serviceWorker';
 import Routes from './routes';
 import { HashRouter } from 'react-router-dom';
