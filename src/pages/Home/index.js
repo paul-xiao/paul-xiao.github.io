@@ -1,10 +1,5 @@
 import React from 'react';
-import { message } from 'antd';
-import firebase from '../../firebase'
-
-const info = msg => {
-  message.info(msg);
-};
+import {Helmet} from 'react-helmet';
 class Home extends React.Component {
 
   state = {
@@ -15,32 +10,16 @@ class Home extends React.Component {
     this.setState({ value: e.target.value })
   }
 
-  async getData() {
-		try {
-      await firebase.getData().then(data => {
-        this.setState({
-          data: JSON.stringify(data)
-        })
-      })
-		} catch(error) {
-			alert(error.message)
-		}
-  }
   
-  async setData(data) {
-		try {
-      await firebase.setData('users',data).then(() => {
-        info('setData success')
-      })
-		} catch(error) {
-			alert(error.message)
-		}
-	}
   componentDidMount(){
     document.title = "pandax"
   }
   render() {
-    return <div className="container">
+    return <div>
+    <Helmet>
+        <title>Home</title>
+        <meta name="description" content="paul-xiao.io" />
+    </Helmet>
     </div>
   }
 }
