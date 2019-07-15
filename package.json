@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "hexo server -p 3001"
+    "start": "hexo server -p 3001",
+    "deploy": "hexo d -g"
   },
   "hexo": {
     "version": "3.9.0"
