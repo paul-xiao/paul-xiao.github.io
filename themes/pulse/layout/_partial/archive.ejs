@@ -1,3 +1,28 @@
-<% page.posts.each(function(post){ %>
-<h1><%- post.title %></h1>
+<div class="archive">
+<% page.posts.each(function(post, index){ %>
+<div class="archive-item">
+     <div class="title"><%- post.title %></div>
+     <div class="info">
+        <span class="author"><%- post.author %></span>
+        <span class="publish-data"><%- date(post.date, 'YYYY/M/D') %></span>
+     </div>
+     <div class="breaf-info">
+     <img id="my_img" src="<%= post.photos %>" alt="">
+     </div>
+     <div class="breaf-info"><%- post.categories %></div>
+     <div class="breaf-info"><%- post.tags %></div>
+     <div class="article-entry">
+     <% if (post.excerpt && index){ %>
+      <%- post.excerpt %>
+      <% if (theme.excerpt_link){ %>
+        <p class="article-more-link">
+          <a class="btn btn-primary" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+        </p>
+      <% } %>
+    <% } else { %>
+      <%- post.content %>
+    <% } %>
+     </div>
+  </div>
 <% }) %>
+</div>

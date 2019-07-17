@@ -2,8 +2,17 @@
 title: customize hexo theme
 author: paul xiao
 date: 2019-7-17
+type: "tags"
+photos:
+- /images/baby.jpg
+categories:
+- frontend
+tags:
+- hexo
 ---
 
+sadhjkashdkhsakjhdkjsa
+<!-- more -->
 # scaffolds
 ```
 |--- pulse
@@ -65,6 +74,12 @@ date: 2019-7-17
 
 <%- css(path) %>
 <%- css([path1, path2]) %>
+
+
+# url_for
+
+<%- url_for(path) %>
+
 
 ```
 

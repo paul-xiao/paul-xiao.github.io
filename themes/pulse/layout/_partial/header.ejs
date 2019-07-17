@@ -1,3 +1,11 @@
 <header class="header">
-xxx
+<div class="logo">
+   <img src="" alt="">
+   <span class="slogan">pulse</span>
+</div>
+<nav>
+<% for (var i in theme.menu){ %>
+    <a class="main-nav-link"  href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+<% } %>
+</nav>
 </header>

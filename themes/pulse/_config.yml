@@ -3,5 +3,24 @@
 # created by paul xiao
 # 2019 07 17
 
+# styles
 style: '/styles/index'
+font: '/styles/font-awesome-4.7.0/css/font-awesome.min.css'
+
+
+# github addr
 github: 'https://github.com/paul-xiao/'
+
+
+# menu
+menu:
+  project: /project
+  artcle: /artcle
+  update: /update
+  like: /like
+
+
+# 摘要
+excerpt_link: Read More
+
+
