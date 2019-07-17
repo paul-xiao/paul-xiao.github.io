@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: fexo
+theme: pulse
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -81,3 +81,10 @@ deploy:
   type: git
   repo: git@github.com:paul-xiao/paul-xiao.github.io.git
   branch: master
+
+# sass support
+node_sass:
+  debug: false
+  outputStyle: nested
+  precision: 5
+  sourceComments: false

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "hexo server -p 3001",
+    "dev": "hexo server -p 3001 --debug",
     "deploy": "hexo d -g"
   },
   "hexo": {
@@ -18,6 +19,7 @@
     "hexo-generator-tag": "^0.2.0",
     "hexo-renderer-ejs": "^0.3.1",
     "hexo-renderer-marked": "^1.0.1",
+    "hexo-renderer-sass": "^0.4.0",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3"
   }
