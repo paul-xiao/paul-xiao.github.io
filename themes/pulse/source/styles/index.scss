@@ -1,0 +1,33 @@
+@import 'variables.scss';
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    height: 100vh;
+    .header {
+        height: 80px;
+        color: $white;
+    }
+    .outer{
+        height: calc(100vh - 160px);
+    }
+    .footer {
+        height: 80px;
+        color: $fontColor;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        .author{
+         flex:1;
+        }
+        .link{
+            flex:1;
+            a {
+                color: $fontColor;
+                text-decoration: none;
+            }
+        }
+    }
+}
