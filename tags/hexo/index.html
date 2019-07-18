@@ -11,56 +11,69 @@
   <div id="container">
     <div id="wrap">
       <header class="header">
+<div class="wrapper">
 <div class="logo">
-   <img src="" alt="">
+   <img src="images/baby.jpg" alt="">
    <span class="slogan">pulse</span>
 </div>
 <nav>
 
     <a class="main-nav-link"  href="/project">project</a>
 
-    <a class="main-nav-link"  href="/artcle">artcle</a>
+    <a class="main-nav-link"  href="/">artcle</a>
 
     <a class="main-nav-link"  href="/update">update</a>
 
     <a class="main-nav-link"  href="/like">like</a>
 
 </nav>
+</div>
 </header>
       <div class="outer">
         <section id="main"><div class="archive">
+<div class="left">
 
 <div class="archive-item">
      <div class="archive-head">
-        <div class="title">customize hexo theme</div>
+        <div class="title">
+          <a href="hexo-theme/">customize hexo theme</a>
+        </div>
         <div class="info">
-            <span class="author">paul xiao</span>
-            <span class="publish-data">2019/7/18</span>
+        
+            <span class="author">
+            <span class="fa fa-user-o"></span>paul xiao
+            </span>
+             
+            <span class="publish-date"><span class="fa fa-clock-o"></span>2019/7/17</span>
              <span class="categories">
-             <span>categories:</span>
+              
+             <span class="fa fa-th-list"></span>
               
                 <span>frontend</span>
               
+               
             </span>
             <span class="tags">
-               <span>tags:</span>
+            
+               <span class="fa fa-tags"></span>
                 
                 <span>hexo</span>
+              
               
             </span>
         </div>
      </div>
     <div class="archive-main">
         <div class="article-image">
-          <img id="my_img" src="/images/baby.jpg" alt="">
+          <a href="/hexo-theme/"><img id="my_img" src="/images/baby.jpg" alt=""></a>
         </div>
         <div class="article-entry">
         
-          <p>customeize hexo theme arrange (a group of people or things) in classes or categories according to shared qualities or characteristics.</p>
+          <p><em>customeize hexo theme arrange (a group of people or things) in classes or categories according to shared qualities or characteristics.</em></p>
 <a id="more"></a>
-<h1 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">|--- pulse</span><br><span class="line">|    |--- languages</span><br><span class="line">|         |--- en.yml</span><br><span class="line">|         |--- zh-CN.yml</span><br><span class="line">|    |--- layout</span><br><span class="line">|         |--- _partial</span><br><span class="line">|              |--- article.ejs</span><br><span class="line">|              |--- header.ejs</span><br><span class="line">|              |--- footer.ejs</span><br><span class="line">|              |--- side.ejs</span><br><span class="line">|         |--- index.ejs</span><br><span class="line">|         |--- post.ejs</span><br><span class="line">|         |--- page.ejs</span><br><span class="line">|         |--- archive.ejs</span><br><span class="line">|         |--- layout.ejs</span><br><span class="line">|    |--- scripts</span><br><span class="line">|    |--- source</span><br><span class="line">|    |--- _config.yml</span><br></pre></td></tr></table></figure>
+<h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">|--- pulse</span><br><span class="line">|    |--- languages</span><br><span class="line">|         |--- en.yml</span><br><span class="line">|         |--- zh-CN.yml</span><br><span class="line">|    |--- layout</span><br><span class="line">|         |--- _partial</span><br><span class="line">|              |--- article.ejs</span><br><span class="line">|              |--- header.ejs</span><br><span class="line">|              |--- footer.ejs</span><br><span class="line">|              |--- side.ejs</span><br><span class="line">|         |--- index.ejs</span><br><span class="line">|         |--- post.ejs</span><br><span class="line">|         |--- page.ejs</span><br><span class="line">|         |--- archive.ejs</span><br><span class="line">|         |--- layout.ejs</span><br><span class="line">|    |--- scripts</span><br><span class="line">|    |--- source</span><br><span class="line">|    |--- _config.yml</span><br></pre></td></tr></table></figure>
 
-<h1 id="ejs"><a href="#ejs" class="headerlink" title="ejs"></a>ejs</h1><h4 id="Partial-局部模版"><a href="#Partial-局部模版" class="headerlink" title="Partial 局部模版"></a>Partial <a href="https://hexo.io/zh-cn/docs/templates.html#%E5%B1%80%E9%83%A8%E6%A8%A1%E7%89%88%EF%BC%88Partial%EF%BC%89" target="_blank" rel="noopener">局部模版</a></h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># with params</span></span><br><span class="line">&lt;%- partial(<span class="string">'_partial/footer'</span>, null, &#123;cache: !config.relative_link&#125;) %&gt;   <span class="comment"># Fragment Caching</span></span><br><span class="line"></span><br><span class="line">&lt;%- partial(<span class="string">'header'</span>, &#123;&#125;, &#123;cache: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="ejs"><a href="#ejs" class="headerlink" title="ejs"></a>ejs</h4><h4 id="Partial-局部模版"><a href="#Partial-局部模版" class="headerlink" title="Partial 局部模版"></a>Partial <a href="https://hexo.io/zh-cn/docs/templates.html#%E5%B1%80%E9%83%A8%E6%A8%A1%E7%89%88%EF%BC%88Partial%EF%BC%89" target="_blank" rel="noopener">局部模版</a></h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># with params</span></span><br><span class="line">&lt;%- partial(<span class="string">'_partial/footer'</span>, null, &#123;cache: !config.relative_link&#125;) %&gt;   <span class="comment"># Fragment Caching</span></span><br><span class="line"></span><br><span class="line">&lt;%- partial(<span class="string">'header'</span>, &#123;&#125;, &#123;cache: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
 
 <h4 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;<span class="name">%-</span> <span class="attr">body</span> %&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -76,6 +89,37 @@
     </div>
   </div>
 
+</div>
+<div class="right">
+   <div class="wrapper">
+     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/http/">http</a>
+          </li>
+        
+          <li>
+            <a href="/test1/">test1</a>
+          </li>
+        
+          <li>
+            <a href="/test-md/">test.md</a>
+          </li>
+        
+          <li>
+            <a href="/hexo-theme/">customize hexo theme</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+   </div>
+</div>
 </div></section>
       </div>
       <footer class="footer">
