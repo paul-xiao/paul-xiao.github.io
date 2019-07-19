@@ -1,0 +1,16 @@
+<div class="gallery">
+  <div class="title"><h1>Gellery</h1></div>
+  <div class="gallery-wrap">
+    <% theme.gallery.forEach(function(item){%>
+    <div class="gallery-item">
+        <div class="image">
+            <a href="<%- item.url %>" target="_blank">
+            <img src="<%- item.image %>" alt="">
+            </a>
+        </div>
+        <div class="title"><%- item.title %></div>
+        <div class="des"><%- item.description %></div>
+    </div>
+    <%})%>
+  </div>
+</div>

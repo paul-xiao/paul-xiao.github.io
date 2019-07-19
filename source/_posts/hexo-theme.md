@@ -10,10 +10,9 @@ categories:
 tags:
 - hexo
 ---
-
-sadhjkashdkhsakjhdkjsa
+*customeize hexo theme arrange (a group of people or things) in classes or categories according to shared qualities or characteristics.*
 <!-- more -->
-# scaffolds
+#### scaffolds
 ```
 |--- pulse
 |    |--- languages
@@ -35,7 +34,7 @@ sadhjkashdkhsakjhdkjsa
 |    |--- _config.yml
 ```
 
-# ejs
+#### ejs
 
 #### Partial [局部模版](https://hexo.io/zh-cn/docs/templates.html#%E5%B1%80%E9%83%A8%E6%A8%A1%E7%89%88%EF%BC%88Partial%EF%BC%89)
 ```bash

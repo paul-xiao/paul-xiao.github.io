@@ -1,0 +1,16 @@
+<div class="projects">
+  <% theme.projects.forEach(function (item) {%>
+    <div class="projects-item">
+       <div class="date"><%- date(item.date, 'YYYY/M/D')  %></div>
+       <div class="wrap">
+          <div class="content">
+            <div class="title"><%- item.name %></div>
+            <div class="intro"><%- item.intro %></div>
+            <div class="url">
+             <a href="<%- item.url %>"><span class="fa fa-github"></span></a>
+            </div>
+        </div>
+       </div>
+    </div>
+  <% })%>
+</div>

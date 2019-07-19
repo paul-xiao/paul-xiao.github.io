@@ -1,6 +1,25 @@
-<% page.posts.each(function(post){ %>
-<h1><%- post.title %></h1>
-<div class="content article-entry">
-<%- post.content %>
+<div class="article">
+    <!-- Title -->
+    <h2 class="article-title">
+            <%- item.title || item.link%>
+    </h2>
+    <!-- Date and Author -->
+    <p class="article-meta">
+        <%= item.date.format(config.date_format) %>
+        <% if(item.author) { %>
+            by <%- item.author %>
+        <% } %>
+    </p>
+    <!-- Content -->
+    <div class="article-entry">
+        <%- item.content %>
+    </div>
+    <div class="foot">
+     <% if(page.prev) { %> 
+     <a href="<%- config.root %><%- page.prev.path %>"><span class="fa fa-arrow-left"></span>Prev</a>
+     <% } %>
+     <% if(page.next) { %> 
+     <a href="<%- config.root %><%- page.next.path %>"><span class="fa fa-arrow-right"></span>Next</a>
+      <% } %>
+    </div>
 </div>
-<% }) %>

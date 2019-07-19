@@ -1,0 +1,25 @@
+.article{
+    &-title{
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    &-meta{
+        font-size: 14px;
+        color: $fontColor;
+        margin-bottom: 15px;
+    }
+    .foot{
+      padding-top: 15px;
+      border-top: 1px solid #fafafa;
+      display: flex;
+      a{
+        flex: 1;
+        span{
+          padding-right: 5px;
+        }
+        &:last-child{
+          text-align: right;
+        }
+      }
+    }
+}

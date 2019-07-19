@@ -1,11 +1,16 @@
 <header class="header">
+<div class="wrapper">
 <div class="logo">
-   <img src="" alt="">
-   <span class="slogan">pulse</span>
+   <img src="<%- theme.logo %>" alt="" style="display:none">
+   <span class="slogan">
+    <h1>Pulse</h1>
+    <p>Simple but works like a charm</p>
+   </span>
 </div>
 <nav>
 <% for (var i in theme.menu){ %>
     <a class="main-nav-link"  href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
 <% } %>
 </nav>
+</div>
 </header>

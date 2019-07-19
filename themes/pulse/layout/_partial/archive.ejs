@@ -1,28 +1,71 @@
 <div class="archive">
+ <div class="title">Articles</div>
+ <div class="wrap">
+<div class="left">
+<% if (type==='archive'){ %>
 <% page.posts.each(function(post, index){ %>
 <div class="archive-item">
-     <div class="title"><%- post.title %></div>
-     <div class="info">
-        <span class="author"><%- post.author %></span>
-        <span class="publish-data"><%- date(post.date, 'YYYY/M/D') %></span>
+     <div class="archive-head">
+        <div class="title">
+          <a href="<%- config.root %><%- post.path %>"><%- post.title %></a>
+        </div>
+        <div class="info">
+        <% if(post.author) { %>
+            <span class="author">
+            <span class="fa fa-user-o"></span><%- post.author %>
+            </span>
+             <% } %>
+            <span class="publish-date"><span class="fa fa-clock-o"></span><%- date(post.date, 'YYYY/M/D') %></span>
+             <span class="categories">
+              <% if(post.categories.length > 0) { %>
+             <span class="fa fa-th-list"></span>
+              <% post.categories.each(function(item){ %>
+                <span><%- item.name %></span>
+              <% }) %>
+               <% } %>
+            </span>
+            <span class="tags">
+            <% if(post.tags.length > 0) { %>
+               <span class="fa fa-tags"></span>
+                <% post.tags.each(function(item){ %>
+                <span><%- item.name %></span>
+              <% }) %>
+              <% } %>
+            </span>
+        </div>
      </div>
-     <div class="breaf-info">
-     <img id="my_img" src="<%= post.photos %>" alt="">
-     </div>
-     <div class="breaf-info"><%- post.categories %></div>
-     <div class="breaf-info"><%- post.tags %></div>
-     <div class="article-entry">
-     <% if (post.excerpt && index){ %>
-      <%- post.excerpt %>
-      <% if (theme.excerpt_link){ %>
-        <p class="article-more-link">
-          <a class="btn btn-primary" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
-        </p>
-      <% } %>
-    <% } else { %>
-      <%- post.content %>
-    <% } %>
-     </div>
+    <div class="archive-main">
+        <div class="article-image">
+          <a href="<%- url_for(post.path) %>"><img id="my_img" src="<%= post.photos %>" alt=""></a>
+        </div>
+        <div class="article-entry">
+        <% if (post.excerpt && index){ %>
+          <%- post.excerpt %>
+          <% if (theme.excerpt_link){ %>
+            <p class="article-more-link">
+              <a class="btn btn-primary" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+            </p>
+          <% } %>
+        <% } else { %>
+          <%- post.content %>
+        <% } %>
+        </div>
+    </div>
   </div>
 <% }) %>
+ <% } else { %>
+ <div class="archive-item">
+   <%- partial('article', {item: page, index: false}) %>
+  </div>
+<% } %>
+</div>
+<div class="right">
+   <div class="wrapper">
+     <%- partial('tags', {title: 'Tags'}) %>
+     <%- partial('categories', {title: 'Categories'}) %>
+     <%- partial('list_archives', {title: 'Archives'}) %>
+     <%- partial('recent_posts') %>
+   </div>
+</div>
+</div>
 </div>

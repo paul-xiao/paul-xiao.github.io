@@ -6,6 +6,7 @@
 # styles
 style: '/styles/index'
 font: '/styles/font-awesome-4.7.0/css/font-awesome.min.css'
+logo: 'images/baby.jpg'
 
 
 # github addr
@@ -14,13 +15,90 @@ github: 'https://github.com/paul-xiao/'
 
 # menu
 menu:
-  project: /project
-  artcle: /artcle
-  update: /update
-  like: /like
+  Projects: /projects
+  Articles: /
+  Gallery: /gallery
+  About: /about
 
 
 # 摘要
 excerpt_link: Read More
 
 
+# projects
+
+projects:
+  - type: personal
+    date: 2019-07-17
+    name: pulse
+    url: https://github.com/paul-xiao/pulse
+    intro: A customized hexo theme
+  - type: personal
+    date: 2019-07-17
+    name: pulse
+    url: https://github.com/paul-xiao/pulse
+    intro: A customized hexo theme
+
+# gallery
+# collections of interesting pics or sites
+
+gallery:
+  - url: google.com
+    image: /images/baby.jpg
+    title: title
+    description: something
+  - url: google.com
+    image: /images/baby.jpg
+    title: title
+    description: something
+  - url: google.com
+    image: /images/baby.jpg
+    title: title
+    description: something
+  - url: google.com
+    image: /images/baby.jpg
+    title: title
+    description: something
+  - url: google.com
+    image: /images/baby.jpg
+    title: title
+    description: something
+  - url: google.com
+    image: /images/baby.jpg
+    title: title
+    description: something
+  - url: google.com
+    image: /images/baby.jpg
+    title: title
+    description: something
+  - url: google.com
+    image: /images/baby.jpg
+    title: title
+    description: something
+  - url: google.com
+    image: /images/baby.jpg
+    title: title
+    description: something
+  - url: google.com
+    image: /images/baby.jpg
+    title: title
+    description: something
+# about
+
+about:
+  avatar: /images/baby.jpg
+  name: paul xiao
+  job: fontend developer
+  description: wirte it down, and keep it up
+  skills:
+    - nodejs 
+    - vue 
+    - react 
+  interests:
+     - games 
+     - desgin 
+     - movies 
+     - sports 
+  location: Chengdu, China
+  github: https://github.com/paul-xiao
+  email: paulxiaooo@gmail.com

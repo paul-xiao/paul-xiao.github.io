@@ -1,0 +1,40 @@
+.gallery{
+    padding: 15px 0;
+    .title{
+        color: $fontColor;
+        h1{
+            font: bold 20px arial, sans-serif;
+            background-color: #565656;
+            color: transparent;
+            text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+        }
+    }
+    &-wrap{
+        column-count: 3;
+        column-gap: 10px;
+        padding: 15px 0;
+    }
+    &-item{
+        box-sizing: border-box;
+        background: $white;
+        padding: 10px;
+        margin-bottom: 15px;
+        -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+          page-break-inside: avoid; /* Firefox */
+               break-inside: avoid; /* IE 10+ */
+        box-shadow: 0 1px 5px 0 #ccc;
+        border: 1px solid $bg;
+        &:hover{
+            box-shadow: 0 1px 5px 0 $fontColor;
+        }
+        .image{
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+        }
+    }
+}

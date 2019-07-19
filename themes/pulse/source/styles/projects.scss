@@ -1,0 +1,84 @@
+.projects{
+    padding-top: 50px;
+    &-item{
+        display: flex;
+        position: relative;
+        &:first-child{
+            &::before{
+                content: 'Projects';
+                position: absolute;
+                left: 100px;
+                top: -20px;
+                z-index: 99;
+                font-size: 20px;
+                color: $fontColor;
+                transform: translateX(-50%) translateY(-50%);
+                font: bold 20px arial, sans-serif;
+                background-color: #565656;
+                color: transparent;
+                text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                background-clip: text;
+
+            }
+        }
+        .date{
+          width: 100px;
+          align-self: center;
+          color: $fontColor;
+        }
+        .wrap{
+            flex:1;
+            padding: 15px;
+            position: relative;
+            &:hover{
+                &::before{
+                background:lighten($color: $linkColor, $amount: 20%);
+                box-shadow: 0 1px 5px 0 lighten($color: $linkColor, $amount: 0%);
+                border: 2px solid lighten($color: $linkColor, $amount: 50%);
+                }
+            }
+            &::before{
+                content: '';
+                width: 20px;
+                height: 20px;
+                background: $linkColor;
+                position: absolute;
+                border-radius: 50%;
+                left: 0;
+                top: 50%;
+                z-index: 99;
+                transform: translateX(-50%) translateY(-50%);
+                box-shadow: 0 1px 5px 0 lighten($color: $linkColor, $amount: 50%);
+                border: 2px solid lighten($color: $linkColor, $amount: 20%);
+                transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s
+            }
+            &::after{
+                content: '';
+                width: 2px;
+                height: 100%;
+                background: $linkColor;
+                position: absolute;
+                left: -1px;
+                top:0;
+            }
+            .content{
+                background: $white;
+                padding: 15px;
+                margin-left: 15px;
+                .title{
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+                .intro{
+                    padding: 10px 0;
+                    color: $fontColor;
+                }
+                .url{
+                    color: $linkColor;
+                }
+            }
+        }
+    }
+}
