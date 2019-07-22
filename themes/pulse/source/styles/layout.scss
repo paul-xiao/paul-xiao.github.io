@@ -9,11 +9,19 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 15px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         .logo{
-            flex:1;
+            -webkit-box-flex:1;
+                -ms-flex:1;
+                    flex:1;
             img{
               width: 50px;
               height: 50px;
@@ -25,7 +33,9 @@
             }
         }
         nav{
-            flex:1;
+            -webkit-box-flex:1;
+                -ms-flex:1;
+                    flex:1;
             text-align: right;
             a{
                 color: $fontColor;
@@ -48,14 +58,22 @@
     .footer {
         height: 80px;
         color: $fontColor;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         text-align: center;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         .author{
-         flex:1;
+         -webkit-box-flex:1;
+             -ms-flex:1;
+                 flex:1;
         }
         .link{
-            flex:1;
+            -webkit-box-flex:1;
+                -ms-flex:1;
+                    flex:1;
             a {
                 color: $fontColor;
                 text-decoration: none;

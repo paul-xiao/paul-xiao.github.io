@@ -11,9 +11,13 @@
     .foot{
       padding-top: 15px;
       border-top: 1px solid #fafafa;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       a{
-        flex: 1;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
         span{
           padding-right: 5px;
         }

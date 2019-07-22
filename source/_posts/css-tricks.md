@@ -4,7 +4,7 @@ date: 2019-07-17 17:55:17
 tags:
   - css
 categories:
-  - fontend
+  - frontend
 ---
 
 ## column layout
@@ -20,9 +20,11 @@ categories:
 }
 
 // break-inside: avoid; box-shadow is not fully display
-[box-shadow partially broken](https://stackoverflow.com/questions/47310583/break-inside-avoid-not-working-with-padding-in-edge)
+// [box-shadow partially broken](https://stackoverflow.com/questions/47310583/break-inside-avoid-not-working-with-padding-in-edge)
+// backface-visibility:hidden; ---- not working
 
 // fix
-backface-visibility:hidden;
+position: relative;
+top: 1px;
 
 ```

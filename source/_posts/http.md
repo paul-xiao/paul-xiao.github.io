@@ -4,7 +4,7 @@ date: 2019-07-18 17:33:16
 tags:
 - http
 categories:
-- fontend
+- frontend
 ---
 
 ## HTTP headers

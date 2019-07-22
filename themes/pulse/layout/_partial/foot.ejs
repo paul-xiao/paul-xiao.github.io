@@ -1,0 +1,31 @@
+<%- js('js/jquery.min') %>
+<script>
+$(function () {
+    window.addEventListener('keydown', function (e) {
+        $('#local-search-result').hide();
+        var val = $('#local-search-input').val()
+        try {
+            if(val && e.keyCode == 13){
+               $('#local-search-input').blur();
+            
+                $.get('<%- config.root %><%- config.search.path %>', function(data) {
+                    const result = data.filter(item => item.content.toLowerCase().includes(val.toLowerCase()))
+                    let html = ''
+                    result.forEach(function (item) {
+                        let resultContent = item.content
+                        const reg = new RegExp(""+val+"/gi")
+                        console.log(reg)
+                        console.log(JSON.stringify(resultContent).replace(reg, '<span style="color:red">'+val+'</span>'))
+                       html+= '<div class="search-item"><a href="'+item.url+'">'+item.title+'</a><p>'+resultContent.replace(reg, '<span style="color:red">'+val+'</span>')+'</p></div>'
+                    })
+                     $('#local-search-result').show();
+                     $('#local-search-result .article-entry').append(html)
+                })
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    })
+    
+})
+</script>

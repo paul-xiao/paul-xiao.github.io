@@ -13,22 +13,29 @@
         }
     }
     &-wrap{
-        column-count: 3;
-        column-gap: 10px;
+        -webkit-column-count: 3;
+                column-count: 3;
+        -webkit-column-gap: 10px;
+                column-gap: 10px;
         padding: 15px 0;
     }
     &-item{
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         background: $white;
         padding: 10px;
         margin-bottom: 15px;
         -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
           page-break-inside: avoid; /* Firefox */
                break-inside: avoid; /* IE 10+ */
-        box-shadow: 0 1px 5px 0 #ccc;
+        -webkit-box-shadow: 0 1px 5px 0 #ccc;
+                box-shadow: 0 1px 5px 0 #ccc;
         border: 1px solid $bg;
+        position: relative;
+        top:1px;
         &:hover{
-            box-shadow: 0 1px 5px 0 $fontColor;
+            -webkit-box-shadow: 0 1px 5px 0 $fontColor;
+                    box-shadow: 0 1px 5px 0 $fontColor;
         }
         .image{
             overflow: hidden;

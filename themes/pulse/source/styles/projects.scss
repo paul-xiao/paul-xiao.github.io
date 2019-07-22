@@ -1,6 +1,8 @@
 .projects{
     padding-top: 50px;
     &-item{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         position: relative;
         &:first-child{
@@ -12,7 +14,8 @@
                 z-index: 99;
                 font-size: 20px;
                 color: $fontColor;
-                transform: translateX(-50%) translateY(-50%);
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                        transform: translateX(-50%) translateY(-50%);
                 font: bold 20px arial, sans-serif;
                 background-color: #565656;
                 color: transparent;
@@ -25,17 +28,21 @@
         }
         .date{
           width: 100px;
-          align-self: center;
+          -ms-flex-item-align: center;
+              align-self: center;
           color: $fontColor;
         }
         .wrap{
-            flex:1;
+            -webkit-box-flex:1;
+                -ms-flex:1;
+                    flex:1;
             padding: 15px;
             position: relative;
             &:hover{
                 &::before{
                 background:lighten($color: $linkColor, $amount: 20%);
-                box-shadow: 0 1px 5px 0 lighten($color: $linkColor, $amount: 0%);
+                -webkit-box-shadow: 0 1px 5px 0 lighten($color: $linkColor, $amount: 0%);
+                        box-shadow: 0 1px 5px 0 lighten($color: $linkColor, $amount: 0%);
                 border: 2px solid lighten($color: $linkColor, $amount: 50%);
                 }
             }
@@ -49,9 +56,12 @@
                 left: 0;
                 top: 50%;
                 z-index: 99;
-                transform: translateX(-50%) translateY(-50%);
-                box-shadow: 0 1px 5px 0 lighten($color: $linkColor, $amount: 50%);
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                        transform: translateX(-50%) translateY(-50%);
+                -webkit-box-shadow: 0 1px 5px 0 lighten($color: $linkColor, $amount: 50%);
+                        box-shadow: 0 1px 5px 0 lighten($color: $linkColor, $amount: 50%);
                 border: 2px solid lighten($color: $linkColor, $amount: 20%);
+                -webkit-transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
                 transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s
             }
             &::after{

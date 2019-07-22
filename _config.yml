@@ -92,3 +92,9 @@ node_sass:
   sourceComments: false
 
 
+# search
+search:
+  path: search.json
+  field: post
+  content: true
+
