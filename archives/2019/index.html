@@ -51,7 +51,7 @@
               
              <span class="fa fa-th-list"></span>
               
-                <span>fontend</span>
+                <span>frontend</span>
               
                
             </span>
@@ -72,6 +72,11 @@
         <div class="article-entry">
         
           <h2 id="HTTP-headers"><a href="#HTTP-headers" class="headerlink" title="HTTP headers"></a>HTTP headers</h2><h4 id="Content-Disposition"><a href="#Content-Disposition" class="headerlink" title="Content-Disposition"></a>Content-Disposition</h4><p>Content-Disposition 消息头指示回复的内容该以何种形式展示，是以内联的形式（即网页或者页面的一部分），还是以附件的形式下载并保存到本地。<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition" target="_blank" rel="noopener">learn more</a></p>
+<h2 id="HTTP-Status-Code"><a href="#HTTP-Status-Code" class="headerlink" title="HTTP Status Code"></a>HTTP Status Code</h2><h4 id="304-Not-Modified"><a href="#304-Not-Modified" class="headerlink" title="304 Not Modified"></a>304 Not Modified</h4><p>HTTP 304 未改变说明无需再次传输请求的内容，也就是说可以使用缓存的内容。这通常是在一些安全的方法（safe），例如GET 或HEAD 或在请求中附带了头部信息： If-None-Match 或If-Modified-Since。</p>
+<p>如果是 200 OK ，响应会带有头部 Cache-Control, Content-Location, Date, ETag, Expires，和 Vary.</p>
+<blockquote>
+<p>很多浏览器的 开发者工具 会发出额外的请求，以达到 304 的目的，这样可以把资源以本地缓存的形式展现给开发者。</p>
+</blockquote>
 
         
         </div>
@@ -81,26 +86,39 @@
 <div class="archive-item">
      <div class="archive-head">
         <div class="title">
-          <a href="/test1/">test1</a>
+          <a href="/vscode-plugins/">vscode plugins</a>
         </div>
         <div class="info">
         
             <span class="publish-date"><span class="fa fa-clock-o"></span>2019/7/18</span>
              <span class="categories">
               
+             <span class="fa fa-th-list"></span>
+              
+                <span>tools</span>
+              
+               
             </span>
             <span class="tags">
             
+               <span class="fa fa-tags"></span>
+                
+                <span>vscode</span>
+              
+              
             </span>
         </div>
      </div>
     <div class="archive-main">
         <div class="article-image">
-          <a href="/test1/"><img id="my_img" src="" alt=""></a>
+          <a href="/vscode-plugins/"><img id="my_img" src="" alt=""></a>
         </div>
         <div class="article-entry">
         
-          
+          <h2 id="Vscode-Plugins"><a href="#Vscode-Plugins" class="headerlink" title="Vscode Plugins"></a>Vscode Plugins</h2><h4 id="Autoprefixer"><a href="#Autoprefixer" class="headerlink" title="Autoprefixer"></a>Autoprefixer</h4><p><em>Useage</em></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># install autoprefixer</span></span><br><span class="line"></span><br><span class="line">npm install -g|-D autoprefixer</span><br><span class="line"></span><br><span class="line"><span class="comment"># set shortcuts key</span></span><br><span class="line"></span><br><span class="line">File &gt; Preferences &gt; keyboard shotcuts <span class="comment"># search *autoprefixer* and set any key you like</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># supported type</span></span><br><span class="line"></span><br><span class="line">- css</span><br><span class="line">- less</span><br><span class="line">- scss</span><br></pre></td></tr></table></figure>
+
+
         
         </div>
     </div>
@@ -118,7 +136,7 @@
               
              <span class="fa fa-th-list"></span>
               
-                <span>fontend</span>
+                <span>frontend</span>
               
                
             </span>
@@ -138,9 +156,11 @@
         </div>
         <div class="article-entry">
         
-          <h2 id="column-layout"><a href="#column-layout" class="headerlink" title="column layout"></a>column layout</h2><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">  <span class="attribute">column-count</span>: <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">column-gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">break-inside</span>: avoid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// break-inside: avoid; box-shadow is not fully display</span></span><br><span class="line"><span class="selector-attr">[box-shadow partially broken]</span>(<span class="attribute">https</span>:<span class="comment">//stackoverflow.com/questions/47310583/break-inside-avoid-not-working-with-padding-in-edge)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fix</span></span><br><span class="line"><span class="attribute">backface-visibility</span>:hidden;</span><br></pre></td></tr></table></figure>
+          <h2 id="column-layout"><a href="#column-layout" class="headerlink" title="column layout"></a>column layout</h2><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">  <span class="attribute">column-count</span>: <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">column-gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">break-inside</span>: avoid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// break-inside: avoid; box-shadow is not fully display</span></span><br><span class="line"><span class="comment">// [box-shadow partially broken](https://stackoverflow.com/questions/47310583/break-inside-avoid-not-working-with-padding-in-edge)</span></span><br><span class="line"><span class="comment">// backface-visibility:hidden; ---- not working</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fix</span></span><br><span class="line"><span class="attribute">position</span>: relative;</span><br><span class="line"><span class="attribute">top</span>: <span class="number">1px</span>;</span><br></pre></td></tr></table></figure>
 
-
+<h2 id="remove-browser-autocomplete"><a href="#remove-browser-autocomplete" class="headerlink" title="remove browser autocomplete"></a>remove browser autocomplete</h2><p>autocomplete 属性规定输入字段是否应该启用自动完成功能。</p>
+<p>自动完成允许浏览器预测对字段的输入。当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 注释：autocomplete 属性适用于 &lt;form&gt;，以及下面的 &lt;input&gt; 类型：text, search, url, telephone, email, password, datepickers, range 以及 color。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span>&gt;</span></span><br></pre></td></tr></table></figure>
         
         </div>
     </div>
@@ -197,13 +217,22 @@
 </div>
 <div class="right">
    <div class="wrapper">
+     <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" autocomplete="off"
+    name="q" results="0" placeholder="Search" 
+    class="search-input"/>
+   </div>  
+  <div id="local-search-result" class="search-content" style="display:none">
+  </div>
+  </div>
      <div class="filters">
 <div class="filters-title">Tags</div>
- <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a><span class="tag-list-count">1</span></li></ul>
+ <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li></ul>
 </div>
      <div class="filters">
 <div class="filters-title"> Categories</div>
- <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/fontend/">fontend</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/frontend/">frontend</a><span class="category-list-count">1</span></li></ul>
+ <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/frontend/">frontend</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">1</span></li></ul>
 </div>
      <div class="filters">
 <div class="filters-title">Archives</div>
@@ -221,7 +250,7 @@
           </li>
         
           <li>
-            <a href="/test1/">test1</a>
+            <a href="/vscode-plugins/">vscode plugins</a>
           </li>
         
           <li>
@@ -249,5 +278,118 @@
 </footer>
     </div>
   </div>
+  <script src="/js/jquery.min.js"></script>
+<script>
+$(function () {
+    window.addEventListener('keydown', function (e) {
+        $('#local-search-result').hide();
+        var val = $('#local-search-input').val()
+        try {
+            if(val && e.keyCode == 13){
+               $('#local-search-input').blur();
+            
+                $.get('/search.json', function(data) {
+                    const result = filterPosts(data, [val])
+                     $('#local-search-result').show();
+                     $('#local-search-result').append(createInnerHTML(result))
+                })
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    })
+
+
+    $('body').click(function() {
+         $('#local-search-result').hide();
+    })
+    
+})
+
+function filterPosts(data, keywords) {
+    var results = [];
+
+    data.forEach(function(item) {
+      var isMatch = false;
+      var matchKeyWords = [];
+      item.content = item.content.replace(/<[^>]*>/g, '');
+
+      keywords.forEach(function(word) {
+        var reg = new RegExp(word, 'i');
+        var indexTitle = item.title.search(reg);
+        var indexContent = item.content.search(reg);
+
+        if (indexTitle > -1 || indexContent > -1) {
+          isMatch = true;
+          matchKeyWords.push(word);
+        }
+      });
+
+      if (isMatch) {
+        item.matchKeyWords = matchKeyWords;
+        results.push(item);
+      }
+    });
+
+    return results;
+  }
+function createInnerHTML(results) {
+    var content = '';
+    results.forEach(function(item) {
+      var postContent;
+      postContent = highlightText(item.content, item.matchKeyWords);
+      postContent = getPreviewContent(postContent, item.matchKeyWords);
+
+      item.title = highlightText(item.title, item.matchKeyWords);
+
+      item = '<li class="search-item">' +
+        '<a href="' + item.url + '"">' +
+        '<h3 class="search-item-title">' + item.title + '</h3>' +
+        '</a>' +
+        '<p class="search-item-content">' + postContent + '</p>' +
+        '</li>';
+      content += item;
+    });
+
+    return content;
+  }
+
+  function getPreviewContent(content, matchKeyWords) {
+    var isMatch = false;
+    var index = 0;
+    matchKeyWords.forEach(function(word) {
+      var reg = new RegExp(word, 'i');
+      index = content.search(reg);
+      if (index < 0) {
+        return;
+      }
+
+      isMatch = true;
+    });
+
+    if (isMatch) {
+      if (index < 120) {
+        content = content.substr(0, 140);
+      } else {
+        content = content.substr(index - 60, 200);
+      }
+    } else {
+      content = content.substr(0, 120);
+    }
+
+    return content;
+  }
+
+  function highlightText(text, matchKeyWords) {
+    text = text.replace(/<[^>]*>/g, '');
+    matchKeyWords.forEach(function(word) {
+      var reg = new RegExp('(' + word + ')', 'ig');
+      text = text.replace(reg, '<span class="color-hightlight">$1</span>');
+    });
+
+    return text;
+  }
+
+</script>
 </body>
 </html>

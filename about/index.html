@@ -74,5 +74,118 @@
 </footer>
     </div>
   </div>
+  <script src="/js/jquery.min.js"></script>
+<script>
+$(function () {
+    window.addEventListener('keydown', function (e) {
+        $('#local-search-result').hide();
+        var val = $('#local-search-input').val()
+        try {
+            if(val && e.keyCode == 13){
+               $('#local-search-input').blur();
+            
+                $.get('/search.json', function(data) {
+                    const result = filterPosts(data, [val])
+                     $('#local-search-result').show();
+                     $('#local-search-result').append(createInnerHTML(result))
+                })
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    })
+
+
+    $('body').click(function() {
+         $('#local-search-result').hide();
+    })
+    
+})
+
+function filterPosts(data, keywords) {
+    var results = [];
+
+    data.forEach(function(item) {
+      var isMatch = false;
+      var matchKeyWords = [];
+      item.content = item.content.replace(/<[^>]*>/g, '');
+
+      keywords.forEach(function(word) {
+        var reg = new RegExp(word, 'i');
+        var indexTitle = item.title.search(reg);
+        var indexContent = item.content.search(reg);
+
+        if (indexTitle > -1 || indexContent > -1) {
+          isMatch = true;
+          matchKeyWords.push(word);
+        }
+      });
+
+      if (isMatch) {
+        item.matchKeyWords = matchKeyWords;
+        results.push(item);
+      }
+    });
+
+    return results;
+  }
+function createInnerHTML(results) {
+    var content = '';
+    results.forEach(function(item) {
+      var postContent;
+      postContent = highlightText(item.content, item.matchKeyWords);
+      postContent = getPreviewContent(postContent, item.matchKeyWords);
+
+      item.title = highlightText(item.title, item.matchKeyWords);
+
+      item = '<li class="search-item">' +
+        '<a href="' + item.url + '"">' +
+        '<h3 class="search-item-title">' + item.title + '</h3>' +
+        '</a>' +
+        '<p class="search-item-content">' + postContent + '</p>' +
+        '</li>';
+      content += item;
+    });
+
+    return content;
+  }
+
+  function getPreviewContent(content, matchKeyWords) {
+    var isMatch = false;
+    var index = 0;
+    matchKeyWords.forEach(function(word) {
+      var reg = new RegExp(word, 'i');
+      index = content.search(reg);
+      if (index < 0) {
+        return;
+      }
+
+      isMatch = true;
+    });
+
+    if (isMatch) {
+      if (index < 120) {
+        content = content.substr(0, 140);
+      } else {
+        content = content.substr(index - 60, 200);
+      }
+    } else {
+      content = content.substr(0, 120);
+    }
+
+    return content;
+  }
+
+  function highlightText(text, matchKeyWords) {
+    text = text.replace(/<[^>]*>/g, '');
+    matchKeyWords.forEach(function(word) {
+      var reg = new RegExp('(' + word + ')', 'ig');
+      text = text.replace(reg, '<span class="color-hightlight">$1</span>');
+    });
+
+    return text;
+  }
+
+</script>
 </body>
 </html>
