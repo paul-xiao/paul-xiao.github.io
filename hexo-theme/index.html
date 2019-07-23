@@ -76,6 +76,15 @@
      
      
     </div>
+     
+<section id="comment">
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
 </div>
   </div>
 
@@ -256,5 +265,23 @@ function createInnerHTML(results) {
   }
 
 </script>
+
+    <script type="text/javascript">
+    var disqus_shortname = 'paulxiao';
+    var disqus_config = function () {
+        this.page.url = 'https://paul-xiao.github.io/hexo-theme/';
+        this.page.identifier = '/hexo-theme/';
+        this.page.title = 'customize hexo theme';
+    };
+    (function(){
+      var d = document;
+      var dsq = d.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (d.head || d.body).appendChild(dsq);
+    })();
+    </script>
+
 </body>
 </html>
