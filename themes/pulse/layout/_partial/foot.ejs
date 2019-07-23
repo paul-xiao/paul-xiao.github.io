@@ -9,23 +9,105 @@ $(function () {
                $('#local-search-input').blur();
             
                 $.get('<%- config.root %><%- config.search.path %>', function(data) {
-                    const result = data.filter(item => item.content.toLowerCase().includes(val.toLowerCase()))
-                    let html = ''
-                    result.forEach(function (item) {
-                        let resultContent = item.content
-                        const reg = new RegExp(""+val+"/gi")
-                        console.log(reg)
-                        console.log(JSON.stringify(resultContent).replace(reg, '<span style="color:red">'+val+'</span>'))
-                       html+= '<div class="search-item"><a href="'+item.url+'">'+item.title+'</a><p>'+resultContent.replace(reg, '<span style="color:red">'+val+'</span>')+'</p></div>'
-                    })
+                    const result = filterPosts(data, [val])
                      $('#local-search-result').show();
-                     $('#local-search-result .article-entry').append(html)
+                     $('#local-search-result').append(createInnerHTML(result))
                 })
             }
         } catch (error) {
             console.log(error);
         }
     })
+
+
+    $('body').click(function() {
+         $('#local-search-result').hide();
+    })
     
 })
+
+function filterPosts(data, keywords) {
+    var results = [];
+
+    data.forEach(function(item) {
+      var isMatch = false;
+      var matchKeyWords = [];
+      item.content = item.content.replace(/<[^>]*>/g, '');
+
+      keywords.forEach(function(word) {
+        var reg = new RegExp(word, 'i');
+        var indexTitle = item.title.search(reg);
+        var indexContent = item.content.search(reg);
+
+        if (indexTitle > -1 || indexContent > -1) {
+          isMatch = true;
+          matchKeyWords.push(word);
+        }
+      });
+
+      if (isMatch) {
+        item.matchKeyWords = matchKeyWords;
+        results.push(item);
+      }
+    });
+
+    return results;
+  }
+function createInnerHTML(results) {
+    var content = '';
+    results.forEach(function(item) {
+      var postContent;
+      postContent = highlightText(item.content, item.matchKeyWords);
+      postContent = getPreviewContent(postContent, item.matchKeyWords);
+
+      item.title = highlightText(item.title, item.matchKeyWords);
+
+      item = '<li class="search-item">' +
+        '<a href="' + item.url + '"">' +
+        '<h3 class="search-item-title">' + item.title + '</h3>' +
+        '</a>' +
+        '<p class="search-item-content">' + postContent + '</p>' +
+        '</li>';
+      content += item;
+    });
+
+    return content;
+  }
+
+  function getPreviewContent(content, matchKeyWords) {
+    var isMatch = false;
+    var index = 0;
+    matchKeyWords.forEach(function(word) {
+      var reg = new RegExp(word, 'i');
+      index = content.search(reg);
+      if (index < 0) {
+        return;
+      }
+
+      isMatch = true;
+    });
+
+    if (isMatch) {
+      if (index < 120) {
+        content = content.substr(0, 140);
+      } else {
+        content = content.substr(index - 60, 200);
+      }
+    } else {
+      content = content.substr(0, 120);
+    }
+
+    return content;
+  }
+
+  function highlightText(text, matchKeyWords) {
+    text = text.replace(/<[^>]*>/g, '');
+    matchKeyWords.forEach(function(word) {
+      var reg = new RegExp('(' + word + ')', 'ig');
+      text = text.replace(reg, '<span class="color-hightlight">$1</span>');
+    });
+
+    return text;
+  }
+
 </script>

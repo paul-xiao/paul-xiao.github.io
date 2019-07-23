@@ -16,5 +16,27 @@
     border: 1px solid #ccc;
     padding: 15px;
     top: 5px;
-    box-shadow: 0 1px 5px 0 #ccc;
+    -webkit-box-shadow: 0 1px 5px 0 #ccc;
+            box-shadow: 0 1px 5px 0 #ccc;
+    .search-item{
+        padding: 15px 0;
+        border-bottom: 1px dashed $fontColor;
+        &:last-child{
+            border-bottom: 0;
+        }
+        &-title{
+            color: #333;
+            padding-bottom: 15px;
+            &:hover{
+                color: $linkColor;
+            }
+        }
+        &-content{
+            color: $fontColor;
+            word-break: break-all;
+        }
+        span.color-hightlight{
+            color: red;
+        }
+    }
 }

@@ -28,3 +28,15 @@ position: relative;
 top: 1px;
 
 ```
+## remove browser autocomplete
+
+autocomplete 属性规定输入字段是否应该启用自动完成功能。
+
+自动完成允许浏览器预测对字段的输入。当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。
+
+
+
+```html
+<!-- 注释：autocomplete 属性适用于 <form>，以及下面的 <input> 类型：text, search, url, telephone, email, password, datepickers, range 以及 color。 -->
+<input autocomplete="off">
+```
