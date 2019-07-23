@@ -5,6 +5,7 @@ tags:
 - http
 categories:
 - frontend
+comments: true
 ---
 
 ## HTTP headers

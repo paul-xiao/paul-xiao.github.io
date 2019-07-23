@@ -98,3 +98,11 @@ search:
   field: post
   content: true
 
+# comment
+comments:
+  type: gitment  # gitment disqus
+
+
+# disqus
+disqus_shortname: paulxiao
+
