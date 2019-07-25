@@ -42,7 +42,7 @@
 <div class="archive-item">
      <div class="archive-head">
         <div class="title">
-          <a href="/es6/">es6</a>
+          <a href="/es6/">Update partial Object Array</a>
         </div>
         <div class="info">
         
@@ -70,15 +70,10 @@
         </div>
         <div class="article-entry">
         
-          <h4 id="Update-partial-Object-Array"><a href="#Update-partial-Object-Array" class="headerlink" title="Update partial Object Array"></a>Update partial Object Array</h4><ul>
-<li>forEach for doing a thing with or to every entry in an array;</li>
-<li>filter for producing a new array containing only qualifying entries;</li>
-<li>map for making a one-to-one new array by transforming an existing array;</li>
-<li>some to check whether at least one element in an array fits some description;</li>
-<li>every to check whether all entries in an array match a description;</li>
-<li>find to look for a value in an array</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// map</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [&#123;<span class="attr">a</span>:<span class="string">'1'</span>&#125;, &#123;<span class="attr">b</span>: <span class="string">'2'</span>&#125;]</span><br><span class="line"></span><br><span class="line">arr = arr.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(item.a=== <span class="string">'1'</span>) <span class="keyword">return</span> <span class="built_in">Object</span>.assign(item, &#123;<span class="attr">c</span>: <span class="string">'3'</span>&#125;)</span><br><span class="line">    <span class="keyword">return</span> item <span class="comment">// if not return will get undefined</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr) </span><br><span class="line"><span class="comment">//output</span></span><br><span class="line"><span class="comment">// 0: &#123;a: "1", c: "3"&#125;</span></span><br><span class="line"><span class="comment">// 1: &#123;b: "2"&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// for each</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [&#123;<span class="attr">a</span>:<span class="string">'1'</span>&#125;, &#123;<span class="attr">b</span>: <span class="string">'2'</span>&#125;]</span><br><span class="line"></span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item, index, arr</span>)  =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(item.a=== <span class="string">'1'</span>) arr[index] = &#123;<span class="attr">c</span>: <span class="string">'3'</span>&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr) </span><br><span class="line"><span class="comment">//output</span></span><br><span class="line"><span class="comment">// 0: &#123;c: "3"&#125;</span></span><br><span class="line"><span class="comment">// 1: &#123;b: "2"&#125;</span></span><br></pre></td></tr></table></figure>
+          <h4 id="Aarry-prototypes"><a href="#Aarry-prototypes" class="headerlink" title="Aarry prototypes"></a>Aarry prototypes</h4><blockquote>
+<p><strong>forEach</strong> for doing a thing with or to every entry in an array;<br><strong>filter</strong> for producing a new array containing only qualifying entries;<br><strong>map</strong> for making a one-to-one new array by transforming an existing array;<br><strong>some</strong> to check whether at least one element in an array fits some description;<br><strong>every</strong> to check whether all entries in an array match a description;<br><strong>find</strong> to look for a value in an array</p>
+</blockquote>
+<h4 id="e-g"><a href="#e-g" class="headerlink" title="e.g."></a>e.g.</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// map</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [&#123;<span class="attr">a</span>:<span class="string">'1'</span>&#125;, &#123;<span class="attr">b</span>: <span class="string">'2'</span>&#125;]</span><br><span class="line"></span><br><span class="line">arr = arr.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(item.a=== <span class="string">'1'</span>) <span class="keyword">return</span> <span class="built_in">Object</span>.assign(item, &#123;<span class="attr">c</span>: <span class="string">'3'</span>&#125;)</span><br><span class="line">    <span class="keyword">return</span> item <span class="comment">// if not return will get undefined</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr) </span><br><span class="line"><span class="comment">//output</span></span><br><span class="line"><span class="comment">// 0: &#123;a: "1", c: "3"&#125;</span></span><br><span class="line"><span class="comment">// 1: &#123;b: "2"&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// for each</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [&#123;<span class="attr">a</span>:<span class="string">'1'</span>&#125;, &#123;<span class="attr">b</span>: <span class="string">'2'</span>&#125;]</span><br><span class="line"></span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item, index, arr</span>)  =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(item.a=== <span class="string">'1'</span>) arr[index] = &#123;<span class="attr">c</span>: <span class="string">'3'</span>&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr) </span><br><span class="line"><span class="comment">//output</span></span><br><span class="line"><span class="comment">// 0: &#123;c: "3"&#125;</span></span><br><span class="line"><span class="comment">// 1: &#123;b: "2"&#125;</span></span><br></pre></td></tr></table></figure>
         
         </div>
     </div>
@@ -117,7 +112,7 @@
       <ul>
         
           <li>
-            <a href="/es6/">es6</a>
+            <a href="/es6/">Update partial Object Array</a>
           </li>
         
           <li>
