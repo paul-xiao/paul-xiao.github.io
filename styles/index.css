@@ -684,7 +684,7 @@ pre .keyword, pre .javascript .function {
 
 .article .foot {
   padding-top: 15px;
-  border-top: 1px solid #fafafa;
+  border-top: 1px solid #e7e9ee;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }

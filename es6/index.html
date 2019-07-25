@@ -33,54 +33,55 @@
 </div>
 </header>
       <div class="outer">
-        <section id="main"><div class="archive">
+        <section id="main">
+<div class="archive">
  <div class="title">Articles</div>
  <div class="wrap">
 <div class="left">
 
-
-<div class="archive-item">
-     <div class="archive-head">
-        <div class="title">
-          <a href="/vscode-plugins/">vscode plugins</a>
-        </div>
-        <div class="info">
+ <div class="archive-item">
+   <div class="article">
+    <!-- Title -->
+    <h2 class="article-title">
+            es6
+    </h2>
+    <!-- Date and Author -->
+    <p class="article-meta">
+        2019-07-25
         
-            <span class="publish-date"><span class="fa fa-clock-o"></span>2019/7/18</span>
-             <span class="categories">
-              
-             <span class="fa fa-th-list"></span>
-              
-                <span>tools</span>
-              
-               
-            </span>
-            <span class="tags">
-            
-               <span class="fa fa-tags"></span>
-                
-                <span>vscode</span>
-              
-              
-            </span>
-        </div>
-     </div>
-    <div class="archive-main">
-        <div class="article-image">
-          <a href="/vscode-plugins/"><img id="my_img" src="" alt=""></a>
-        </div>
-        <div class="article-entry">
+            by paul
         
-          <h2 id="Vscode-Plugins"><a href="#Vscode-Plugins" class="headerlink" title="Vscode Plugins"></a>Vscode Plugins</h2><h4 id="Autoprefixer"><a href="#Autoprefixer" class="headerlink" title="Autoprefixer"></a>Autoprefixer</h4><p><em>Useage</em></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># install autoprefixer</span></span><br><span class="line"></span><br><span class="line">npm install -g|-D autoprefixer</span><br><span class="line"></span><br><span class="line"><span class="comment"># set shortcuts key</span></span><br><span class="line"></span><br><span class="line">File &gt; Preferences &gt; keyboard shotcuts <span class="comment"># search *autoprefixer* and set any key you like</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># supported type</span></span><br><span class="line"></span><br><span class="line">- css</span><br><span class="line">- less</span><br><span class="line">- scss</span><br></pre></td></tr></table></figure>
-
-
-        
-        </div>
+    </p>
+    <!-- Content -->
+    <div class="article-entry">
+        <h4 id="Update-partial-Object-Array"><a href="#Update-partial-Object-Array" class="headerlink" title="Update partial Object Array"></a>Update partial Object Array</h4><ul>
+<li>forEach for doing a thing with or to every entry in an array;</li>
+<li>filter for producing a new array containing only qualifying entries;</li>
+<li>map for making a one-to-one new array by transforming an existing array;</li>
+<li>some to check whether at least one element in an array fits some description;</li>
+<li>every to check whether all entries in an array match a description;</li>
+<li>find to look for a value in an array</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// map</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [&#123;<span class="attr">a</span>:<span class="string">'1'</span>&#125;, &#123;<span class="attr">b</span>: <span class="string">'2'</span>&#125;]</span><br><span class="line"></span><br><span class="line">arr = arr.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(item.a=== <span class="string">'1'</span>) <span class="keyword">return</span> <span class="built_in">Object</span>.assign(item, &#123;<span class="attr">c</span>: <span class="string">'3'</span>&#125;)</span><br><span class="line">    <span class="keyword">return</span> item <span class="comment">// if not return will get undefined</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr) </span><br><span class="line"><span class="comment">//output</span></span><br><span class="line"><span class="comment">// 0: &#123;a: "1", c: "3"&#125;</span></span><br><span class="line"><span class="comment">// 1: &#123;b: "2"&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// for each</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [&#123;<span class="attr">a</span>:<span class="string">'1'</span>&#125;, &#123;<span class="attr">b</span>: <span class="string">'2'</span>&#125;]</span><br><span class="line"></span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item, index, arr</span>)  =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(item.a=== <span class="string">'1'</span>) arr[index] = &#123;<span class="attr">c</span>: <span class="string">'3'</span>&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr) </span><br><span class="line"><span class="comment">//output</span></span><br><span class="line"><span class="comment">// 0: &#123;c: "3"&#125;</span></span><br><span class="line"><span class="comment">// 1: &#123;b: "2"&#125;</span></span><br></pre></td></tr></table></figure>
     </div>
+    <div class="foot">
+     
+      
+     <a href="/http/"><span class="fa fa-arrow-right"></span>Next</a>
+      
+    </div>
+     
+<section id="comment">
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div>
   </div>
 
- 
 </div>
 <div class="right">
    <div class="wrapper">
@@ -262,6 +263,23 @@ function createInnerHTML(results) {
   }
 
 </script>
+
+    <script type="text/javascript">
+    var disqus_shortname = 'paulxiao';
+    var disqus_config = function () {
+        this.page.url = 'https://paul-xiao.github.io/es6/';
+        this.page.identifier = '/es6/';
+        this.page.title = 'es6';
+    };
+    (function(){
+      var d = document;
+      var dsq = d.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (d.head || d.body).appendChild(dsq);
+    })();
+    </script>
 
 </body>
 </html>
