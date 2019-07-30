@@ -43,46 +43,30 @@ projects:
 # collections of interesting pics or sites
 
 gallery:
-  - url: google.com
-    image: /images/baby.jpg
-    title: title
-    description: something
-  - url: google.com
-    image: /images/baby.jpg
-    title: title
-    description: something
-  - url: google.com
-    image: /images/baby.jpg
-    title: title
-    description: something
-  - url: google.com
-    image: /images/baby.jpg
-    title: title
-    description: something
-  - url: google.com
-    image: /images/baby.jpg
-    title: title
-    description: something
-  - url: google.com
-    image: /images/baby.jpg
-    title: title
-    description: something
-  - url: google.com
-    image: /images/baby.jpg
-    title: title
-    description: something
-  - url: google.com
-    image: /images/baby.jpg
-    title: title
-    description: something
-  - url: google.com
-    image: /images/baby.jpg
-    title: title
-    description: something
-  - url: google.com
-    image: /images/baby.jpg
-    title: title
-    description: something
+  - url: https://soundcloud.com/discover
+    image: /images/soundcloud.png
+    title: SoundCloud
+    description: 
+  - url: https://www.pinterest.com/
+    image: /images/pinterest.png
+    title: Pinterest
+    description: 
+  - url: https://dribbble.com/
+    image: /images/dribbble.png
+    title: Dribbble
+    description: 
+  - url: https://www.mp3juices.cc/
+    image: /images/mp3juices.png
+    title: Mp3juices
+    description: 
+  - url: https://d3js.org/
+    image: /images/D3.png
+    title: D3.js
+    description: 
+  - url: https://threejs.org/
+    image: /images/threejs.png
+    title: Three.js
+    description: 
 # about
 
 about:

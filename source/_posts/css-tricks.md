@@ -23,9 +23,8 @@ categories:
 // [box-shadow partially broken](https://stackoverflow.com/questions/47310583/break-inside-avoid-not-working-with-padding-in-edge)
 // backface-visibility:hidden; ---- not working
 
-// fix
-position: relative;
-top: 1px;
+// fix  https://stackoverflow.com/questions/17881923/box-shadow-trimmed-in-css-columns-in-chrome
+ transform: translateZ(0);
 
 ```
 ## remove browser autocomplete
