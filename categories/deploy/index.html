@@ -42,16 +42,16 @@
 <div class="archive-item">
      <div class="archive-head">
         <div class="title">
-          <a href="/css-tricks/">css tricks</a>
+          <a href="/deploy-web-app-on-heroku/">deploy web app on heroku</a>
         </div>
         <div class="info">
         
-            <span class="publish-date"><span class="fa fa-clock-o"></span>2019/7/17</span>
+            <span class="publish-date"><span class="fa fa-clock-o"></span>2019/8/6</span>
              <span class="categories">
               
              <span class="fa fa-th-list"></span>
               
-                <span>frontend</span>
+                <span>deploy</span>
               
                
             </span>
@@ -59,7 +59,7 @@
             
                <span class="fa fa-tags"></span>
                 
-                <span>css</span>
+                <span>heroku</span>
               
               
             </span>
@@ -67,15 +67,11 @@
      </div>
     <div class="archive-main">
         <div class="article-image">
-          <a href="/css-tricks/"><img id="my_img" src="" alt=""></a>
+          <a href="/deploy-web-app-on-heroku/"><img id="my_img" src="" alt=""></a>
         </div>
         <div class="article-entry">
         
-          <h2 id="column-layout"><a href="#column-layout" class="headerlink" title="column layout"></a>column layout</h2><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">  <span class="attribute">column-count</span>: <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">column-gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">break-inside</span>: avoid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// break-inside: avoid; box-shadow is not fully display</span></span><br><span class="line"><span class="comment">// [box-shadow partially broken](https://stackoverflow.com/questions/47310583/break-inside-avoid-not-working-with-padding-in-edge)</span></span><br><span class="line"><span class="comment">// backface-visibility:hidden; ---- not working</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fix  https://stackoverflow.com/questions/17881923/box-shadow-trimmed-in-css-columns-in-chrome</span></span><br><span class="line"> <span class="attribute">transform</span>: translateZ(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="remove-browser-autocomplete"><a href="#remove-browser-autocomplete" class="headerlink" title="remove browser autocomplete"></a>remove browser autocomplete</h2><p>autocomplete 属性规定输入字段是否应该启用自动完成功能。</p>
-<p>自动完成允许浏览器预测对字段的输入。当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 注释：autocomplete 属性适用于 &lt;form&gt;，以及下面的 &lt;input&gt; 类型：text, search, url, telephone, email, password, datepickers, range 以及 color。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <h4 id="get-started-with-nodejs"><a href="#get-started-with-nodejs" class="headerlink" title="get started with nodejs"></a>get started with nodejs</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># install</span></span><br><span class="line">npm install -g heroku</span><br><span class="line"></span><br><span class="line"><span class="comment"># login </span></span><br><span class="line">heroku login</span><br><span class="line"></span><br><span class="line"><span class="comment"># create</span></span><br><span class="line">heroku create</span><br><span class="line"></span><br><span class="line"><span class="comment"># push</span></span><br><span class="line">git push heroku master</span><br><span class="line"></span><br><span class="line"><span class="comment"># Ensure that at least one instance of the app is running:</span></span><br><span class="line">heroku ps:scale web=1</span><br><span class="line">heroku ps:scale web=0 <span class="comment"># no app running</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># vist on broswer</span></span><br><span class="line">heroku open</span><br><span class="line"></span><br><span class="line"><span class="comment"># logs</span></span><br><span class="line">heroku logs --tail</span><br><span class="line"></span><br><span class="line"><span class="comment"># procfile - to explicitly declare what command should be executed to start your app.</span></span><br><span class="line">web: node index.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># run app locally</span></span><br><span class="line">heroku <span class="built_in">local</span> web</span><br><span class="line"></span><br><span class="line"><span class="comment"># push changes</span></span><br><span class="line"></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'commits'</span></span><br><span class="line">git push heroku master</span><br><span class="line"></span><br><span class="line"><span class="comment"># bash</span></span><br><span class="line">heroku run bash</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># deploy react apps</span></span><br><span class="line">touch Procfile</span><br><span class="line">web: npm start</span><br><span class="line"></span><br><span class="line"><span class="comment"># branch not updating?</span></span><br><span class="line">git push heroku local_branch_name:master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># clear build cache</span></span><br><span class="line">heroku config:<span class="built_in">set</span> NODE_MODULES_CACHE=<span class="literal">false</span></span><br><span class="line">git commit -am <span class="string">'disable node_modules cache'</span> --allow-empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># addons</span></span><br><span class="line">heroku addons:create mongolab <span class="comment"># will generate a MONGODB_URI</span></span><br><span class="line">heroku config <span class="comment">#check configs</span></span><br><span class="line">MONGODB_URI: mongodb://&lt;dbuser&gt;:&lt;dbpassword&gt;@ds259787.mlab.com:59787/heroku_pgd6txgv</span><br><span class="line"></span><br><span class="line"><span class="comment"># DB config</span></span><br><span class="line">module.exports = &#123;</span><br><span class="line">    secret:<span class="string">'paultest'</span>,</span><br><span class="line">    DB: process.env.MONGODB_URI|| <span class="string">'mongodb://localhost:27017/test'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
         </div>
     </div>

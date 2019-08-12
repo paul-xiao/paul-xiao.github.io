@@ -42,16 +42,16 @@
 <div class="archive-item">
      <div class="archive-head">
         <div class="title">
-          <a href="/css-tricks/">css tricks</a>
+          <a href="/how-to-use-mongoose/">how to use mongoose</a>
         </div>
         <div class="info">
         
-            <span class="publish-date"><span class="fa fa-clock-o"></span>2019/7/17</span>
+            <span class="publish-date"><span class="fa fa-clock-o"></span>2019/8/8</span>
              <span class="categories">
               
              <span class="fa fa-th-list"></span>
               
-                <span>frontend</span>
+                <span>database</span>
               
                
             </span>
@@ -59,7 +59,7 @@
             
                <span class="fa fa-tags"></span>
                 
-                <span>css</span>
+                <span>mongoose</span>
               
               
             </span>
@@ -67,15 +67,18 @@
      </div>
     <div class="archive-main">
         <div class="article-image">
-          <a href="/css-tricks/"><img id="my_img" src="" alt=""></a>
+          <a href="/how-to-use-mongoose/"><img id="my_img" src="" alt=""></a>
         </div>
         <div class="article-entry">
         
-          <h2 id="column-layout"><a href="#column-layout" class="headerlink" title="column layout"></a>column layout</h2><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">  <span class="attribute">column-count</span>: <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">column-gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">break-inside</span>: avoid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// break-inside: avoid; box-shadow is not fully display</span></span><br><span class="line"><span class="comment">// [box-shadow partially broken](https://stackoverflow.com/questions/47310583/break-inside-avoid-not-working-with-padding-in-edge)</span></span><br><span class="line"><span class="comment">// backface-visibility:hidden; ---- not working</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fix  https://stackoverflow.com/questions/17881923/box-shadow-trimmed-in-css-columns-in-chrome</span></span><br><span class="line"> <span class="attribute">transform</span>: translateZ(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+          <h4 id="Schemas"><a href="#Schemas" class="headerlink" title="Schemas"></a>Schemas</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</span><br><span class="line"><span class="keyword">const</span> Schema = mongoose.Schema;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Define collection and schema for Course</span></span><br><span class="line"><span class="keyword">var</span> Test = <span class="keyword">new</span> Schema(&#123;</span><br><span class="line">    course_name: &#123;</span><br><span class="line">        type: <span class="built_in">String</span></span><br><span class="line">    &#125;,</span><br><span class="line">    course_price: &#123;</span><br><span class="line">        type: <span class="built_in">Number</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,&#123;</span><br><span class="line">    timestamps: <span class="literal">true</span>,</span><br><span class="line">    collection: <span class="string">'test'</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = mongoose.model(<span class="string">'Test'</span>, Test);</span><br></pre></td></tr></table></figure>
 
-<h2 id="remove-browser-autocomplete"><a href="#remove-browser-autocomplete" class="headerlink" title="remove browser autocomplete"></a>remove browser autocomplete</h2><p>autocomplete 属性规定输入字段是否应该启用自动完成功能。</p>
-<p>自动完成允许浏览器预测对字段的输入。当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 注释：autocomplete 属性适用于 &lt;form&gt;，以及下面的 &lt;input&gt; 类型：text, search, url, telephone, email, password, datepickers, range 以及 color。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="three-way-to-get-req-parameters"><a href="#three-way-to-get-req-parameters" class="headerlink" title="three way to get req parameters"></a>three way to get req parameters</h4><blockquote>
+<p><a href="https://i5ting.github.io/node-http/#106" target="_blank" rel="noopener">https://i5ting.github.io/node-http/#106</a></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// req.body.xxx </span></span><br><span class="line"><span class="comment">// has to be post requset</span></span><br><span class="line"><span class="keyword">var</span> app = <span class="built_in">require</span>(<span class="string">'express'</span>)();</span><br><span class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</span><br><span class="line"><span class="keyword">var</span> multer = <span class="built_in">require</span>(<span class="string">'multer'</span>); </span><br><span class="line"></span><br><span class="line">app.use(bodyParser.json()); <span class="comment">// for parsing application/json</span></span><br><span class="line">app.use(bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">true</span> &#125;)); <span class="comment">// for parsing application/x-www-form-urlencoded</span></span><br><span class="line">app.use(multer()); <span class="comment">// for parsing multipart/form-data</span></span><br><span class="line"></span><br><span class="line">app.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.body);</span><br><span class="line">  res.json(req.body);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// req.query.xxx</span></span><br><span class="line">GET /search?q=tobi+ferret</span><br><span class="line">GET /shoes?order=desc&amp;shoe[color]=blue&amp;shoe[type]=converse</span><br><span class="line"></span><br><span class="line"><span class="comment">// req.params.xxx</span></span><br><span class="line">app.get(<span class="string">'/user/:id'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  res.send(<span class="string">'user '</span> + req.params.id);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
         
         </div>
     </div>

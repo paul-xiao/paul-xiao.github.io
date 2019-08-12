@@ -843,8 +843,8 @@ pre .keyword, pre .javascript .function {
     -webkit-box-shadow: 0 1px 5px 0 #ccc;
     box-shadow: 0 1px 5px 0 #ccc;
     border: 1px solid #fafafa;
-    position: relative;
-    top: 1px; }
+    transform: translateZ(0);
+    border-radius: 5px; }
     .gallery-item:hover {
       -webkit-box-shadow: 0 1px 5px 0 #757575;
       box-shadow: 0 1px 5px 0 #757575; }

@@ -42,24 +42,19 @@
 <div class="archive-item">
      <div class="archive-head">
         <div class="title">
-          <a href="/css-tricks/">css tricks</a>
+          <a href="/build-a-node-restful-api/">build a node restful api</a>
         </div>
         <div class="info">
         
-            <span class="publish-date"><span class="fa fa-clock-o"></span>2019/7/17</span>
+            <span class="publish-date"><span class="fa fa-clock-o"></span>2019/8/8</span>
              <span class="categories">
               
-             <span class="fa fa-th-list"></span>
-              
-                <span>frontend</span>
-              
-               
             </span>
             <span class="tags">
             
                <span class="fa fa-tags"></span>
                 
-                <span>css</span>
+                <span>restful api</span>
               
               
             </span>
@@ -67,15 +62,26 @@
      </div>
     <div class="archive-main">
         <div class="article-image">
-          <a href="/css-tricks/"><img id="my_img" src="" alt=""></a>
+          <a href="/build-a-node-restful-api/"><img id="my_img" src="" alt=""></a>
         </div>
         <div class="article-entry">
         
-          <h2 id="column-layout"><a href="#column-layout" class="headerlink" title="column layout"></a>column layout</h2><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">  <span class="attribute">column-count</span>: <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">column-gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">break-inside</span>: avoid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// break-inside: avoid; box-shadow is not fully display</span></span><br><span class="line"><span class="comment">// [box-shadow partially broken](https://stackoverflow.com/questions/47310583/break-inside-avoid-not-working-with-padding-in-edge)</span></span><br><span class="line"><span class="comment">// backface-visibility:hidden; ---- not working</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fix  https://stackoverflow.com/questions/17881923/box-shadow-trimmed-in-css-columns-in-chrome</span></span><br><span class="line"> <span class="attribute">transform</span>: translateZ(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+          <h4 id="build-dev-env"><a href="#build-dev-env" class="headerlink" title="build dev env"></a>build dev env</h4><ul>
+<li><p>nodemon</p>
+<blockquote>
+<p><a href="https://github.com/remy/nodemon" target="_blank" rel="noopener">https://github.com/remy/nodemon</a></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// nodeamon</span></span><br><span class="line">npm install --save-dev nodemon</span><br><span class="line"></span><br><span class="line">touch nodemon.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"restartable"</span>: <span class="string">"rs"</span>,</span><br><span class="line">  <span class="string">"ignore"</span>: [</span><br><span class="line">    <span class="string">".git"</span>,</span><br><span class="line">    <span class="string">"node_modules/**/node_modules"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"verbose"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">"execMap"</span>: &#123;</span><br><span class="line">    <span class="string">"js"</span>: <span class="string">"node --harmony"</span> <span class="comment">// support es6</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"events"</span>: &#123;</span><br><span class="line">    <span class="string">"restart"</span>: <span class="string">"osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"</span></span><br><span class="line">  &#125;,</span><br><span class="line">   <span class="comment">// By default nodemon monitors the current working directory. If you want to take control of that option, use the --watch option to add specific paths:</span></span><br><span class="line">  <span class="string">"watch"</span>: [</span><br><span class="line">    <span class="string">"test/fixtures/"</span>,</span><br><span class="line">    <span class="string">"test/samples/"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"env"</span>: &#123;</span><br><span class="line">    <span class="string">"NODE_ENV"</span>: <span class="string">"development"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"ext"</span>: <span class="string">"js,json"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cross-env</p>
+<blockquote>
+<p>Run scripts that set and use environment variables across platforms</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//package.json</span></span><br><span class="line"><span class="string">"start"</span>: <span class="string">"cross-env NODE_ENV=production node server.js"</span>,</span><br><span class="line"><span class="string">"dev"</span>: <span class="string">"cross-env NODE_ENV=development nodemon --inspect server.js"</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="remove-browser-autocomplete"><a href="#remove-browser-autocomplete" class="headerlink" title="remove browser autocomplete"></a>remove browser autocomplete</h2><p>autocomplete 属性规定输入字段是否应该启用自动完成功能。</p>
-<p>自动完成允许浏览器预测对字段的输入。当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 注释：autocomplete 属性适用于 &lt;form&gt;，以及下面的 &lt;input&gt; 类型：text, search, url, telephone, email, password, datepickers, range 以及 color。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
         
         </div>
     </div>
