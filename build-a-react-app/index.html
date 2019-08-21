@@ -52,7 +52,53 @@
     </p>
     <!-- Content -->
     <div class="article-entry">
-        <h4 id="this-props-content"><a href="#this-props-content" class="headerlink" title="this.props.content"></a>this.props.content</h4><h4 id="scss-support"><a href="#scss-support" class="headerlink" title="scss support"></a>scss support</h4><h4 id="how-user-auth-works"><a href="#how-user-auth-works" class="headerlink" title="how user auth works"></a>how user auth works</h4>
+        <h4 id="this-props-content"><a href="#this-props-content" class="headerlink" title="this.props.content"></a>this.props.content</h4><h4 id="scss-support"><a href="#scss-support" class="headerlink" title="scss support"></a>scss support</h4><p>default support scss, only need install node-sass as dependency</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i node-sass -D</span><br></pre></td></tr></table></figure>
+
+<h4 id="how-user-auth-works"><a href="#how-user-auth-works" class="headerlink" title="how user auth works"></a>how user auth works</h4><blockquote>
+<p><a href="https://reacttraining.com/react-router/web/example/auth-workflow" target="_blank" rel="noopener">auth-workflow</a></p>
+</blockquote>
+<h4 id="add-antd"><a href="#add-antd" class="headerlink" title="add antd"></a>add antd</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">yarn add antd</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;Button&#125; <span class="keyword">from</span> <span class="string">'antd'</span></span><br><span class="line">@<span class="keyword">import</span> <span class="string">'~antd/dist/antd.css'</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="data-bind"><a href="#data-bind" class="headerlink" title="data bind"></a>data bind</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// binding input value by targe name</span></span><br><span class="line">handleChange(event) &#123;</span><br><span class="line">   <span class="keyword">const</span> name = event.target.name</span><br><span class="line">   <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">     [name]: event.target.value</span><br><span class="line">   &#125;);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&lt;Input type=<span class="string">"text"</span> name=<span class="string">"username"</span> </span><br><span class="line">       value=&#123;<span class="keyword">this</span>.state.username&#125; </span><br><span class="line">       onChange=&#123;<span class="keyword">this</span>.handleChange&#125; /&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="functional-vs-class-components"><a href="#functional-vs-class-components" class="headerlink" title="functional-vs-class-components"></a>functional-vs-class-components</h4><blockquote>
+<p><a href="https://medium.com/@Zwenza/functional-vs-class-components-in-react-231e3fbd7108" target="_blank" rel="noopener">Functional vs Class-Components in React</a></p>
+</blockquote>
+<ul>
+<li>Functional component<ul>
+<li>pros<ul>
+<li>Functional component are much easier to read and test because they are plain JavaScript functions without state or lifecycle-hooks</li>
+<li>You end up with less code</li>
+<li>They help you to use best practices. It will get easier to separate container and presentational components because you need to think more about your component’s state if you don’t have access to setState() in your component</li>
+<li>The React team mentioned that there may be a performance boost for functional component in future React versions</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Welcome</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Class component<ul>
+<li>pros<ul>
+<li>state</li>
+<li>lifecycle-hooks</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Welcome</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="withRouter-pass-props"><a href="#withRouter-pass-props" class="headerlink" title="withRouter pass props"></a>withRouter pass props</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> AuthButton = withRouter(</span><br><span class="line">  (&#123; history , ...props&#125;) =&gt;</span><br><span class="line">  isLogin ? (</span><br><span class="line">      &lt;span&gt;</span><br><span class="line">        Welcome! &#123;props.name&#125;</span><br><span class="line">        &lt;Button</span><br><span class="line">         </span><br><span class="line">          onClick=&#123;() =&gt; &#123;</span><br><span class="line">            fakeAuth.signout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">              history.push(<span class="string">"/"</span>);</span><br><span class="line">              clearToken();</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;&#125;</span><br><span class="line">        &gt;</span><br><span class="line">          Sign out</span><br><span class="line">        &lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>span&gt;</span><br><span class="line">    ) : (</span><br><span class="line">      &lt;p&gt;You are not logged <span class="keyword">in</span>.&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="use-constructor-or-not"><a href="#use-constructor-or-not" class="headerlink" title="use constructor or not"></a>use constructor or not</h4><blockquote>
+<p><a href="https://daveceddia.com/where-initialize-state-react/" target="_blank" rel="noopener">where-initialize-state-react</a></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// use constructor</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="comment">// Required step: always call the parent class' constructor</span></span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set the state directly. Use props if necessary.</span></span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      loggedIn: <span class="literal">false</span>,</span><br><span class="line">      currentState: <span class="string">"not-panic"</span>,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Note: think carefully before initializing</span></span><br><span class="line">      <span class="comment">// state based on props!</span></span><br><span class="line">      someInitialValue: <span class="keyword">this</span>.props.initialValue</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// whatever you like</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Class field declarations for JavaScript stage 3</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    loggedIn: <span class="literal">false</span>,</span><br><span class="line">    currentState: <span class="string">"not-panic"</span>,</span><br><span class="line">    someDefaultThing: <span class="keyword">this</span>.props.whatever</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// whatever you like</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
     </div>
     <div class="foot">
      
