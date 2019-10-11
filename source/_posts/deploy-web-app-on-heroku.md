@@ -2,6 +2,9 @@
 title: deploy web app on heroku
 date: 2019-08-06 09:42:02
 tags:
+ - heroku
+categories:
+ - deploy
 ---
 
 
@@ -50,5 +53,25 @@ heroku run bash
 # deploy react apps
 touch Procfile
 web: npm start
+
+# branch not updating?
+git push heroku local_branch_name:master
+
+
+# clear build cache
+heroku config:set NODE_MODULES_CACHE=false
+git commit -am 'disable node_modules cache' --allow-empty
+
+# addons
+heroku addons:create mongolab # will generate a MONGODB_URI
+heroku config #check configs
+MONGODB_URI: mongodb://<dbuser>:<dbpassword>@ds259787.mlab.com:59787/heroku_pgd6txgv
+
+# DB config
+module.exports = {
+    secret:'paultest',
+    DB: process.env.MONGODB_URI|| 'mongodb://localhost:27017/test'
+}
+
 
 ```
