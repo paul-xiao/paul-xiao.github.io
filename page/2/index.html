@@ -42,6 +42,48 @@
 <div class="archive-item">
      <div class="archive-head">
         <div class="title">
+          <a href="/css-tricks/">css tricks</a>
+        </div>
+        <div class="info">
+        
+            <span class="publish-date"><span class="fa fa-clock-o"></span>2019/7/17</span>
+             <span class="categories">
+              
+             <span class="fa fa-th-list"></span>
+              
+                <span>frontend</span>
+              
+               
+            </span>
+            <span class="tags">
+            
+               <span class="fa fa-tags"></span>
+                
+                <span>css</span>
+              
+              
+            </span>
+        </div>
+     </div>
+    <div class="archive-main">
+        <div class="article-image">
+          <a href="/css-tricks/"><img id="my_img" src="" alt=""></a>
+        </div>
+        <div class="article-entry">
+        
+          <h2 id="column-layout"><a href="#column-layout" class="headerlink" title="column layout"></a>column layout</h2><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">  <span class="attribute">column-count</span>: <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">column-gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">break-inside</span>: avoid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// break-inside: avoid; box-shadow is not fully display</span></span><br><span class="line"><span class="comment">// [box-shadow partially broken](https://stackoverflow.com/questions/47310583/break-inside-avoid-not-working-with-padding-in-edge)</span></span><br><span class="line"><span class="comment">// backface-visibility:hidden; ---- not working</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fix  https://stackoverflow.com/questions/17881923/box-shadow-trimmed-in-css-columns-in-chrome</span></span><br><span class="line"> <span class="attribute">transform</span>: translateZ(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="remove-browser-autocomplete"><a href="#remove-browser-autocomplete" class="headerlink" title="remove browser autocomplete"></a>remove browser autocomplete</h2><p>autocomplete 属性规定输入字段是否应该启用自动完成功能。</p>
+<p>自动完成允许浏览器预测对字段的输入。当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 注释：autocomplete 属性适用于 &lt;form&gt;，以及下面的 &lt;input&gt; 类型：text, search, url, telephone, email, password, datepickers, range 以及 color。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        
+        </div>
+    </div>
+  </div>
+
+<div class="archive-item">
+     <div class="archive-head">
+        <div class="title">
           <a href="/hexo-theme/">customize hexo theme</a>
         </div>
         <div class="info">
@@ -76,20 +118,11 @@
         <div class="article-entry">
         
           <p><em>customeize hexo theme arrange (a group of people or things) in classes or categories according to shared qualities or characteristics.</em></p>
-<a id="more"></a>
-<h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">|--- pulse</span><br><span class="line">|    |--- languages</span><br><span class="line">|         |--- en.yml</span><br><span class="line">|         |--- zh-CN.yml</span><br><span class="line">|    |--- layout</span><br><span class="line">|         |--- _partial</span><br><span class="line">|              |--- article.ejs</span><br><span class="line">|              |--- header.ejs</span><br><span class="line">|              |--- footer.ejs</span><br><span class="line">|              |--- side.ejs</span><br><span class="line">|         |--- index.ejs</span><br><span class="line">|         |--- post.ejs</span><br><span class="line">|         |--- page.ejs</span><br><span class="line">|         |--- archive.ejs</span><br><span class="line">|         |--- layout.ejs</span><br><span class="line">|    |--- scripts</span><br><span class="line">|    |--- source</span><br><span class="line">|    |--- _config.yml</span><br></pre></td></tr></table></figure>
-
-<h4 id="ejs"><a href="#ejs" class="headerlink" title="ejs"></a>ejs</h4><h4 id="Partial-局部模版"><a href="#Partial-局部模版" class="headerlink" title="Partial 局部模版"></a>Partial <a href="https://hexo.io/zh-cn/docs/templates.html#%E5%B1%80%E9%83%A8%E6%A8%A1%E7%89%88%EF%BC%88Partial%EF%BC%89" target="_blank" rel="noopener">局部模版</a></h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># with params</span></span><br><span class="line">&lt;%- partial(<span class="string">'_partial/footer'</span>, null, &#123;cache: !config.relative_link&#125;) %&gt;   <span class="comment"># Fragment Caching</span></span><br><span class="line"></span><br><span class="line">&lt;%- partial(<span class="string">'header'</span>, &#123;&#125;, &#123;cache: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;<span class="name">%-</span> <span class="attr">body</span> %&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="variables"><a href="#variables" class="headerlink" title="variables"></a><a href="https://hexo.io/zh-cn/docs/variables" target="_blank" rel="noopener">variables</a></h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># use config variables</span></span><br><span class="line">&lt;%- config.var %&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># use theme variables</span></span><br><span class="line">&lt;%- theme.var %&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="helpers"><a href="#helpers" class="headerlink" title="helpers"></a>helpers</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># load css</span></span><br><span class="line"></span><br><span class="line">&lt;%- css(path) %&gt;</span><br><span class="line">&lt;%- css([path1, path2]) %&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># url_for</span></span><br><span class="line"></span><br><span class="line">&lt;%- url_for(path) %&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="sass-support"><a href="#sass-support" class="headerlink" title="sass support"></a>sass support</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-renderer-sass</span><br></pre></td></tr></table></figure>
-
-<h4 id="search"><a href="#search" class="headerlink" title="search"></a>search</h4>
+          
+            <p class="article-more-link">
+              <a class="btn btn-primary" href="/hexo-theme/#more">Read More</a>
+            </p>
+          
         
         </div>
     </div>
@@ -110,7 +143,7 @@
   </div>
      <div class="filters">
 <div class="filters-title">Tags</div>
- <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoose/">mongoose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/restful-api/">restful api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-test/">vue-test</a><span class="tag-list-count">1</span></li></ul>
+ <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/circle-ci/">circle-ci</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitlab/">gitlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoose/">mongoose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/restful-api/">restful api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-test/">vue-test</a><span class="tag-list-count">1</span></li></ul>
 </div>
      <div class="filters">
 <div class="filters-title"> Categories</div>
@@ -118,7 +151,7 @@
 </div>
      <div class="filters">
 <div class="filters-title">Archives</div>
-<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">6</span></li></ul>
+<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">7</span></li></ul>
 </div>
 
      

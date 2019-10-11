@@ -33,53 +33,68 @@
 </div>
 </header>
       <div class="outer">
-        <section id="main">
-<div class="archive">
+        <section id="main"><div class="archive">
  <div class="title">Articles</div>
  <div class="wrap">
 <div class="left">
 
- <div class="archive-item">
-   <div class="article">
-    <!-- Title -->
-    <h2 class="article-title">
-            http
-    </h2>
-    <!-- Date and Author -->
-    <p class="article-meta">
-        2019-07-18
+
+<div class="archive-item">
+     <div class="archive-head">
+        <div class="title">
+          <a href="/gitlab-ci-vs-circle-ci/">gitlab-ci VS circle-ci</a>
+        </div>
+        <div class="info">
         
-    </p>
-    <!-- Content -->
-    <div class="article-entry">
-        <h2 id="HTTP-headers"><a href="#HTTP-headers" class="headerlink" title="HTTP headers"></a>HTTP headers</h2><h4 id="Content-Disposition"><a href="#Content-Disposition" class="headerlink" title="Content-Disposition"></a>Content-Disposition</h4><p>Content-Disposition 消息头指示回复的内容该以何种形式展示，是以内联的形式（即网页或者页面的一部分），还是以附件的形式下载并保存到本地。<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition" target="_blank" rel="noopener">learn more</a></p>
-<h2 id="HTTP-Status-Code"><a href="#HTTP-Status-Code" class="headerlink" title="HTTP Status Code"></a>HTTP Status Code</h2><h4 id="304-Not-Modified"><a href="#304-Not-Modified" class="headerlink" title="304 Not Modified"></a>304 Not Modified</h4><p>HTTP 304 未改变说明无需再次传输请求的内容，也就是说可以使用缓存的内容。这通常是在一些安全的方法（safe），例如GET 或HEAD 或在请求中附带了头部信息： If-None-Match 或If-Modified-Since。</p>
-<p>如果是 200 OK ，响应会带有头部 Cache-Control, Content-Location, Date, ETag, Expires，和 Vary.</p>
-<blockquote>
-<p>很多浏览器的 开发者工具 会发出额外的请求，以达到 304 的目的，这样可以把资源以本地缓存的形式展现给开发者。</p>
+            <span class="author">
+            <span class="fa fa-user-o"></span>paul
+            </span>
+             
+            <span class="publish-date"><span class="fa fa-clock-o"></span>2019/7/25</span>
+             <span class="categories">
+              
+            </span>
+            <span class="tags">
+            
+               <span class="fa fa-tags"></span>
+                
+                <span>gitlab</span>
+              
+                <span>circle-ci</span>
+              
+              
+            </span>
+        </div>
+     </div>
+    <div class="archive-main">
+        <div class="article-image">
+          <a href="/gitlab-ci-vs-circle-ci/"><img id="my_img" src="" alt=""></a>
+        </div>
+        <div class="article-entry">
+        
+          <h1 id="GitLab-CI-VS-Circle-CI"><a href="#GitLab-CI-VS-Circle-CI" class="headerlink" title="GitLab CI VS Circle CI"></a>GitLab CI VS Circle CI</h1><hr>
+<h2 id="GitLab-CI"><a href="#GitLab-CI" class="headerlink" title="GitLab CI"></a>GitLab CI</h2><blockquote>
+<p><em>for me i’m use linux, so just tested on linux locally</em></p>
 </blockquote>
+<h4 id="1-gitlab-ci-yml-config"><a href="#1-gitlab-ci-yml-config" class="headerlink" title="1 .gitlab-ci.yml config"></a>1 .gitlab-ci.yml config</h4><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">image:</span> <span class="attr">node:latest</span></span><br><span class="line"><span class="attr">stages:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">production</span></span><br><span class="line">  </span><br><span class="line"><span class="attr">production:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">deploy</span></span><br><span class="line"><span class="attr">  tags:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">test</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">test1</span></span><br><span class="line"><span class="attr">  stage:</span> <span class="string">production</span></span><br><span class="line"><span class="attr">  image:</span> <span class="attr">ruby:latest</span></span><br><span class="line"><span class="attr">  script:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">apt-get</span> <span class="string">update</span> <span class="bullet">-qy</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">apt-get</span> <span class="string">install</span> <span class="bullet">-y</span> <span class="string">ruby-dev</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">gem</span> <span class="string">install</span> <span class="string">dpl</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">dpl</span> <span class="bullet">--provider=heroku</span> <span class="bullet">--app=heroku_node_restful_api</span> <span class="bullet">--api-key=$HEROKU_API_KEY</span></span><br><span class="line"><span class="attr">  only:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
-    </div>
-    <div class="foot">
-      
-     <a href="/gitlab-ci-vs-circle-ci/"><span class="fa fa-arrow-left"></span>Prev</a>
-     
-      
-     <a href="/vscode-plugins/"><span class="fa fa-arrow-right"></span>Next</a>
-      
-    </div>
-     
-<section id="comment">
-  
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-  
-</section>
+<h4 id="2-install-gitlab-runner"><a href="#2-install-gitlab-runner" class="headerlink" title="2 install gitlab-runner"></a>2 install gitlab-runner</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># get yum pakage</span></span><br><span class="line">curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh | sudo bash <span class="comment"># sudo -s pwd</span></span><br><span class="line"></span><br><span class="line">sudo yum install gitlab-runner</span><br><span class="line"></span><br><span class="line"><span class="comment"># register runner / register info is in setteing/CI/Runners</span></span><br><span class="line">sudo gitlab-runner register </span><br><span class="line"></span><br><span class="line"><span class="comment"># run local gitlab-runner</span></span><br><span class="line">sudo gitlab-runner run  <span class="comment"># more opts like : start | status | stop</span></span><br></pre></td></tr></table></figure>
 
-</div>
+<p>now we are able to see the runner in setteing/CI/Runners</p>
+<blockquote>
+<p><em>Note: tags is needed by default, you can choose to not use tags by edit the runner</em></p>
+</blockquote>
+<h4 id="3-runner-manage"><a href="#3-runner-manage" class="headerlink" title="3 runner manage"></a>3 runner manage</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># check all runners</span></span><br><span class="line">sudo gitlab-runner list</span><br><span class="line"><span class="comment"># unregister runner by name</span></span><br><span class="line">sudo gitlab-runner unregister --name <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>let’s end it here for now, Why need a runner ? Circle-CI seems not need, let dig into it, we’ll see</strong></p>
+<h2 id="Circle-CI"><a href="#Circle-CI" class="headerlink" title="Circle-CI"></a>Circle-CI</h2>
+        
+        </div>
+    </div>
   </div>
 
+ 
 </div>
 <div class="right">
    <div class="wrapper">
@@ -261,23 +276,6 @@ function createInnerHTML(results) {
   }
 
 </script>
-
-    <script type="text/javascript">
-    var disqus_shortname = 'paulxiao';
-    var disqus_config = function () {
-        this.page.url = 'https://paul-xiao.github.io/http/';
-        this.page.identifier = '/http/';
-        this.page.title = 'http';
-    };
-    (function(){
-      var d = document;
-      var dsq = d.createElement('script');
-      dsq.type = 'text/javascript';
-      dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (d.head || d.body).appendChild(dsq);
-    })();
-    </script>
 
 </body>
 </html>
