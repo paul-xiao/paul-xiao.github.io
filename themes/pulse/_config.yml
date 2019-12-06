@@ -15,11 +15,10 @@ github: 'https://github.com/paul-xiao/'
 
 # menu
 menu:
+  Home: /home
+  Articles: /articles
   Projects: /projects
-  Articles: /
   Gallery: /gallery
-  About: /about
-
 
 # 摘要
 excerpt_link: Read More
