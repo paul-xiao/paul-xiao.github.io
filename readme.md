@@ -1,3 +1,3 @@
-## Desc
+## Project Descrition
 
-> keep it simple, foucs on major point
+- [notes]('/notes')
