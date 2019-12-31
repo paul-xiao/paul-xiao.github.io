@@ -1,3 +1,3 @@
 ## Project Descrition
 
-- [notes]('/notes')
+- [notes](notes)
