@@ -1,6 +1,7 @@
 ---
 title: Home
 lang: en-US
+layout: Home
 ---
 
 > 花时间设计花哨的网页，还不如来点干货

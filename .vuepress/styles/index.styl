@@ -1,0 +1,40 @@
+@import './palete.styl'
+body
+  margin: 0  
+.theme-container
+  max-width: 1000px
+  margin: 0 auto
+  background: lightcyan  
+.theme-content
+  height: "calc(100vh - %s)" % ($head-height*2 + $base-padding*2) 
+  padding: $base-padding
+.theme-header 
+  background $base-color
+  display flex
+  height: $head-height
+  line-height: $head-height
+  padding: 0 $base-padding
+  .left
+      flex 1
+  .nav
+      flex 1
+      ul
+        margin 0
+        li
+          list-style none
+          display inline
+          padding: 0 15px
+          a
+           text-decoration: none
+           color: $link-color
+           &:active, &:hover{
+              color: $link-color-hover
+             }
+.theme-footer
+  height: $head-height
+  line-height: $head-height
+  background: #ffffff
+  text-align: center
+  padding: 0 $base-padding
+  p
+   margin: 0           
