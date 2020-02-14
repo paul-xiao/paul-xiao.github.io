@@ -16,13 +16,8 @@ import Footer from '../components/Footer'
      [Header.name]: Header,
      [Footer.name]: Footer,
    },
-   mounted() {
-       console.log(this.$page)
-
-   },
    computed: {
      site() {
-       console.log(this.$site)
        return this.$site
      },
      config() {

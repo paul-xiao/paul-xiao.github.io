@@ -13,5 +13,8 @@ module.exports = {
     ],
     displayAllHeaders: true,
     sidebar: 'auto'
-  }
+  },
+  plugins: [
+    require('./plugins/publishdate.js')
+  ]
 }

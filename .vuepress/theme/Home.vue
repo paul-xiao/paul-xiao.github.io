@@ -1,6 +1,6 @@
 <template>
  <BaseLayout>
- <List :pages="pages"/>
+ <List :pages="pages" @filter="handleFilter"/>
 </BaseLayout>
 </template>
 <script>
@@ -11,22 +11,35 @@ import List from '../components/List'
      [BaseLayout.name]: BaseLayout,
      [List.name]: List,
    },
+   data() {
+     return {
+       filter: ''
+     }
+   },
    mounted() {
-       console.log(this)
-
+       console.log(this.$site.pages.filter(e => e.path.match(/^\/blog\//)))
    },
    computed: {
      site() {
-       console.log(this.$site)
        return this.$site
      },
      config() {
-       console.log(this.$site)
        return this.$themeConfig
      },
      pages() {
-       return this.$site.pages
+       const blogs = this.$site.pages.filter(e => e.path.match(/^\/blog\//))
+        if(this.filter){
+           return blogs.filter(e => (e.frontmatter.tags && e.frontmatter.tags.includes(this.filter)) || (e.frontmatter.categories && e.frontmatter.categories.includes(this.filter)))
+         } else {
+          return blogs
+         }
      }
    },
+   methods: {
+     handleFilter(filter) {
+        this.filter = filter
+        console.log(this.$route)
+     }
+   }
  }
 </script>

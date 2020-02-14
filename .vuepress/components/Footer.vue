@@ -1,6 +1,6 @@
 <template>
   <div class="theme-footer">
-    <p>footer</p>
+    <p>created by <span>@paulxiaooo</span></p>
   </div>
 </template>
 <script>

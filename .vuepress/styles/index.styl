@@ -1,21 +1,59 @@
 @import './palete.styl'
+@import './common.styl'
 body
-  margin: 0  
+  margin: 0
+  background: lighten($border-color, 20%)  
 .theme-container
   max-width: 1000px
   margin: 0 auto
-  background: lightcyan  
+  background: $base-color  
 .theme-content
-  height: "calc(100vh - %s)" % ($head-height*2 + $base-padding*2) 
+  min-height: "calc(100vh - %s)" % ($head-height*2 + $base-padding*2) 
   padding: $base-padding
+  .list
+    &-item
+      border: 1px solid $border-color
+      min-height: 150px
+      padding: $base-padding
+      margin: 10px 0
+      &-head
+        height: 50px
+        line-height: 50px
+        .title
+          text-decoration: none
+          color: $link-color
+        small
+          font-size: 12px
+          color: $font-color
+          .publish-date{
+           float right
+          }
+          .tag, .category
+           cursor: pointer
+           color: lighten($link-color, 10%)
+           &:active, &:focus, &:hover
+             color: lighten($link-color, 20%)
+
+      &-excerpt
+        min-height: 100px
+        &>p
+          margin: 0  
+          padding: 10px 0
+          img
+            width: 200px
+            vertical-align: middle
+            display: block
 .theme-header 
   background $base-color
   display flex
   height: $head-height
   line-height: $head-height
   padding: 0 $base-padding
+  border-bottom: 1px solid $border-color
   .left
       flex 1
+      a
+       color: $font-color
   .nav
       flex 1
       ul
@@ -36,5 +74,8 @@ body
   background: #ffffff
   text-align: center
   padding: 0 $base-padding
+  border-top: 1px solid $border-color
   p
-   margin: 0           
+   margin: 0
+   color: $font-color
+   font-size: 12px           

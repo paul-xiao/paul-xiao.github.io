@@ -1,7 +1,7 @@
 <template>
   <div class="theme-header" v-if="site">
     <div class="left">
-       {{site.title}}
+       <a href="/">{{site.title}}</a>
     </div>
     <div class="nav">
       <ul>
