@@ -1,6 +1,5 @@
 ---
-title: 文章名称xxx
-date: 2019-12-11
+title: 测试xxx
 sticky: 2
 tags:
  - VuePress

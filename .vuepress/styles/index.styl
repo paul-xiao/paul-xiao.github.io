@@ -1,8 +1,10 @@
 @import './palete.styl'
 @import './common.styl'
+@import './default.styl'
 body
   margin: 0
-  background: lighten($border-color, 20%)  
+  background: $bg-color
+  color: $font-color 
 .theme-container
   max-width: 1000px
   margin: 0 auto
@@ -10,6 +12,39 @@ body
 .theme-content
   min-height: "calc(100vh - %s)" % ($head-height*2 + $base-padding*2) 
   padding: $base-padding
+  .archives
+    .total
+      color: lighten($font-color, 20%)
+    .archive
+      &-title
+        color: $font-color
+      &-item
+        display: block
+        padding: 5px 0
+  &>.tags
+    .tag
+      background: $tag-color
+      margin: 5px
+      padding: 5px 15px
+      display: inline-block
+      color: $base-color
+    .category
+      background: lighten($category-color, 10%)
+      margin: 5px
+      padding: 5px 15px
+      display: inline-block
+      color: $base-color  
+  .pagination
+    width: 200px
+    margin: 10px 0
+    .page
+      border: 1px solid $border-color
+      cursor: pointer
+      padding: 0 10px
+      margin: 5px
+      color: $font-color
+      &.active
+        background: $border-color
   .list
     &-item
       border: 1px solid $border-color
@@ -56,6 +91,17 @@ body
        color: $font-color
   .nav
       flex 1
+      text-align: right
+      display: flex
+      justify-content: flex-end
+      .search-box
+        input
+          height: 30px
+          width: 200px
+          outline: none
+          padding: 0 5px
+          font-size: 15px
+          color: $font-color
       ul
         margin 0
         li
@@ -64,14 +110,14 @@ body
           padding: 0 15px
           a
            text-decoration: none
-           color: $link-color
+           color: $font-color
            &:active, &:hover{
-              color: $link-color-hover
+              color: $link-color
              }
 .theme-footer
   height: $head-height
   line-height: $head-height
-  background: #ffffff
+  background: $base-color
   text-align: center
   padding: 0 $base-padding
   border-top: 1px solid $border-color

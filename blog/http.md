@@ -1,0 +1,26 @@
+---
+title: http
+date: 2019-07-18 17:33:16
+tags:
+- http
+categories:
+- frontend
+comments: true
+---
+
+## HTTP headers
+
+#### Content-Disposition
+Content-Disposition 消息头指示回复的内容该以何种形式展示，是以内联的形式（即网页或者页面的一部分），还是以附件的形式下载并保存到本地。[learn more](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition)
+
+
+
+## HTTP Status Code
+
+#### 304 Not Modified
+
+HTTP 304 未改变说明无需再次传输请求的内容，也就是说可以使用缓存的内容。这通常是在一些安全的方法（safe），例如GET 或HEAD 或在请求中附带了头部信息： If-None-Match 或If-Modified-Since。
+
+如果是 200 OK ，响应会带有头部 Cache-Control, Content-Location, Date, ETag, Expires，和 Vary.
+
+> 很多浏览器的 开发者工具 会发出额外的请求，以达到 304 的目的，这样可以把资源以本地缓存的形式展现给开发者。

@@ -4,6 +4,9 @@
        <a href="/">{{site.title}}</a>
     </div>
     <div class="nav">
+      <div class="search-box">
+        <input type="text">
+      </div>
       <ul>
         <li v-for="item in config.nav">
           <a :href="item.link">

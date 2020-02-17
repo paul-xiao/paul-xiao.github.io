@@ -1,0 +1,53 @@
+---
+title: Update partial Object Array 
+date: 2019-07-25 17:24:46
+author: paul
+tags:
+ - es6
+categories:
+ - frontend
+---
+
+
+#### Aarry prototypes
+
+
+> **forEach** for doing a thing with or to every entry in an array;
+> **filter** for producing a new array containing only qualifying entries;
+> **map** for making a one-to-one new array by transforming an existing array;
+> **some** to check whether at least one element in an array fits some description;
+> **every** to check whether all entries in an array match a description;
+> **find** to look for a value in an array
+
+
+#### e.g.
+```js
+
+// map
+
+let arr = [{a:'1'}, {b: '2'}]
+
+arr = arr.map(item => {
+    if(item.a=== '1') return Object.assign(item, {c: '3'})
+    return item // if not return will get undefined
+})
+
+console.log(arr) 
+//output
+// 0: {a: "1", c: "3"}
+// 1: {b: "2"}
+
+
+// for each
+
+let arr = [{a:'1'}, {b: '2'}]
+
+arr.forEach((item, index, arr)  => {
+    if(item.a=== '1') arr[index] = {c: '3'}
+})
+
+console.log(arr) 
+//output
+// 0: {c: "3"}
+// 1: {b: "2"}
+```

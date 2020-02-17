@@ -1,18 +1,24 @@
 <template>
-<div class="theme-container">
- <Header :site="site" :config="config"/>
+<BaseLayout>
+  <div class="content_default-title">
+    <a :href="page.path" class="title">{{page.title}}</a>
+       <small><span class="tags" v-for="tag in page.frontmatter.tags">
+         <span class="tag" @click="handleClick(tag)">
+           {{` #${tag}`}}
+         </span>
+       </span>
+       <span class="categories" v-for="category in page.frontmatter.categories">
+         <span class="category" @click="handleClick(category)">{{` @${category}`}}</span>
+       </span>
+       <span class="publish-date">{{publishDate(page.publishDate)}}</span>
+       </small>
+  </div>
  <Content />
- <Footer />
-</div>
+</BaseLayout>
 </template>
 <script>
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import moment from '../utils/moment'
  export default {
-   components: {
-     [Header.name]: Header,
-     [Footer.name]: Footer,
-   },
    mounted() {
        console.log(this.$page)
 
@@ -29,5 +35,13 @@ import Footer from '../components/Footer'
        return this.$page
      }
    },
+   methods: {
+     publishDate(publishDate) {
+      return moment(publishDate).date
+    },
+    handleClick() {
+      console.log(1)
+    }
+   }
  }
 </script>

@@ -27,7 +27,8 @@ import List from '../components/List'
        return this.$themeConfig
      },
      pages() {
-       const blogs = this.$site.pages.filter(e => e.path.match(/^\/blog\//))
+       const blogs = this.$site.pages.filter(e => e.path.match(/^\/blog\//)).sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate))
+
         if(this.filter){
            return blogs.filter(e => (e.frontmatter.tags && e.frontmatter.tags.includes(this.filter)) || (e.frontmatter.categories && e.frontmatter.categories.includes(this.filter)))
          } else {

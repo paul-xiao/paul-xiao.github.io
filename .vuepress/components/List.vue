@@ -1,6 +1,7 @@
 <template>
-  <div class="list" v-if="pages">
-    <div class="list-item" v-for="page in pages">
+  <div class="list-wrap">
+    <div class="list" v-if="list">
+    <div class="list-item" v-for="page in list">
       <div class="list-item-head">
        <a :href="page.path" class="title">{{page.title}}</a>
        <small><span class="tags" v-for="tag in page.frontmatter.tags">
@@ -17,19 +18,37 @@
       <div v-html="page.excerpt" class="list-item-excerpt"></div>
     </div>
   </div>
+  <Pagination :pageNum="pageNum" v-model="currentPage"/>
+  </div>
 </template>
 <script>
 import moment from '../utils/moment'
+import Pagination from "./Pagination";
 export default {
   name: 'List',
+  data() {
+    return {
+      defaultNumPerPage: 5,
+      currentPage: 0
+    }
+  },
   props: {
     pages: {
       type: Array
     }
   },
+  computed: {
+    pageNum() {
+      return Math.ceil(this.pages.length / this.defaultNumPerPage )
+    },
+    list() {
+      console.log(this.pages.slice(this.currentPage*this.defaultNumPerPage, (this.currentPage+1) * this.defaultNumPerPage))
+      return this.pages.slice(this.currentPage*this.defaultNumPerPage, (this.currentPage+1) * this.defaultNumPerPage)
+    }
+  },
   methods: {
     publishDate(publishDate) {
-      return Object.values(moment(publishDate)).join(' ')
+      return moment(publishDate).date
     },
     handleClick(filter) {
       this.$emit('filter', filter)

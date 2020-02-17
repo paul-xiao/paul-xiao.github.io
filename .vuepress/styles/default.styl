@@ -1,0 +1,48 @@
+.content__default
+  img
+    width 300px
+    display block
+  blockquote
+    background: $border-color
+    padding: $base-padding
+  .language-js, .language-bash
+    pre
+      background: $bg-code
+      padding: $base-padding
+      color: lighten($font-color, 40%)
+      .token
+        white-space: normal
+      .comment
+        color: $comment-color
+      .punctuation
+        color: lighten($font-color, 20%)
+      .string
+        color: darkcyan
+      .operator 
+        color:lighten($font-color, 10%)
+      .function
+        color: lighten(darkcyan, 40%)
+      .parameter
+        color: lighten(lightblue, 40%)
+      .keyword
+        color: darken(lightblue, 20%)   
+      .class-name
+        color: darken(pink, 20%) 
+.content_default-title
+  height: 50px
+  line-height: 50px
+  .title
+    text-decoration: none
+    color: $font-color
+    font-size: 16px
+  small
+    font-size: 12px
+    color: $font-color
+    .publish-date{
+      float right
+    }
+    .tag, .category
+      cursor: pointer
+      color: lighten($link-color, 10%)
+      &:active, &:focus, &:hover
+        color: lighten($link-color, 20%) 
