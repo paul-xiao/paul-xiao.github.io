@@ -4,11 +4,11 @@
         <h1>Tags</h1>
         <div class="group-by-tags">
           <h4>group by tags :</h4>
-            <span v-for="tag in tags" class="tag">{{`${tag[0]}  ${tag[1]}`}}</span>
+            <span v-for="tag in tags" class="tag" @click="handleClick(tag[0])">{{`${tag[0]}  ${tag[1]}`}}</span>
         </div>
         <div class="group-by-categories">
          <h4> group by categories :</h4>
-            <span v-for="category in categories" class="category">{{`${category[0]}  ${category[1]}`}}</span>
+            <span v-for="category in categories" class="category" @click="handleClick(category[0])">{{`${category[0]}  ${category[1]}`}}</span>
         </div>
     </div>
   </BaseLayout>
@@ -74,9 +74,13 @@
         }
       },
       methods: {
-        handleClick(e) {
-          console.log(e)
-          // this.$router.push('/')
+        handleClick(filter) {
+          this.$router.push({
+            path: '/',
+            query: {
+              filter: filter
+            }
+          })
         }
       }
   }

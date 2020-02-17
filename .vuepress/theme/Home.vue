@@ -16,8 +16,15 @@ import List from '../components/List'
        filter: ''
      }
    },
+   watch: {
+     $route(){
+       console.log(this.$route)
+     }
+   },
    mounted() {
-       console.log(this.$site.pages.filter(e => e.path.match(/^\/blog\//)))
+      const { filter } = this.$route.query
+      this.filter =  filter ? filter : ''
+      console.log(this.$route.query)
    },
    computed: {
      site() {
@@ -39,7 +46,11 @@ import List from '../components/List'
    methods: {
      handleFilter(filter) {
         this.filter = filter
-        console.log(this.$route)
+        this.$router.push({
+          query: {
+            filter: filter
+          }
+        })
      }
    }
  }

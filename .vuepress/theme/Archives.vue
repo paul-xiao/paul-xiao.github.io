@@ -7,7 +7,7 @@
         </div>
         <div v-for="archive in archives" class="archive">
           <h2 class="archive-title">{{archive[0]}}</h2>
-          <a v-for="item in archive[1]" :href="item.path" class="archive-item">{{`${item.title} -- ${handleMoment(item.publishDate)}`}}</a>
+          <router-link v-for="item in archive[1]" :to="item.path" class="archive-item">{{`${item.title} -- ${handleMoment(item.publishDate)}`}}</router-link>
         </div>
     </div>
   </BaseLayout>

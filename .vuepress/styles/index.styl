@@ -21,6 +21,11 @@ body
       &-item
         display: block
         padding: 5px 0
+        color: $font-color
+        &:hover
+          color: $link-color
+          transform: translateX(10px)
+          transition: all ease 0.5s
   &>.tags
     .tag
       background: $tag-color
@@ -28,12 +33,20 @@ body
       padding: 5px 15px
       display: inline-block
       color: $base-color
+      cursor: pointer
+      &:hover
+        transform: scale(1.1)
+        transition: all ease-in 0.5s
     .category
-      background: lighten($category-color, 10%)
+      background: $category-color
       margin: 5px
       padding: 5px 15px
       display: inline-block
-      color: $base-color  
+      color: $base-color
+      cursor: pointer
+      &:hover
+        transform: scale(1.1)
+        transition: all ease-out 0.5s
   .pagination
     width: 200px
     margin: 10px 0
@@ -102,6 +115,8 @@ body
           padding: 0 5px
           font-size: 15px
           color: $font-color
+          background: $base-color
+          border: 1px solid $border-color
       ul
         margin 0
         li

@@ -1,7 +1,7 @@
 <template>
   <div class="theme-header" v-if="site">
     <div class="left">
-       <a href="/">{{site.title}}</a>
+       <router-link to="/">{{site.title}}</router-link>
     </div>
     <div class="nav">
       <div class="search-box">
@@ -9,11 +9,11 @@
       </div>
       <ul>
         <li v-for="item in config.nav">
-          <a :href="item.link">
+          <router-link :to="item.link">
            {{
             item.text
           }}
-          </a>
+          </router-link>
         </li>
       </ul>
     </div>

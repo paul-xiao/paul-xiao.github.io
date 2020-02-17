@@ -5,11 +5,15 @@
   blockquote
     background: $border-color
     padding: $base-padding
-  .language-js, .language-bash
+  .language-js, .language-bash, .language-less
     pre
       background: $bg-code
       padding: $base-padding
       color: lighten($font-color, 40%)
+      .selector
+        color: orange
+      .property
+        color: pink 
       .token
         white-space: normal
       .comment

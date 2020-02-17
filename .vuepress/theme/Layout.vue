@@ -1,7 +1,7 @@
 <template>
 <BaseLayout>
   <div class="content_default-title">
-    <a :href="page.path" class="title">{{page.title}}</a>
+    <router-link :to="page.path" class="title">{{page.title}}</router-link>
        <small><span class="tags" v-for="tag in page.frontmatter.tags">
          <span class="tag" @click="handleClick(tag)">
            {{` #${tag}`}}
@@ -39,8 +39,13 @@ import moment from '../utils/moment'
      publishDate(publishDate) {
       return moment(publishDate).date
     },
-    handleClick() {
-      console.log(1)
+    handleClick(filter) {
+      this.$router.push({
+            path: '/',
+            query: {
+              filter: filter
+            }
+          })
     }
    }
  }

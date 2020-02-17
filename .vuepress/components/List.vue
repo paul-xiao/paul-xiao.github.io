@@ -3,8 +3,12 @@
     <div class="list" v-if="list">
     <div class="list-item" v-for="page in list">
       <div class="list-item-head">
-       <a :href="page.path" class="title">{{page.title}}</a>
-       <small><span class="tags" v-for="tag in page.frontmatter.tags">
+       <router-link :to="page.path" class="title">{{page.title}}</router-link>
+         <small>      <span class="publish-date">{{publishDate(page.publishDate)}}</span>
+</small>
+       </div>
+      <div v-html="page.excerpt" class="list-item-excerpt"></div>
+      <div class="list-item-head"> <small><span class="tags" v-for="tag in page.frontmatter.tags">
          <span class="tag" @click="handleClick(tag)">
            {{` #${tag}`}}
          </span>
@@ -12,10 +16,7 @@
        <span class="categories" v-for="category in page.frontmatter.categories">
          <span class="category" @click="handleClick(category)">{{` @${category}`}}</span>
        </span>
-       <span class="publish-date">{{publishDate(page.publishDate)}}</span>
-       </small>
-      </div>
-      <div v-html="page.excerpt" class="list-item-excerpt"></div>
+       </small></div>
     </div>
   </div>
   <Pagination :pageNum="pageNum" v-model="currentPage"/>
