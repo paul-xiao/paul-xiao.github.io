@@ -19,7 +19,7 @@ categories:
 > **every** to check whether all entries in an array match a description;
 > **find** to look for a value in an array
 
-
+<!-- more -->
 #### e.g.
 ```js
 

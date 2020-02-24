@@ -3,15 +3,15 @@
 @import './default.styl'
 body
   margin: 0
-  background: $bg-color
   color: $font-color 
 .theme-container
-  max-width: 1000px
-  margin: 0 auto
-  background: $base-color  
+  background: url('/bg.png')
 .theme-content
   min-height: "calc(100vh - %s)" % ($head-height*2 + $base-padding*2) 
   padding: $base-padding
+  background: $base-color
+  max-width: 1000px
+  margin: 0 auto
   .archives
     .total
       color: lighten($font-color, 20%)
@@ -23,7 +23,7 @@ body
         padding: 5px 0
         color: $font-color
         &:hover
-          color: $link-color
+          color: $link-color-hover
           transform: translateX(10px)
           transition: all ease 0.5s
   &>.tags
@@ -59,14 +59,36 @@ body
       &.active
         background: $border-color
   .list
+    display: flex
+    flex-direction: row
+    .archives
+      margin: 10px 0
+      width: 200px
+      padding: $base-padding
+      .title
+        margin: 0
+      .total
+        color: lighten($font-color, 20%)
+      .archive
+        &-title
+          color: $font-color
+        &-item
+          display: block
+          padding: 5px 0
+          color: $font-color
+          &:hover
+            color: $link-color-hover
+            transform: translateX(10px)
+            transition: all ease 0.5s
+    &-inner
+      flex:1
     &-item
       border: 1px solid $border-color
       min-height: 150px
       padding: $base-padding
       margin: 10px 0
       &-head
-        height: 50px
-        line-height: 50px
+        line-height: 30px
         .title
           text-decoration: none
           color: $link-color
@@ -76,12 +98,16 @@ body
           .publish-date{
            float right
           }
-          .tag, .category
+          .tag
            cursor: pointer
-           color: lighten($link-color, 10%)
+           color: $tag-color
            &:active, &:focus, &:hover
-             color: lighten($link-color, 20%)
-
+             color: $tag-color
+          .category
+           cursor: pointer
+           color: $category-color
+           &:active, &:focus, &:hover
+             color: $category-color
       &-excerpt
         min-height: 100px
         &>p
@@ -92,21 +118,24 @@ body
             vertical-align: middle
             display: block
 .theme-header 
-  background $base-color
+  background transparent
   display flex
   height: $head-height
   line-height: $head-height
   padding: 0 $base-padding
   border-bottom: 1px solid $border-color
+  max-width: 1000px
+  margin: 0 auto
   .left
       flex 1
       a
-       color: $font-color
+       color: $base-color
   .nav
       flex 1
       text-align: right
       display: flex
       justify-content: flex-end
+      position: relative
       .search-box
         input
           height: 30px
@@ -117,6 +146,20 @@ body
           color: $font-color
           background: $base-color
           border: 1px solid $border-color
+      .search-result
+        min-width: 180px
+        height: auto
+        padding: $base-padding
+        border: 1px solid $border-color
+        background: $base-color
+        position: absolute
+        top: 50px
+        text-align: left
+        line-height: 35px
+        &-item
+          line-height: 35px
+          & a:hover
+            color: lighten($link-color, 50%)
       ul
         margin 0
         li
@@ -125,18 +168,20 @@ body
           padding: 0 15px
           a
            text-decoration: none
-           color: $font-color
+           color: $base-color
            &:active, &:hover{
-              color: $link-color
+              color: $border-color
              }
 .theme-footer
+  max-width: 1000px
+  margin: 0 auto
   height: $head-height
   line-height: $head-height
-  background: $base-color
+  background: transparent
   text-align: center
   padding: 0 $base-padding
   border-top: 1px solid $border-color
   p
    margin: 0
-   color: $font-color
+   color: $border-color
    font-size: 12px           

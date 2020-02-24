@@ -1,10 +1,12 @@
 <template>
  <BaseLayout>
+ <Breadcrumbs :pageNum="pageNum" v-model="currentPage"/>
  <List :pages="pages" @filter="handleFilter"/>
 </BaseLayout>
 </template>
 <script>
 import BaseLayout from '../components/BaseLayout'
+import Breadcrumbs from '../components/Breadcrumbs'
 import List from '../components/List'
  export default {
    components: {
@@ -13,18 +15,14 @@ import List from '../components/List'
    },
    data() {
      return {
-       filter: ''
-     }
-   },
-   watch: {
-     $route(){
-       console.log(this.$route)
+       filter: '',
+       currentPage: 1,
+       pageNum: 1
      }
    },
    mounted() {
       const { filter } = this.$route.query
       this.filter =  filter ? filter : ''
-      console.log(this.$route.query)
    },
    computed: {
      site() {

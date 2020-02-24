@@ -1,11 +1,11 @@
 <template>
   <div class="list-wrap">
     <div class="list" v-if="list">
-    <div class="list-item" v-for="page in list">
+     <div class="list-inner">
+       <div class="list-item" v-for="page in list">
       <div class="list-item-head">
        <router-link :to="page.path" class="title">{{page.title}}</router-link>
-         <small>      <span class="publish-date">{{publishDate(page.publishDate)}}</span>
-</small>
+         <small><span class="publish-date">{{publishDate(page.publishDate)}}</span></small>
        </div>
       <div v-html="page.excerpt" class="list-item-excerpt"></div>
       <div class="list-item-head"> <small><span class="tags" v-for="tag in page.frontmatter.tags">
@@ -18,6 +18,8 @@
        </span>
        </small></div>
     </div>
+     </div>
+    <Archives />
   </div>
   <Pagination :pageNum="pageNum" v-model="currentPage"/>
   </div>
@@ -25,6 +27,7 @@
 <script>
 import moment from '../utils/moment'
 import Pagination from "./Pagination";
+import Archives from "./Archives";
 export default {
   name: 'List',
   data() {
@@ -43,7 +46,6 @@ export default {
       return Math.ceil(this.pages.length / this.defaultNumPerPage )
     },
     list() {
-      console.log(this.pages.slice(this.currentPage*this.defaultNumPerPage, (this.currentPage+1) * this.defaultNumPerPage))
       return this.pages.slice(this.currentPage*this.defaultNumPerPage, (this.currentPage+1) * this.defaultNumPerPage)
     }
   },

@@ -27,6 +27,7 @@ categories:
  transform: translateZ(0);
 
 ```
+<!-- more -->
 ## remove browser autocomplete
 
 autocomplete 属性规定输入字段是否应该启用自动完成功能。

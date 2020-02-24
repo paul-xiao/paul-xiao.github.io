@@ -1,11 +1,11 @@
-.content__default
+.content__default, .list-item-excerpt
   img
     width 300px
     display block
   blockquote
     background: $border-color
     padding: $base-padding
-  .language-js, .language-bash, .language-less
+  .language-js, .language-bash, .language-less, .language-html, .language-sh
     pre
       background: $bg-code
       padding: $base-padding
@@ -45,8 +45,13 @@
     .publish-date{
       float right
     }
-    .tag, .category
+    .category
       cursor: pointer
-      color: lighten($link-color, 10%)
+      color: $category-color
       &:active, &:focus, &:hover
-        color: lighten($link-color, 20%) 
+        color: $category-color
+    .tag
+      cursor: pointer
+      color: $tag-color
+      &:active, &:focus, &:hover
+        color: $tag-color

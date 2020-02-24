@@ -11,3 +11,4 @@ categories:
 #### vue event affect
 
 if two component both has attched the same event, it will affect each other
+<!-- more -->

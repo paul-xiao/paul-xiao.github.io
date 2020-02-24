@@ -9,7 +9,7 @@ categories:
 
 
 #### get started with nodejs
-
+<!-- more -->
 ```bash
 
 # install

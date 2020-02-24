@@ -18,7 +18,7 @@ default support scss, only need install node-sass as dependency
 ```bash
 npm i node-sass -D
 ```
-
+<!-- more -->
 
 #### how user auth works
 > [auth-workflow](https://reacttraining.com/react-router/web/example/auth-workflow)

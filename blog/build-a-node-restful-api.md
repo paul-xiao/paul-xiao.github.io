@@ -11,6 +11,8 @@ categories:
 
 - nodemon
 > https://github.com/remy/nodemon
+
+<!-- more -->
 ```js
 
 // nodeamon

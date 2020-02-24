@@ -30,7 +30,7 @@ var Test = new Schema({
 module.exports = mongoose.model('Test', Test);
 
 ```
-
+<!-- more -->
 #### three way to get req parameters
 > https://i5ting.github.io/node-http/#106
 

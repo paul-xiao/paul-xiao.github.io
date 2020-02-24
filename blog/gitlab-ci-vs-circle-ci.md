@@ -18,7 +18,7 @@ categories:
 
 > *for me i'm use linux, so just tested on linux locally*
 
-
+<!-- more -->
 ####  1 .gitlab-ci.yml config
 
 ```yml
