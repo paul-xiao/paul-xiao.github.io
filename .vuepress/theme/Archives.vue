@@ -7,7 +7,7 @@
         </div>
         <div v-for="archive in archives" class="archive">
           <h2 class="archive-title">{{archive[0]}}</h2>
-          <router-link v-for="item in archive[1]" :to="item.path" class="archive-item">{{`${item.title} -- ${handleMoment(item.publishDate)}`}}</router-link>
+          <router-link v-for="item in archive[1]" :to="item.path" class="archive-item">{{`${item.title} -- ${handleMoment(item.frontmatter.date)}`}}</router-link>
         </div>
     </div>
   </BaseLayout>
@@ -26,12 +26,12 @@
       computed: {
         pages() {
           console.log(this.$site.pages.filter(e => e.path.match(/^\/blog\//)))
-         return this.$site.pages.filter(e => e.path.match(/^\/blog\//)).sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate))
+         return this.$site.pages.filter(e => e.path.match(/^\/blog\//)).sort((a,b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date))
         },
         archives() {
           const map = new Map()
           this.pages.forEach(e => {
-            const Month = moment(e.publishDate).getMonth()
+            const Month = moment(e.frontmatter.date).getMonth()
             if(map.has(Month)){
               map.set(Month, [
                 ...map.get(Month),

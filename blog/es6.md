@@ -1,6 +1,7 @@
 ---
 title: Update partial Object Array 
 date: 2019-07-25 17:24:46
+stick: true
 author: paul
 tags:
  - es6

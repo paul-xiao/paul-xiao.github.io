@@ -1,11 +1,12 @@
 <template>
   <div class="list-wrap">
+    <Breadcrumbs :pageNum="pageNum" v-model="currentPage"/>
     <div class="list" v-if="list">
      <div class="list-inner">
        <div class="list-item" v-for="page in list">
       <div class="list-item-head">
        <router-link :to="page.path" class="title">{{page.title}}</router-link>
-         <small><span class="publish-date">{{publishDate(page.publishDate)}}</span></small>
+         <small><span class="publish-date">{{publishDate(page.frontmatter.date)}}</span></small>
        </div>
       <div v-html="page.excerpt" class="list-item-excerpt"></div>
       <div class="list-item-head"> <small><span class="tags" v-for="tag in page.frontmatter.tags">
@@ -16,10 +17,10 @@
        <span class="categories" v-for="category in page.frontmatter.categories">
          <span class="category" @click="handleClick(category)">{{` @${category}`}}</span>
        </span>
+       <span class="sticked" v-if="page.frontmatter.stick">sticked</span>
        </small></div>
     </div>
      </div>
-    <Archives />
   </div>
   <Pagination :pageNum="pageNum" v-model="currentPage"/>
   </div>
@@ -27,7 +28,8 @@
 <script>
 import moment from '../utils/moment'
 import Pagination from "./Pagination";
-import Archives from "./Archives";
+import Breadcrumbs from "./Breadcrumbs";
+import ListArchives from "./ListArchives";
 export default {
   name: 'List',
   data() {

@@ -1,6 +1,5 @@
 <template>
  <BaseLayout>
- <Breadcrumbs :pageNum="pageNum" v-model="currentPage"/>
  <List :pages="pages" @filter="handleFilter"/>
 </BaseLayout>
 </template>
@@ -8,6 +7,7 @@
 import BaseLayout from '../components/BaseLayout'
 import Breadcrumbs from '../components/Breadcrumbs'
 import List from '../components/List'
+import moment from "../utils/moment";
  export default {
    components: {
      [BaseLayout.name]: BaseLayout,
@@ -19,6 +19,13 @@ import List from '../components/List'
        currentPage: 1,
        pageNum: 1
      }
+   },
+   watch: {
+    $route() {
+      if(!this.$route.query.filter){
+        this.filter = ''
+      }
+    }
    },
    mounted() {
       const { filter } = this.$route.query
@@ -32,10 +39,12 @@ import List from '../components/List'
        return this.$themeConfig
      },
      pages() {
-       const blogs = this.$site.pages.filter(e => e.path.match(/^\/blog\//)).sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate))
-
+       const data = this.$site.pages.filter(e => e.path.match(/^\/blog\//)).sort((a,b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date))
+       const sticked = data.filter(e => e.frontmatter.stick)
+       const notsticked = data.filter(e => !e.frontmatter.stick)
+       const blogs = sticked.concat(notsticked)
         if(this.filter){
-           return blogs.filter(e => (e.frontmatter.tags && e.frontmatter.tags.includes(this.filter)) || (e.frontmatter.categories && e.frontmatter.categories.includes(this.filter)))
+           return blogs.filter(e => (e.frontmatter.tags && e.frontmatter.tags.includes(this.filter)) || (e.frontmatter.categories && e.frontmatter.categories.includes(this.filter)) || (e.frontmatter.date && moment(e.frontmatter.date).getMonth().includes(this.filter)))
          } else {
           return blogs
          }

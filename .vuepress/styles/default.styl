@@ -1,3 +1,41 @@
+.theme-content
+  display: flex
+  flex-direction: row
+  .content__default__wrap
+    flex:1
+    padding: $base-padding
+    border: 1px solid $border-color
+    overflow: hidden
+  .side-archives
+    width: 200px
+    padding: $base-padding
+    .group-by-month
+      span
+        display: block
+        margin: 2px
+        cursor: pointer
+        &:hover
+          color: $tag-color
+    .group-by-tags
+      .tag
+        background: $tag-color
+        margin: 2px
+        padding: 2px 5px
+        display: inline-block
+        color: $base-color
+        cursor: pointer
+        &:hover
+          background: darken($tag-color, 20%)
+    .group-by-categories   
+      .category
+        background: $category-color
+        margin: 2px
+        padding: 2px 5px
+        display: inline-block
+        color: $base-color
+        cursor: pointer
+        &:hover
+          background: lighten($category-color, 20%)
 .content__default, .list-item-excerpt
   img
     width 300px
@@ -5,11 +43,19 @@
   blockquote
     background: $border-color
     padding: $base-padding
-  .language-js, .language-bash, .language-less, .language-html, .language-sh
+  .extra-class
     pre
       background: $bg-code
       padding: $base-padding
       color: lighten($font-color, 40%)
+      overflow: auto
+      &::-webkit-scrollbar
+        height: 5px
+      &::-webkit-scrollbar-track
+        box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3)
+      &::-webkit-scrollbar-thumb
+        background-color: darkgrey
+        outline: 1px solid slategrey
       .selector
         color: orange
       .property
