@@ -21,7 +21,7 @@
 </template>
 <script>
 import moment from '../utils/moment'
-import ListArchives from "../components/ListArchives";
+import ListArchives from "../components/ListArchives"
  export default {
    mounted() {
        console.log(this.$page)

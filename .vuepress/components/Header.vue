@@ -5,7 +5,7 @@
     </div>
     <div class="nav">
       <div class="search-box" v-click-outside="clearSearchVal">
-        <input type="text" @keyup.prevent="handleKeyUp" v-model="searchVal">
+        <input type="text" @keyup.prevent="handleKeyUp" v-model="searchVal" placeholder="input title here ...">
         <SearchResult :result="result"/>
       </div>
       <ul>

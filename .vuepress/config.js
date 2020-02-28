@@ -16,5 +16,6 @@ module.exports = {
   },
   plugins: [
     require('./plugins/publishdate.js')
-  ]
+  ],
+  globalUIComponents: []
 }
