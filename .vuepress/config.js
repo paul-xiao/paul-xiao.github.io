@@ -17,7 +17,7 @@ module.exports = {
   plugins: [
     '@vuepress/last-updated',
     '@vuepress/nprogress',
-    '@vuepress/medium-zoom'
+    '@vuepress/back-to-top'
   ],
   globalUIComponents: []
 }

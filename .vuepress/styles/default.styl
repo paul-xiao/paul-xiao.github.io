@@ -6,6 +6,8 @@
     padding: $base-padding
     border: 1px solid $border-color
     overflow: hidden
+    display: flex
+    flex-direction: column
   .side-archives
     width: 200px
     padding: $base-padding
@@ -37,6 +39,7 @@
         &:hover
           background: lighten($category-color, 20%)
 .content__default, .list-item-excerpt
+  flex:1
   img
     width 300px
     display block
@@ -103,3 +106,8 @@
       color: $tag-color
       &:active, &:focus, &:hover
         color: $tag-color
+.content_default-foot
+    text-align: right 
+  .last-update
+    color: lighten($font-color,20%)
+    font-size: 12px

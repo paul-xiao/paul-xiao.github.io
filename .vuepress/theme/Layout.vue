@@ -11,10 +11,12 @@
         <span class="categories" v-for="category in page.frontmatter.categories">
           <span class="category" @click="handleClick(category)">{{` @${category}`}}</span>
         </span>
-        <span class="publish-date">{{publishDate(page.frontmatter.date)}}</span>
         </small>
     </div>
     <Content />
+    <div class="content_default-foot">
+      <span class="last-update">last updated at: {{$page.lastUpdated}}</span>
+    </div>
  </div>
   <ListArchives />
 </BaseLayout>
