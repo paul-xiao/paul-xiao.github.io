@@ -20,5 +20,10 @@
   "homepage": "https://github.com/paul-xiao/paul-xiao.github.io#readme",
   "dependencies": {
     "sass-loader": "^8.0.2"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-last-updated": "^1.3.1",
+    "@vuepress/plugin-medium-zoom": "^1.3.1",
+    "@vuepress/plugin-nprogress": "^1.3.1"
   }
 }

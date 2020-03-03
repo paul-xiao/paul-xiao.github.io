@@ -15,7 +15,9 @@ module.exports = {
     sidebar: 'auto'
   },
   plugins: [
-    require('./plugins/publishdate.js')
+    '@vuepress/last-updated',
+    '@vuepress/nprogress',
+    '@vuepress/medium-zoom'
   ],
   globalUIComponents: []
 }

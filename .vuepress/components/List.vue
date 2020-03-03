@@ -6,7 +6,7 @@
        <div class="list-item" v-for="page in list">
       <div class="list-item-head">
        <router-link :to="page.path" class="title">{{page.title}}</router-link>
-         <small><span class="publish-date">{{publishDate(page.frontmatter.date)}}</span></small>
+         <small><span class="publish-date">{{publishDate(page.frontmatter.date)}}</span><span>{{$page.lastUpdated}}</span></small>
        </div>
       <div v-html="page.excerpt" class="list-item-excerpt"></div>
       <div class="list-item-head"> <small><span class="tags" v-for="tag in page.frontmatter.tags">

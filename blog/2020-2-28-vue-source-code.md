@@ -37,6 +37,45 @@ Vue-2.x and Vue-next source code compare
 ```
 > [flow](https://flow.org/): Facebook 团队开发的静态类型检查工具, 用于Vue2.x, Vue3 开始用TS <small>(3)</small>
 
+#### code/index.js
+
+```js
+import Vue from './instance/index'
+import { initGlobalAPI } from './global-api/index'
+import { isServerRendering } from 'core/util/env'
+import { FunctionalRenderContext } from 'core/vdom/create-functional-component'
+
+initGlobalAPI(Vue)
+
+/*
+* Object.defineProperty(obj, prop, descriptor)
+* obj 要在其上定义属性的对象。
+* prop 要定义或修改的属性的名称。
+* descriptor 将被定义或修改的属性描述符。
+*/
+Object.defineProperty(Vue.prototype, '$isServer', {
+  get: isServerRendering
+})
+
+Object.defineProperty(Vue.prototype, '$ssrContext', {
+  get () {
+    /* istanbul ignore next */
+    return this.$vnode && this.$vnode.ssrContext
+  }
+})
+
+// expose FunctionalRenderContext for ssr runtime helper installation
+Object.defineProperty(Vue, 'FunctionalRenderContext', {
+  value: FunctionalRenderContext
+})
+
+Vue.version = '__VERSION__'
+
+export default Vue
+```
+
+
+
 ------
 #### 参考
 1. [https://github.com/answershuto/learnVue](https://github.com/answershuto/learnVue/blob/master/docs/%E4%BB%8E%E6%BA%90%E7%A0%81%E8%A7%92%E5%BA%A6%E5%86%8D%E7%9C%8B%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.MarkDown)
