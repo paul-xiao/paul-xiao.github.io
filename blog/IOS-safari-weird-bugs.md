@@ -7,17 +7,43 @@ tags:
 categories:
  - hacks 
 ---
-### 100vh not fully display
+#### 100vh not fully display
 
 
-### position fixed div still can scroll behand the div
+#### position fixed div still can scroll behand the div
 
-### position fixed div overflow can not been seen
+#### position fixed div overflow can not been seen
 <!-- more -->
 
-### video play button cannot hide
+#### video play button cannot hide
 
 
-### video cannot autoplay
+#### video cannot autoplay
 
+
+
+#### font-size less than 16px will zoom 
+[disable-auto-zoom-in-input-text-tag-safari-on-iphone](https://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone)
+
+
+
+#### safari freeze issue
+
+```js
+
+ created() {
+     document.addEventListener('touchmove', this.handleTouchMove)
+   },
+   methods: {
+     handleTouchMove() {
+       document.body.scrollTop = 0
+     }
+   },
+   beforeDestory() {
+     document.removeEventListener('touchmove', this.handleTouchMove)
+   }
+ }
+
+
+```
 

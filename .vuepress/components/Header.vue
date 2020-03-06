@@ -1,20 +1,26 @@
 <template>
   <div class="theme-header" v-if="site">
+    <div class="nav-bar" @click="sideOn = true">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <div class="left">
        <router-link to="/">{{site.title}}</router-link>
     </div>
-    <div class="nav">
-      <div class="search-box" v-click-outside="clearSearchVal">
-        <input type="text" @keyup.prevent="handleKeyUp" v-model="searchVal" placeholder="input title here ...">
-        <SearchResult :result="result"/>
-      </div>
-      <ul>
-        <li v-for="item in config.nav">
-          <router-link :to="item.link">
-           {{item.text}}
-          </router-link>
-        </li>
-      </ul>
+    <div :class="['nav', sideOn ? 'side-on' : '']">
+        <div class="title"><h4>Menu</h4><div class="side-close" @click="sideOn = false"></div></div>
+        <div class="search-box" v-click-outside="clearSearchVal">
+          <input type="text" @keyup.prevent="handleKeyUp" v-model="searchVal" placeholder="input title here ...">
+          <SearchResult :result="result"/>
+        </div>
+        <ul>
+          <li v-for="item in config.nav">
+            <router-link :to="item.link">
+            {{item.text}}
+            </router-link>
+          </li>
+        </ul>
     </div>
   </div>
 </template>
@@ -25,7 +31,8 @@ export default {
   data() {
     return {
       result: [],
-      searchVal: ''
+      searchVal: '',
+      sideOn: false
     }
   },
   props: {
@@ -35,6 +42,14 @@ export default {
    config: {
      type: Object
    }
+  },
+  watch: {
+    $route() {
+      this.sideOn = false
+    },
+    sideOn() {
+      console.log(1)
+    }
   },
   mounted() {
     document.addEventListener('keyup', this.clearSearchVal)
