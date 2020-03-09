@@ -26,12 +26,11 @@ import moment from '../utils/moment'
 import ListArchives from "../components/ListArchives"
  export default {
    mounted() {
+       console.log('this.$page')
        console.log(this.$page)
-
    },
    computed: {
      site() {
-       console.log(this.$site)
        return this.$site
      },
      config() {

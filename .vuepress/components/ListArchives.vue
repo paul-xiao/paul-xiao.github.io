@@ -29,7 +29,6 @@
       },
       computed: {
         pages() {
-          console.log(this.$site.pages.filter(e => e.path.match(/^\/blog\//)))
          return this.$site.pages.filter(e => e.path.match(/^\/blog\//)).sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate))
         },
          monthes() {
@@ -45,7 +44,6 @@
               map.set(Month, [].concat(e))
             }
           })
-          console.log(map)
           return map
         },
         tags() {

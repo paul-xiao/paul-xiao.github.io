@@ -4,15 +4,19 @@ lang: en-US
 layout: Home
 ---
 
-> 花时间设计花哨的网页，还不如来点干货
+# About me
+![image](/bg.png)
+> Hi, I'm Paul, a UI/UX designer and web devloper in Chengdu
+
+#### Interests
+
+- web/product design
+- web/app development
+- vue/react/react-native
+- nodejs
 
 
-[[toc]]
+#### Contacts
+- paulxiaooo@gmail.com
 
-## Working Projects
 
-- [daily notes](notes)
-- [heroku_node_restful_api](heroku_node_restful_api)
-- [rnapp](rnapp)
-
-## blog

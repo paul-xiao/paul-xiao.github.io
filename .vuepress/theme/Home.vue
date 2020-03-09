@@ -43,6 +43,7 @@ import moment from "../utils/moment";
        const sticked = data.filter(e => e.frontmatter.stick)
        const notsticked = data.filter(e => !e.frontmatter.stick)
        const blogs = sticked.concat(notsticked)
+       console.log(this.$site.pages)
         if(this.filter){
            return blogs.filter(e => (e.frontmatter.tags && e.frontmatter.tags.includes(this.filter)) || (e.frontmatter.categories && e.frontmatter.categories.includes(this.filter)) || (e.frontmatter.date && moment(e.frontmatter.date).getMonth().includes(this.filter)))
          } else {

@@ -16,7 +16,21 @@ module.exports = {
   },
   plugins: [
     '@vuepress/last-updated',
-    '@vuepress/nprogress'
+    '@vuepress/nprogress',
+    ['@vuepress/blog',{
+      directories: [
+        {
+          id: 'post',
+          dirname: '_posts',
+          path: '/',
+          pagination: {
+            perPagePosts: 2,
+          },
+          layout: 'Home',
+          itemLayout: 'Layout',
+        },
+      ],
+    }]
   ],
   globalUIComponents: []
 }
