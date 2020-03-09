@@ -29,7 +29,7 @@
       },
       computed: {
         pages() {
-         return this.$site.pages.filter(e => e.path.match(/^\/blog\//)).sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate))
+         return this.$site.pages.filter(e => e.id === 'post').sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate))
         },
          monthes() {
           const map = new Map()

@@ -25,8 +25,8 @@
       },
       computed: {
         pages() {
-          console.log(this.$site.pages.filter(e => e.path.match(/^\/blog\//)))
-         return this.$site.pages.filter(e => e.path.match(/^\/blog\//)).sort((a,b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date))
+          console.log(this.$site.pages.filter(e => e.id === 'post'))
+         return this.$site.pages.filter(e => e.id === 'post').sort((a,b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date))
         },
         archives() {
           const map = new Map()

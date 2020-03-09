@@ -56,7 +56,7 @@ export default {
   },
   computed:{
     pages() {
-       const blogs = this.$site.pages.filter(e => e.path.match(/^\/blog\//)).sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate))
+       const blogs = this.$site.pages.filter(e => e.id === 'post').sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate))
 
         if(this.filter){
            return blogs.filter(e => (e.frontmatter.tags && e.frontmatter.tags.includes(this.filter)) || (e.frontmatter.categories && e.frontmatter.categories.includes(this.filter)))

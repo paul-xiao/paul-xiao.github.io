@@ -25,7 +25,7 @@
       },
       computed: {
         pages() {
-         return this.$site.pages.filter(e => e.path.match(/^\/blog\//))
+         return this.$site.pages.filter(e => e.id === 'post')
         },
         date() {
           const map = new Map()
