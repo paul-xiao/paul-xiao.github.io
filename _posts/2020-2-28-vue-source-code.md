@@ -37,7 +37,7 @@ Vue-2.x and Vue-next source code compare
 ```
 > [flow](https://flow.org/): Facebook 团队开发的静态类型检查工具, 用于Vue2.x, Vue3 开始用TS <small>(3)</small>
 
-#### code/index.js
+#### 初始化VUE实例
 
 ```js
 import Vue from './instance/index'
@@ -104,6 +104,46 @@ export default Vue
 
 ```
 
+#### MVVM
+
+> Model-View-ViewModel <small>(4)</small>
+
+![image](/mvvm.png)
+![image](/vue.jpg)
+
+
+
+- Observer：数据监听器，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者，内部采用Object.defineProperty的getter和setter来实现；
+- Compile ：指令解析器，它的作用是对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定相应的更新函数；
+- Watcher ：订阅者，作为连接 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数；
+- Dep ：消息订阅器，内部维护了一个数组，用来收集订阅者（Watcher），数据变动触发notify 函数，再调用订阅者的 update 方法。
+
+
+
+
+#### 响应式原理
+
+
+![image](/reactive.jpg)
+
+> 异步更新队列
+
+```js
+
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: '123'
+  }
+})
+vm.message = 'new message' // 更改数据
+vm.$el.textContent === 'new message' // false
+Vue.nextTick(function () {
+  vm.$el.textContent === 'new message' // true
+})
+
+
+```
 
 ------
 #### 参考
@@ -112,3 +152,6 @@ export default Vue
 2. [https://nlrx-wjc.github.io/Learn-Vue-Source-Code/](https://nlrx-wjc.github.io/Learn-Vue-Source-Code/)
 
 3. [https://www.zhihu.com/question/46397274](https://www.zhihu.com/question/46397274)
+4. [what is MVVM](https://medium.com/@gaogezhang/%E5%AD%A6%E7%82%B9%E5%84%BF%E6%8A%80%E6%9C%AF-mvvm%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-ce5a4c731079)
+
+5. [官方文档： 深入响应式原理](https://cn.vuejs.org/v2/guide/reactivity.html)
