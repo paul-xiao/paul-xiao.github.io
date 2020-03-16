@@ -11,10 +11,12 @@ comments: true
 
 #### Todo List
 
-- [x] webpack
+- [ ] webpack
 - [ ] typescript
 - [ ] node
 - [ ] flutter
+- [ ] redis
+- [ ] web architecture
 
 
 <!-- more -->
