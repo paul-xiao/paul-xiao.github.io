@@ -66,3 +66,14 @@ const cors = require('cors');
 
 app.use(cors()) //enabled
 ```
+
+
+#### images compress
+
+
+
+
+
+#### refs
+
+1. [nodejs复制文件](https://blog.csdn.net/weixin_37994110/article/details/89057704)
