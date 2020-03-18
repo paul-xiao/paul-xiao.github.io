@@ -14,6 +14,6 @@ node ./image-compress.js
 cd ../../
 
 # build
-yarn build
+vuepress build .
 
 echo 'building end...'

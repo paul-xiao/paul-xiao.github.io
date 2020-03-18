@@ -15,7 +15,7 @@
         }
       },
       mounted() {
-        console.log(this.$page)
+        // console.log(this.$page)
       },
       methods: {
         handlePageClick(index) {

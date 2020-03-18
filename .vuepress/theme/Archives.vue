@@ -25,7 +25,7 @@
       },
       computed: {
         pages() {
-          console.log(this.$site.pages.filter(e => e.id === 'post'))
+          // console.log(this.$site.pages.filter(e => e.id === 'post'))
          return this.$site.pages.filter(e => e.id === 'post').sort((a,b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date))
         },
         archives() {
@@ -41,13 +41,13 @@
               map.set(Month, [].concat(e))
             }
           })
-          console.log(map)
+          // console.log(map)
           return map
         },
       },
       methods: {
         handleClick(e) {
-          console.log(e)
+          // console.log(e)
           // this.$router.push('/')
         },
         handleMoment(date) {
