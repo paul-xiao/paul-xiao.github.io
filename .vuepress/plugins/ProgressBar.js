@@ -1,5 +1,6 @@
 const chalk = require("chalk");
 const readline = require('readline');
+const { bullet, tick, cross, pointerSmall, radioOff } = require('figures');
 module.exports = class ProgressBar {
 	constructor() {
 		this.total;
@@ -19,14 +20,14 @@ module.exports = class ProgressBar {
 		this.current = 0;
 		this.cursor = 1;
 		this.title = `Compressing`;
-		this.bar_length = process.stdout.columns - this.title.length*3;
+		this.bar_length = 25
 		this.cursorPos = this.title.length + this.cursor
 		this.barStartPos = this.title.length + 2 
 		this.barEndPos = this.barStartPos + this.bar_length
 		this.percentage = ` ${this.current}/${this.total} `
 		this.dur = 0
     
-		process.stdout.write(chalk.bgMagenta(this.title))
+		process.stdout.write(chalk.blue.bold(this.title))
 		readline.cursorTo(process.stdout, this.title.length + 2)
 		for (let i = 0; i < this.bar_length; i++) {
 				process.stdout.write(chalk.bgWhiteBright('_'))
@@ -47,7 +48,6 @@ module.exports = class ProgressBar {
 
 		this.current = current
 		this.cursor = this.current* progress
-		this.bar_length = process.stdout.columns - this.title.length*3;
 		this.cursorPos = this.title.length + this.cursor
 		this.barStartPos = this.title.length + 2 
 		this.barEndPos = this.barStartPos + this.bar_length
@@ -61,7 +61,7 @@ module.exports = class ProgressBar {
 		if(this.current > this.total || this.current === this.total) {
 			readline.clearLine()
 			process.stdout.write('\n');
-			process.stdout.write(chalk.blackBright(` ${chalk.blueBright('✓')} Comporessed successfully in ${this.dur}s`));
+			process.stdout.write(chalk.blackBright(` ${chalk.blueBright.bold(tick)} Comporessed successfully in ${this.dur}s`));
 			process.stdout.write('\n');
 			process.exit();
 		}
@@ -70,5 +70,8 @@ module.exports = class ProgressBar {
 	done() {
 		this.cursor = this.bar_length + 1
 		this.update(this.total)
+	}
+	next() {
+		this.update(this.current ++ )
 	}
 };

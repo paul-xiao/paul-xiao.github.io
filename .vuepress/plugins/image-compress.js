@@ -4,7 +4,7 @@
 const tinify = require('tinify');
 const fs = require('fs');
 const path = require('path');
-const dest = '../public'
+const dest = '../test'
 const ProgressBar = require('./ProgressBar');
 const Bar = new ProgressBar();
 
@@ -12,16 +12,18 @@ const Bar = new ProgressBar();
 tinify.key = '5n2NCSj2zzbwRxJQ316bSzbPFyKd8VfF';
 
 // 执行图片压缩任务，返回promise对象
-const task = path => {
+const task = (path, index) => {
     const source = tinify.fromFile(path);
-    source.toFile(path).catch(() => {
-      Bar.done();
+    source.toFile(path).then(() => {
+      console.log('done')
+      Bar.update(index)
+    }).catch(() => {
+      Bar.next();
     });
-    return source._url;
 }
 
 
-const compress = () => {
+const compress = async() => {
   const files = fs.readdirSync(dest) // 返回文件名列表
   const pwd = fs.realpathSync(process.cwd());
   Bar.init(files.length)
@@ -30,13 +32,9 @@ const compress = () => {
     try {
       const filePath = `${path.resolve(pwd, dest)}/${file}`
       fs.accessSync(filePath);
-      // console.log(fs.accessSync(filePath))
-      task(filePath)
-      Bar.update(index)
+      await task(filePath, index)
     } catch (err) {
-       // process.stdout.write('\n');
-       console.error(err);
-       // process.exit();
+       console.error(err.message);
 
     }
   }
