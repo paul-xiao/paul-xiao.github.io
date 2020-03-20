@@ -48,7 +48,7 @@ export default {
       this.sideOn = false
     },
     sideOn() {
-      console.log(1)
+      // console.log(1)
     }
   },
   mounted() {

@@ -27,7 +27,7 @@ import Footer from '../components/Footer'
        return this.$page
      }
    },
-   created() {
+   mounted() {
      document.addEventListener('touchmove', this.handleTouchMove)
    },
    methods: {
