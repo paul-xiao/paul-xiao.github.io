@@ -11,10 +11,43 @@ comments: true
 
 #### todos
 
--[ ] 图片上传(ipfs?)
--[ ] 备注
--[ ] 评论
--[ ] 分类(tags/dates)
+- [x] 权限管理
+- [ ] 图片上传(ipfs?)
+- [ ] 备注
+- [ ] 评论
+- [ ] 分类(tags/dates)
+
+
+#### express-session/passport/mongo auth
+
+```sh
+# scaffold
+
+├── config
+│   ├── index.js
+│   └── passport.js
+├── controller
+│   └── user.js
+├── curl.sh
+├── index.js
+├── model
+│   ├── Post.js
+│   └── User.js
+├── nodemon.json
+├── package.json
+├── utils
+│   └── logger.js
+└── yarn.lock
+
+```
+**steps for passport auth**
+- init express-session
+- save session in mongo
+- add mongo schema
+- init passport
+- add LocalStrategy
+- passport auth
+- update mongo
 
 #### ipfs 原理
 #### Init ipfs
