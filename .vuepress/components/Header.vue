@@ -10,17 +10,17 @@
     </div>
     <div :class="['nav', sideOn ? 'side-on' : '']">
         <div class="title"><h4>Menu</h4><div class="side-close" @click="sideOn = false"></div></div>
-        <div class="search-box" v-click-outside="clearSearchVal">
-          <input type="text" @keyup.prevent="handleKeyUp" v-model="searchVal" placeholder="input title here ...">
-          <SearchResult :result="result"/>
-        </div>
         <ul>
           <li v-for="item in config.nav">
-            <router-link :to="item.link">
+            <router-link :to="item.link" :class="{'active': $route.path.includes(item.link) }">
             {{item.text}}
             </router-link>
           </li>
         </ul>
+        <div class="search-box" v-click-outside="clearSearchVal">
+          <input type="text" @keyup.prevent="handleKeyUp" v-model="searchVal" placeholder="Search">
+          <SearchResult :result="result"/>
+        </div>
     </div>
   </div>
 </template>
@@ -52,6 +52,8 @@ export default {
     }
   },
   mounted() {
+          console.log(this.$route.path)
+
     document.addEventListener('keyup', this.clearSearchVal)
   },
   computed:{
