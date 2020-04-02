@@ -149,7 +149,30 @@ ipfs bootstrap list
 
 ```
 #### ipfs private network
-...
+```sh
+# 1. generator swarm key
+
+go get -u github.com/Kubuxu/go-ipfs-swarm-key-gen/ipfs-swarm-key-gen
+
+./go/bin/ipfs-swarm-key-gen > ~/.ipfs/swarm.key
+
+
+# 2. update bootstrap node
+
+ipfs bootstrap rm --all # remove all exist node
+ipfs config show | grep "PeerID" # peer identity hash of bootnode
+hostname -I # ip address of bootnode
+ipfs bootstrap add /ip4/<ip address of bootnode>/tcp/4001/ipfs/<peer identity hash of bootnode> # add new node
+
+ipfs boostrap list 
+
+# 3. check speed
+
+ipfs swarm peers  # check connected peers
+
+ipfs get <hash> -o <file_name>
+
+```
 #### upload file with ipfs and node js [2]
 
 
@@ -157,3 +180,4 @@ ipfs bootstrap list
 1. [Merkle DAG](https://docs.ipfs.io/guides/concepts/merkle-dag/)
 2. [Node app with ipfs](https://steemit.com/utopian-io/@hsynterkr/ipfs-tutorial-2-build-a-nodejs-app-for-ipfs)
 3. [IPFS 原理](https://www.jianshu.com/p/3f7cc1ee9ec4)
+4. [ipfs private network](https://medium.com/@s_van_laar/deploy-a-private-ipfs-network-on-ubuntu-in-5-steps-5aad95f7261b)
