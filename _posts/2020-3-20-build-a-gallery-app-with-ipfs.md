@@ -154,6 +154,8 @@ ipfs bootstrap list
 
 go get -u github.com/Kubuxu/go-ipfs-swarm-key-gen/ipfs-swarm-key-gen
 
+cd ~
+
 ./go/bin/ipfs-swarm-key-gen > ~/.ipfs/swarm.key
 
 

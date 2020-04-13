@@ -22,4 +22,9 @@ git push origin --delete branch_name
 # local
 
 git branch -D branch_name
+
+# reset
+git reset --hard commit
+
+git push -f origin branch
 ```
