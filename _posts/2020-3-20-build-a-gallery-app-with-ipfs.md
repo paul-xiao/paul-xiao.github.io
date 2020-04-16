@@ -176,6 +176,72 @@ ipfs get <hash> -o <file_name>
 
 ```
 #### upload file with ipfs and node js [2]
+> based on ipfs-http-client 43.0.1
+
+1. repo gc useage
+
+refs: 
+
+[for await ...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of)
+
+[AsyncIterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AsyncIterator)
+
+[repo gc](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/REPO.md#repogc)
+
+```js
+// gc
+for await (const res of ipfs.repo.gc()) {
+  console.log(res)
+}
+
+```
+
+
+
+
+
+#### ipfs state
+
+文件块 的 5 种 Pin 状态
+1. Recursive 状态
+文件块树被递归添加到 pin 中，根文件块的状态是 Recursive，非根文件块的状态是 Indirect
+
+2. Direct 状态
+只有目标文件块添加到 pin 中, 子孙块不做处理，目标文件块的状态就是 Direct
+
+3. Indirect 状态
+文件块树被递归添加到 pin 中，根文件块的状态是 Recursive，非根文件块的状态是 Indirect
+
+4. Internal 状态
+ipfs 使用文件块来保存 pinner 状态，这些文件块的状态就是 Internal
+
+5. NotPinned 状态
+文件块没有被 pin，在 GC 时会被删除
+
+
+#### pin/unpin
+
+```sh
+# 展示
+## 列出所有被 pin 的块
+ipfs pin ls
+## 列出 pin 为指定状态的块
+ipfs pin ls -t direct
+ipfs pin ls -t indirect
+ipfs pin ls -t recursive
+
+# 增加
+## 递归 pin
+ipfs pin add QmZ98HahPRKRcfoYoJchZNKzFxSHFWw6WxvQc1hpFEoFca
+## 直接 pin(只 pin 指定 hash 的文件块)
+ipfs pin add --recursive=false QmZ98HahPRKRcfoYoJchZNKzFxSHFWw6WxvQc1hpFEoFca
+
+# 移除
+## 递归从 pin 中移除
+ipfs pin rm QmZ98HahPRKRcfoYoJchZNKzFxSHFWw6WxvQc1hpFEoFca
+## 直接从 pin 中移除
+ipfs pin rm --recursive=false QmZ98HahPRKRcfoYoJchZNKzFxSHFWw6WxvQc1hpFEoFca
+```
 
 
 #### refs
@@ -183,3 +249,4 @@ ipfs get <hash> -o <file_name>
 2. [Node app with ipfs](https://steemit.com/utopian-io/@hsynterkr/ipfs-tutorial-2-build-a-nodejs-app-for-ipfs)
 3. [IPFS 原理](https://www.jianshu.com/p/3f7cc1ee9ec4)
 4. [ipfs private network](https://medium.com/@s_van_laar/deploy-a-private-ipfs-network-on-ubuntu-in-5-steps-5aad95f7261b)
+5. [repo gc version issue](https://github.com/ipfs/js-ipfs/issues/2985)
