@@ -1,7 +1,7 @@
 ---
 title: Browser compatibility issues
 date: 2020-3-2 18:51
-stick: true
+stick: false
 author: paul
 tags:
  - compatibility

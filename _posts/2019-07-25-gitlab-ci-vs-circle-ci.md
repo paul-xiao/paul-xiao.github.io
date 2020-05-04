@@ -1,7 +1,7 @@
 ---
 title: gitlab-ci VS circle-ci
 date: 2019-07-25 17:24:46
-stick: true
+stick: false
 author: paul
 tags:
  - gitlab

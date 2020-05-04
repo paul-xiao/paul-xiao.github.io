@@ -145,6 +145,9 @@ Vue.nextTick(function () {
 
 ```
 
+#### 问题驱动
+> 源码看不动了,怎么办? 
+
 ------
 #### 参考
 1. [https://github.com/answershuto/learnVue](https://github.com/answershuto/learnVue/blob/master/docs/%E4%BB%8E%E6%BA%90%E7%A0%81%E8%A7%92%E5%BA%A6%E5%86%8D%E7%9C%8B%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.MarkDown)
@@ -155,3 +158,4 @@ Vue.nextTick(function () {
 4. [what is MVVM](https://medium.com/@gaogezhang/%E5%AD%A6%E7%82%B9%E5%84%BF%E6%8A%80%E6%9C%AF-mvvm%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-ce5a4c731079)
 
 5. [官方文档： 深入响应式原理](https://cn.vuejs.org/v2/guide/reactivity.html)
+6. [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)

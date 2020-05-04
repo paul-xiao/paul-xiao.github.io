@@ -11,12 +11,13 @@ comments: true
 
 #### Todo List
 
-- [ ] webpack
+- [ ] webpack(工作原理， 如何开发插件/loader)
 - [ ] typescript
 - [ ] node
 - [ ] flutter
 - [ ] redis
 - [ ] web architecture
+- [ ] 小程序
 
 
 <!-- more -->

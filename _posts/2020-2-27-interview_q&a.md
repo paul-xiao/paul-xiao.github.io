@@ -1,7 +1,7 @@
 ---
 title: interview Q&A
 date: 2020-2-27 11:04
-stick: true
+stick: false
 tags:
 - interview
 categories:
