@@ -19,3 +19,7 @@ vue init mpvue/mpvue-quickstart my-project
 ```
 
 #### how to devlop a webpack plugin
+
+task - dev - review - deploy - qa - integreate - publish
+
+project - 
