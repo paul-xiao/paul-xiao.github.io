@@ -8,7 +8,7 @@ cd .vuepress/plugins
 
 pwd
 # compress
-node ./image-compress.js
+# node ./image-compress.js
 
 # back to root
 cd ../../
