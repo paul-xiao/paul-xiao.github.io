@@ -16,24 +16,17 @@ checked ali p6 front-end interview questions today, seems lots of questions not 
 
 #### [面试问题整理](https://www.cnblogs.com/zhouwenfan-home/p/10469573.html)
 
-<<<<<<< Updated upstream
 #### 项目经验
-=======
-##### 项目经验
->>>>>>> Stashed changes
+
 <details>
   <summary>做过哪些项目, 使用哪些技术栈 ?</summary>
-
-  
-
   - jquery + boostrap
   - vue 全家桶 + node/express + webpack
   - react/redux/react-native
   - css/less/sass/stylus
-
 </details>
 <details>
-  <summary>2. SPA</summary>
+  <summary>SPA</summary>
   
 单页Web应用（single page web application，SPA），就是只有一张Web页面的应用，是加载单个HTML 页面并在用户与应用程序交互时动态更新该页面的Web应用程序。
 
