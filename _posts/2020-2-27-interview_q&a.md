@@ -1,7 +1,7 @@
 ---
-title: interview Q&A
+title: 前端面试问题及答案汇总
 date: 2020-2-27 11:04
-stick: false
+stick: true
 tags:
   - interview
 categories:
@@ -16,10 +16,21 @@ checked ali p6 front-end interview questions today, seems lots of questions not 
 
 #### [面试问题整理](https://www.cnblogs.com/zhouwenfan-home/p/10469573.html)
 
+<<<<<<< Updated upstream
 #### 项目经验
+=======
+##### 项目经验
+>>>>>>> Stashed changes
 <details>
-  <summary>1. 做过哪些项目, 使用哪些技术栈 ?</summary>
-  ...
+  <summary>做过哪些项目, 使用哪些技术栈 ?</summary>
+
+  
+
+  - jquery + boostrap
+  - vue 全家桶 + node/express + webpack
+  - react/redux/react-native
+  - css/less/sass/stylus
+
 </details>
 <details>
   <summary>2. SPA</summary>
@@ -128,6 +139,7 @@ CORS （Cross-Origin Resource Sharing，跨域资源共享）是一个系统，�
   通过搭建一个中转服务器来转发请求规避跨域的问题。生产环境中使用nginx进行反向代理
 
 </details>
+
 
 <details>
 <summary>2. Get/Post请求的区别</summary>
