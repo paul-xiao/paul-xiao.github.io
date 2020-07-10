@@ -17,7 +17,6 @@ comments: true
 - [ ] 评论
 - [ ] 分类(tags/dates)
 
-
 #### express-session/passport/mongo auth
 
 ```sh
@@ -40,7 +39,9 @@ comments: true
 └── yarn.lock
 
 ```
+
 **steps for passport auth**
+
 - init express-session
 - save session in mongo
 - add mongo schema
@@ -50,24 +51,30 @@ comments: true
 - update mongo
 
 #### ipfs 原理
+
 #### Init ipfs
-1. install 
+
+1. install
 
 ```sh
 # download go-ipfs https://dist.ipfs.io/#go-ipfs
 # unzip file
 tar xvfz go-ipfs_v0.4.23_linux-amd64.tar.gz
 
+
+# win10 install ipfs
+https://gist.github.com/drwasho/ca224cbd4a21440f7cc1245e594398e4
 # install
 
 cd go-ipfs/
-sudo ./install.sh 
+sudo ./install.sh
 
 # check
 
 ipfs help
 
 ```
+
 2. init ipfs
 
 ```sh
@@ -96,7 +103,7 @@ $ ipfs pin rm QmNU3nhLTUxK96coALJtPi5Cprrr416rr5YgkqKUYRobe9
 
 # gc
 
-ipfs repo gc 
+ipfs repo gc
 
 # start a daemon
 
@@ -104,7 +111,7 @@ ipfs daemon
 
 localhost:8080/ipfs/${hash}
 
-# 
+#
 # list DAG (see refs [1])
 ipfs ls ${hash}
 
@@ -112,12 +119,12 @@ ipfs ls ${hash}
 
 #### configs
 
-1. bootstrap list 
+1. bootstrap list
 
 > The IPFS bootstrap list is a list of peers with which the IPFS daemon learns about other peers on the network. IPFS comes with a default list of trusted peers, but you are free to modify the list to suit your needs. One popular use for a custom bootstrap list is to create a personal IPFS network.
 
 ```sh
-# list 
+# list
 
 ipfs bootstrap list
 
@@ -148,7 +155,9 @@ ipfs bootstrap list
 
 
 ```
+
 #### ipfs private network
+
 ```sh
 # 1. generator swarm key
 
@@ -165,8 +174,9 @@ ipfs bootstrap rm --all # remove all exist node
 ipfs config show | grep "PeerID" # peer identity hash of bootnode
 hostname -I # ip address of bootnode
 ipfs bootstrap add /ip4/<ip address of bootnode>/tcp/4001/ipfs/<peer identity hash of bootnode> # add new node
+ipfs bootstrap add /ip4/172.20.10.2/tcp/4001/ipfs/QmRk7cmDmq7TspqtyAbnYPeM7z24FCiWx21VE2nJfG6mNY # add new node
 
-ipfs boostrap list 
+ipfs boostrap list
 
 # 3. check speed
 
@@ -175,12 +185,14 @@ ipfs swarm peers  # check connected peers
 ipfs get <hash> -o <file_name>
 
 ```
+
 #### upload file with ipfs and node js [2]
+
 > based on ipfs-http-client 43.0.1
 
 1. repo gc useage
 
-refs: 
+refs:
 
 [for await ...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of)
 
@@ -193,31 +205,26 @@ refs:
 for await (const res of ipfs.repo.gc()) {
   console.log(res)
 }
-
 ```
-
-
-
-
 
 #### ipfs state
 
 文件块 的 5 种 Pin 状态
+
 1. Recursive 状态
-文件块树被递归添加到 pin 中，根文件块的状态是 Recursive，非根文件块的状态是 Indirect
+   文件块树被递归添加到 pin 中，根文件块的状态是 Recursive，非根文件块的状态是 Indirect
 
 2. Direct 状态
-只有目标文件块添加到 pin 中, 子孙块不做处理，目标文件块的状态就是 Direct
+   只有目标文件块添加到 pin 中, 子孙块不做处理，目标文件块的状态就是 Direct
 
 3. Indirect 状态
-文件块树被递归添加到 pin 中，根文件块的状态是 Recursive，非根文件块的状态是 Indirect
+   文件块树被递归添加到 pin 中，根文件块的状态是 Recursive，非根文件块的状态是 Indirect
 
 4. Internal 状态
-ipfs 使用文件块来保存 pinner 状态，这些文件块的状态就是 Internal
+   ipfs 使用文件块来保存 pinner 状态，这些文件块的状态就是 Internal
 
 5. NotPinned 状态
-文件块没有被 pin，在 GC 时会被删除
-
+   文件块没有被 pin，在 GC 时会被删除
 
 #### pin/unpin
 
@@ -243,8 +250,8 @@ ipfs pin rm QmZ98HahPRKRcfoYoJchZNKzFxSHFWw6WxvQc1hpFEoFca
 ipfs pin rm --recursive=false QmZ98HahPRKRcfoYoJchZNKzFxSHFWw6WxvQc1hpFEoFca
 ```
 
-
 #### refs
+
 1. [Merkle DAG](https://docs.ipfs.io/guides/concepts/merkle-dag/)
 2. [Node app with ipfs](https://steemit.com/utopian-io/@hsynterkr/ipfs-tutorial-2-build-a-nodejs-app-for-ipfs)
 3. [IPFS 原理](https://www.jianshu.com/p/3f7cc1ee9ec4)
