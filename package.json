@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vuepress dev .",
     "build": "sh scripts/build.sh",
-    "deploy": "sh scripts/deploy.sh"
+    "deploy": "sh scripts/deploy.sh",
+    "changelog": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "chalk": "^3.0.0",
     "cz-conventional-changelog": "^3.3.0",
     "figures": "^3.2.0",
+    "standard-version": "^9.0.0",
     "tinify": "^1.6.0-beta.2",
     "vuepress": "next"
   },
