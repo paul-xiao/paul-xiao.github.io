@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MacOS 10.13 configurations | Paul&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/favicon.ico">
+    <script data-ad-client="ca-pub-2300280771526991" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="description" content="Just playing around">
+    <link rel="preload" href="/assets/css/2.styles.78ab0a71.css" as="style"><link rel="preload" href="/assets/js/app.f3e98fbf.js" as="script"><link rel="preload" href="/assets/js/5.bc09d294.js" as="script"><link rel="preload" href="/assets/js/41.f9e97dc4.js" as="script"><link rel="prefetch" href="/assets/js/0.991a6d6e.js"><link rel="prefetch" href="/assets/js/10.91bc6baf.js"><link rel="prefetch" href="/assets/js/11.1468a42c.js"><link rel="prefetch" href="/assets/js/12.0bca8c29.js"><link rel="prefetch" href="/assets/js/13.42d28948.js"><link rel="prefetch" href="/assets/js/14.4f0cb2c9.js"><link rel="prefetch" href="/assets/js/15.697a71da.js"><link rel="prefetch" href="/assets/js/16.dc82ee0d.js"><link rel="prefetch" href="/assets/js/17.60a60544.js"><link rel="prefetch" href="/assets/js/18.ef3c214a.js"><link rel="prefetch" href="/assets/js/19.71b3137d.js"><link rel="prefetch" href="/assets/js/20.95f47e45.js"><link rel="prefetch" href="/assets/js/21.d92a009d.js"><link rel="prefetch" href="/assets/js/22.1970eebb.js"><link rel="prefetch" href="/assets/js/23.8254b09b.js"><link rel="prefetch" href="/assets/js/24.2861530b.js"><link rel="prefetch" href="/assets/js/25.45bf7a69.js"><link rel="prefetch" href="/assets/js/26.6abb0a84.js"><link rel="prefetch" href="/assets/js/27.8f021992.js"><link rel="prefetch" href="/assets/js/28.2406f040.js"><link rel="prefetch" href="/assets/js/29.6830b354.js"><link rel="prefetch" href="/assets/js/3.b7f9c074.js"><link rel="prefetch" href="/assets/js/30.d1fc1ed5.js"><link rel="prefetch" href="/assets/js/31.a5b4e072.js"><link rel="prefetch" href="/assets/js/32.97fecdd9.js"><link rel="prefetch" href="/assets/js/33.c55ac730.js"><link rel="prefetch" href="/assets/js/34.1a730436.js"><link rel="prefetch" href="/assets/js/35.c8074cd0.js"><link rel="prefetch" href="/assets/js/36.f6c38866.js"><link rel="prefetch" href="/assets/js/37.1202de65.js"><link rel="prefetch" href="/assets/js/38.3604073c.js"><link rel="prefetch" href="/assets/js/39.1ff3165d.js"><link rel="prefetch" href="/assets/js/4.45dee9dd.js"><link rel="prefetch" href="/assets/js/40.3dad6a0f.js"><link rel="prefetch" href="/assets/js/42.4e8adcfe.js"><link rel="prefetch" href="/assets/js/43.f381bcf1.js"><link rel="prefetch" href="/assets/js/44.fc8cd635.js"><link rel="prefetch" href="/assets/js/45.48773abb.js"><link rel="prefetch" href="/assets/js/46.32f1e76e.js"><link rel="prefetch" href="/assets/js/47.e7933e68.js"><link rel="prefetch" href="/assets/js/48.f9ebe6b0.js"><link rel="prefetch" href="/assets/js/49.f4c1f820.js"><link rel="prefetch" href="/assets/js/50.9d6baf99.js"><link rel="prefetch" href="/assets/js/51.f0ef577a.js"><link rel="prefetch" href="/assets/js/52.90adbcc5.js"><link rel="prefetch" href="/assets/js/6.cf846793.js"><link rel="prefetch" href="/assets/js/7.d926660f.js"><link rel="prefetch" href="/assets/js/8.6ecad381.js"><link rel="prefetch" href="/assets/js/9.504e87d4.js">
+    <link rel="stylesheet" href="/assets/css/2.styles.78ab0a71.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><div class="theme-header"><div class="nav-bar"><span></span> <span></span> <span></span></div> <div class="left"><a href="/" class="router-link-active">Paul's Blog</a></div> <div class="nav"><div class="title"><h4>Menu</h4><div class="side-close"></div></div> <ul><li><a href="/archives">
+          Archives
+          </a></li><li><a href="/tags">
+          Tags
+          </a></li><li><a href="/about">
+          About
+          </a></li></ul> <div class="search-box"><input type="text" placeholder="Search" value=""> <!----></div></div></div> <div class="theme-content"><div class="content__default__wrap"><div class="content_default-title"><a href="/2020/03/03/macos-10-13-config/" aria-current="page" class="title router-link-exact-active router-link-active">MacOS 10.13 configurations</a> <small><span class="tags"><span class="tag">
+             #mac
+          </span></span> <span class="categories"><span class="category"> @OS</span></span></small></div> <div class="content__default"><h4 id="install-homebrew"><a href="#install-homebrew" class="header-anchor">#</a> install homebrew</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># get ruby shell</span>
+https://raw.githubusercontent.com/Homebrew/install/master/install
+
+<span class="token comment"># save as</span>
+brew_install.rb
+
+<span class="token comment"># replace BREW_REPO = &quot;https://github.com/Homebrew/brew&quot;.freeze as below</span>
+BREW_REPO <span class="token operator">=</span> <span class="token string">&quot;https://mirrors.ustc.edu.cn/brew.git&quot;</span>.freeze
+
+<span class="token comment"># exec</span>
+usr/bin/ruby path/to/brew_install.rb
+
+<span class="token comment"># change brew src (check ref 1)</span>
+<span class="token punctuation">..</span>.
+
+<span class="token comment"># Running Homebrew as root is extremely dangerous and no longer supported</span>
+<span class="token function">sudo</span> <span class="token function">chown</span> -R <span class="token variable"><span class="token variable">$(</span><span class="token function">whoami</span><span class="token variable">)</span></span> /usr/local/Homebrew/
+</code></pre></div><h4 id="expo-simulator"><a href="#expo-simulator" class="header-anchor">#</a> expo simulator</h4> <p>auto start with expo run ios</p> <h4 id="install-mongodb-on-mac"><a href="#install-mongodb-on-mac" class="header-anchor">#</a> install mongodb on mac</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># get source</span>
+brew tap mongodb/brew
+<span class="token comment"># install</span>
+brew <span class="token function">install</span> mongodb-community@4.2
+
+<span class="token comment"># start</span>
+<span class="token comment">#To have launchd start mongodb/brew/mongodb-community now and restart at login:</span>
+  brew services start mongodb/brew/mongodb-community
+<span class="token comment"># Or, if you don't want/need a background service you can just run:</span>
+  mongod --config /usr/local/etc/mongod.conf
+
+
+
+</code></pre></div><hr> <h5 id="refs"><a href="#refs" class="header-anchor">#</a> refs</h5> <ol><li><a href="https://juejin.im/post/5c738bacf265da2deb6aaf97" target="_blank" rel="noopener noreferrer">Mac HomeBrew国内镜像安装方法<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://segmentfault.com/q/1010000007575129" target="_blank" rel="noopener noreferrer">Running Homebrew as root is extremely dangerous and no longer supported<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ol></div> <div class="content_default-foot"><span class="last-update">last updated at: 3/28/2020, 5:26:32 PM</span></div></div> <div class="side-archives"><div class="total">
+      total blogs : 33
+    </div> <div class="group-by-month"><h4>group by month :</h4> </div> <div class="group-by-tags"><h4>group by tags :</h4> </div> <div class="group-by-categories"><h4> group by categories :</h4> </div></div></div> <div class="theme-footer"><p>created by <span>@paulxiaooo</span></p></div></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f3e98fbf.js" defer></script><script src="/assets/js/5.bc09d294.js" defer></script><script src="/assets/js/41.f9e97dc4.js" defer></script>
+  </body>
+</html>

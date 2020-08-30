@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>build a react app | Paul&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/favicon.ico">
+    <script data-ad-client="ca-pub-2300280771526991" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="description" content="Just playing around">
+    <link rel="preload" href="/assets/css/2.styles.78ab0a71.css" as="style"><link rel="preload" href="/assets/js/app.f3e98fbf.js" as="script"><link rel="preload" href="/assets/js/5.bc09d294.js" as="script"><link rel="preload" href="/assets/js/31.a5b4e072.js" as="script"><link rel="prefetch" href="/assets/js/0.991a6d6e.js"><link rel="prefetch" href="/assets/js/10.91bc6baf.js"><link rel="prefetch" href="/assets/js/11.1468a42c.js"><link rel="prefetch" href="/assets/js/12.0bca8c29.js"><link rel="prefetch" href="/assets/js/13.42d28948.js"><link rel="prefetch" href="/assets/js/14.4f0cb2c9.js"><link rel="prefetch" href="/assets/js/15.697a71da.js"><link rel="prefetch" href="/assets/js/16.dc82ee0d.js"><link rel="prefetch" href="/assets/js/17.60a60544.js"><link rel="prefetch" href="/assets/js/18.ef3c214a.js"><link rel="prefetch" href="/assets/js/19.71b3137d.js"><link rel="prefetch" href="/assets/js/20.95f47e45.js"><link rel="prefetch" href="/assets/js/21.d92a009d.js"><link rel="prefetch" href="/assets/js/22.1970eebb.js"><link rel="prefetch" href="/assets/js/23.8254b09b.js"><link rel="prefetch" href="/assets/js/24.2861530b.js"><link rel="prefetch" href="/assets/js/25.45bf7a69.js"><link rel="prefetch" href="/assets/js/26.6abb0a84.js"><link rel="prefetch" href="/assets/js/27.8f021992.js"><link rel="prefetch" href="/assets/js/28.2406f040.js"><link rel="prefetch" href="/assets/js/29.6830b354.js"><link rel="prefetch" href="/assets/js/3.b7f9c074.js"><link rel="prefetch" href="/assets/js/30.d1fc1ed5.js"><link rel="prefetch" href="/assets/js/32.97fecdd9.js"><link rel="prefetch" href="/assets/js/33.c55ac730.js"><link rel="prefetch" href="/assets/js/34.1a730436.js"><link rel="prefetch" href="/assets/js/35.c8074cd0.js"><link rel="prefetch" href="/assets/js/36.f6c38866.js"><link rel="prefetch" href="/assets/js/37.1202de65.js"><link rel="prefetch" href="/assets/js/38.3604073c.js"><link rel="prefetch" href="/assets/js/39.1ff3165d.js"><link rel="prefetch" href="/assets/js/4.45dee9dd.js"><link rel="prefetch" href="/assets/js/40.3dad6a0f.js"><link rel="prefetch" href="/assets/js/41.f9e97dc4.js"><link rel="prefetch" href="/assets/js/42.4e8adcfe.js"><link rel="prefetch" href="/assets/js/43.f381bcf1.js"><link rel="prefetch" href="/assets/js/44.fc8cd635.js"><link rel="prefetch" href="/assets/js/45.48773abb.js"><link rel="prefetch" href="/assets/js/46.32f1e76e.js"><link rel="prefetch" href="/assets/js/47.e7933e68.js"><link rel="prefetch" href="/assets/js/48.f9ebe6b0.js"><link rel="prefetch" href="/assets/js/49.f4c1f820.js"><link rel="prefetch" href="/assets/js/50.9d6baf99.js"><link rel="prefetch" href="/assets/js/51.f0ef577a.js"><link rel="prefetch" href="/assets/js/52.90adbcc5.js"><link rel="prefetch" href="/assets/js/6.cf846793.js"><link rel="prefetch" href="/assets/js/7.d926660f.js"><link rel="prefetch" href="/assets/js/8.6ecad381.js"><link rel="prefetch" href="/assets/js/9.504e87d4.js">
+    <link rel="stylesheet" href="/assets/css/2.styles.78ab0a71.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><div class="theme-header"><div class="nav-bar"><span></span> <span></span> <span></span></div> <div class="left"><a href="/" class="router-link-active">Paul's Blog</a></div> <div class="nav"><div class="title"><h4>Menu</h4><div class="side-close"></div></div> <ul><li><a href="/archives">
+          Archives
+          </a></li><li><a href="/tags">
+          Tags
+          </a></li><li><a href="/about">
+          About
+          </a></li></ul> <div class="search-box"><input type="text" placeholder="Search" value=""> <!----></div></div></div> <div class="theme-content"><div class="content__default__wrap"><div class="content_default-title"><a href="/2019/08/08/build-a-react-app/" aria-current="page" class="title router-link-exact-active router-link-active">build a react app</a> <small><span class="tags"><span class="tag">
+             #react
+          </span></span> <span class="categories"><span class="category"> @framework</span></span></small></div> <div class="content__default"><h4 id="this-props-content"><a href="#this-props-content" class="header-anchor">#</a> this.props.content</h4> <h4 id="scss-support"><a href="#scss-support" class="header-anchor">#</a> scss support</h4> <p>default support scss, only need install node-sass as dependency</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> i node-sass -D
+</code></pre></div> <h4 id="how-user-auth-works"><a href="#how-user-auth-works" class="header-anchor">#</a> how user auth works</h4> <blockquote><p><a href="https://reacttraining.com/react-router/web/example/auth-workflow" target="_blank" rel="noopener noreferrer">auth-workflow<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <h4 id="add-antd"><a href="#add-antd" class="header-anchor">#</a> add antd</h4> <div class="language-js extra-class"><pre class="language-js"><code>yarn add antd
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span>Button<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'antd'</span>
+@<span class="token keyword">import</span> <span class="token string">'~antd/dist/antd.css'</span><span class="token punctuation">;</span>
+
+
+</code></pre></div><h4 id="data-bind"><a href="#data-bind" class="header-anchor">#</a> data bind</h4> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token comment">// binding input value by targe name</span>
+ <span class="token function">handleChange</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> name <span class="token operator">=</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>name
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token operator">:</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+ <span class="token operator">&lt;</span>Input type<span class="token operator">=</span><span class="token string">&quot;text&quot;</span> name<span class="token operator">=</span><span class="token string">&quot;username&quot;</span> 
+        value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>username<span class="token punctuation">}</span> 
+        onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleChange<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+
+
+</code></pre></div><h4 id="functional-vs-class-components"><a href="#functional-vs-class-components" class="header-anchor">#</a> functional-vs-class-components</h4> <blockquote><p><a href="https://medium.com/@Zwenza/functional-vs-class-components-in-react-231e3fbd7108" target="_blank" rel="noopener noreferrer">Functional vs Class-Components in React<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <ul><li>Functional component
+<ul><li>pros
+<ul><li>Functional component are much easier to read and test because they are plain JavaScript functions without state or lifecycle-hooks</li> <li>You end up with less code</li> <li>They help you to use best practices. It will get easier to separate container and presentational components because you need to think more about your component’s state if you don’t have access to setState() in your component</li> <li>The React team mentioned that there may be a performance boost for functional component in future React versions</li></ul></li></ul></li></ul> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token keyword">function</span> <span class="token function">Welcome</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Hello<span class="token punctuation">,</span> <span class="token punctuation">{</span>props<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><ul><li>Class component
+<ul><li>pros
+<ul><li>state</li> <li>lifecycle-hooks</li></ul></li></ul></li></ul> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token keyword">class</span> <span class="token class-name">Welcome</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Hello<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h4 id="withrouter-pass-props"><a href="#withrouter-pass-props" class="header-anchor">#</a> withRouter pass props</h4> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token keyword">const</span> AuthButton <span class="token operator">=</span> <span class="token function">withRouter</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> history <span class="token punctuation">,</span> <span class="token operator">...</span>props<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+  isLogin <span class="token operator">?</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>
+        Welcome<span class="token operator">!</span> <span class="token punctuation">{</span>props<span class="token punctuation">.</span>name<span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span>Button
+         
+          onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            fakeAuth<span class="token punctuation">.</span><span class="token function">signout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+              history<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token function">clearToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token operator">&gt;</span>
+          Sign out
+        <span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>You are not logged <span class="token keyword">in</span><span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><h4 id="use-constructor-or-not"><a href="#use-constructor-or-not" class="header-anchor">#</a> use constructor or not</h4> <blockquote><p><a href="https://daveceddia.com/where-initialize-state-react/" target="_blank" rel="noopener noreferrer">where-initialize-state-react<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// use constructorgit </span>
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Required step: always call the parent class' constructor</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Set the state directly. Use props if necessary.</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      loggedIn<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      currentState<span class="token operator">:</span> <span class="token string">&quot;not-panic&quot;</span><span class="token punctuation">,</span>
+
+      <span class="token comment">// Note: think carefully before initializing</span>
+      <span class="token comment">// state based on props!</span>
+      someInitialValue<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>initialValue
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// whatever you like</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Class field declarations for JavaScript stage 3</span>
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  state <span class="token operator">=</span> <span class="token punctuation">{</span>
+    loggedIn<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    currentState<span class="token operator">:</span> <span class="token string">&quot;not-panic&quot;</span><span class="token punctuation">,</span>
+    someDefaultThing<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>whatever
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// whatever you like</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h4 id="react-redux"><a href="#react-redux" class="header-anchor">#</a> <a href="https://www.npmjs.com/package/redux-thunk" target="_blank" rel="noopener noreferrer">react-redux<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></h4> <p><strong>Without react-redux throw error</strong>: Actions must be plain objects. Use custom middleware for async actions.</p> <blockquote><p>Redux Thunk middleware allows you to write action creators that return a function instead of an action. The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met. The inner function receives the store methods dispatch and getState as parameters</p></blockquote> <h4 id="umi-antd-dva"><a href="#umi-antd-dva" class="header-anchor">#</a> umi antd dva</h4> <blockquote><p>the antd combo</p></blockquote> <h4 id="wtf-is-this-props-children"><a href="#wtf-is-this-props-children" class="header-anchor">#</a> wtf is this.props.children</h4> <blockquote><p>same as slots in vue</p></blockquote></div> <div class="content_default-foot"><span class="last-update">last updated at: 3/9/2020, 6:13:59 PM</span></div></div> <div class="side-archives"><div class="total">
+      total blogs : 33
+    </div> <div class="group-by-month"><h4>group by month :</h4> </div> <div class="group-by-tags"><h4>group by tags :</h4> </div> <div class="group-by-categories"><h4> group by categories :</h4> </div></div></div> <div class="theme-footer"><p>created by <span>@paulxiaooo</span></p></div></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f3e98fbf.js" defer></script><script src="/assets/js/5.bc09d294.js" defer></script><script src="/assets/js/31.a5b4e072.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css tricks | Paul&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/favicon.ico">
+    <script data-ad-client="ca-pub-2300280771526991" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="description" content="Just playing around">
+    <link rel="preload" href="/assets/css/2.styles.78ab0a71.css" as="style"><link rel="preload" href="/assets/js/app.f3e98fbf.js" as="script"><link rel="preload" href="/assets/js/5.bc09d294.js" as="script"><link rel="preload" href="/assets/js/23.8254b09b.js" as="script"><link rel="prefetch" href="/assets/js/0.991a6d6e.js"><link rel="prefetch" href="/assets/js/10.91bc6baf.js"><link rel="prefetch" href="/assets/js/11.1468a42c.js"><link rel="prefetch" href="/assets/js/12.0bca8c29.js"><link rel="prefetch" href="/assets/js/13.42d28948.js"><link rel="prefetch" href="/assets/js/14.4f0cb2c9.js"><link rel="prefetch" href="/assets/js/15.697a71da.js"><link rel="prefetch" href="/assets/js/16.dc82ee0d.js"><link rel="prefetch" href="/assets/js/17.60a60544.js"><link rel="prefetch" href="/assets/js/18.ef3c214a.js"><link rel="prefetch" href="/assets/js/19.71b3137d.js"><link rel="prefetch" href="/assets/js/20.95f47e45.js"><link rel="prefetch" href="/assets/js/21.d92a009d.js"><link rel="prefetch" href="/assets/js/22.1970eebb.js"><link rel="prefetch" href="/assets/js/24.2861530b.js"><link rel="prefetch" href="/assets/js/25.45bf7a69.js"><link rel="prefetch" href="/assets/js/26.6abb0a84.js"><link rel="prefetch" href="/assets/js/27.8f021992.js"><link rel="prefetch" href="/assets/js/28.2406f040.js"><link rel="prefetch" href="/assets/js/29.6830b354.js"><link rel="prefetch" href="/assets/js/3.b7f9c074.js"><link rel="prefetch" href="/assets/js/30.d1fc1ed5.js"><link rel="prefetch" href="/assets/js/31.a5b4e072.js"><link rel="prefetch" href="/assets/js/32.97fecdd9.js"><link rel="prefetch" href="/assets/js/33.c55ac730.js"><link rel="prefetch" href="/assets/js/34.1a730436.js"><link rel="prefetch" href="/assets/js/35.c8074cd0.js"><link rel="prefetch" href="/assets/js/36.f6c38866.js"><link rel="prefetch" href="/assets/js/37.1202de65.js"><link rel="prefetch" href="/assets/js/38.3604073c.js"><link rel="prefetch" href="/assets/js/39.1ff3165d.js"><link rel="prefetch" href="/assets/js/4.45dee9dd.js"><link rel="prefetch" href="/assets/js/40.3dad6a0f.js"><link rel="prefetch" href="/assets/js/41.f9e97dc4.js"><link rel="prefetch" href="/assets/js/42.4e8adcfe.js"><link rel="prefetch" href="/assets/js/43.f381bcf1.js"><link rel="prefetch" href="/assets/js/44.fc8cd635.js"><link rel="prefetch" href="/assets/js/45.48773abb.js"><link rel="prefetch" href="/assets/js/46.32f1e76e.js"><link rel="prefetch" href="/assets/js/47.e7933e68.js"><link rel="prefetch" href="/assets/js/48.f9ebe6b0.js"><link rel="prefetch" href="/assets/js/49.f4c1f820.js"><link rel="prefetch" href="/assets/js/50.9d6baf99.js"><link rel="prefetch" href="/assets/js/51.f0ef577a.js"><link rel="prefetch" href="/assets/js/52.90adbcc5.js"><link rel="prefetch" href="/assets/js/6.cf846793.js"><link rel="prefetch" href="/assets/js/7.d926660f.js"><link rel="prefetch" href="/assets/js/8.6ecad381.js"><link rel="prefetch" href="/assets/js/9.504e87d4.js">
+    <link rel="stylesheet" href="/assets/css/2.styles.78ab0a71.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><div class="theme-header"><div class="nav-bar"><span></span> <span></span> <span></span></div> <div class="left"><a href="/" class="router-link-active">Paul's Blog</a></div> <div class="nav"><div class="title"><h4>Menu</h4><div class="side-close"></div></div> <ul><li><a href="/archives">
+          Archives
+          </a></li><li><a href="/tags">
+          Tags
+          </a></li><li><a href="/about">
+          About
+          </a></li></ul> <div class="search-box"><input type="text" placeholder="Search" value=""> <!----></div></div></div> <div class="theme-content"><div class="content__default__wrap"><div class="content_default-title"><a href="/2019/07/18/css-tricks/" aria-current="page" class="title router-link-exact-active router-link-active">css tricks</a> <small><span class="tags"><span class="tag">
+             #css
+          </span></span> <span class="categories"><span class="category"> @frontend</span></span></small></div> <div class="content__default"><h2 id="column-layout"><a href="#column-layout" class="header-anchor">#</a> column layout</h2> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">.wrap</span> <span class="token punctuation">{</span>
+  <span class="token property">column-count</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+  <span class="token property">column-gap</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border<span class="token operator">-</span>box<span class="token punctuation">;</span>
+  <span class="token property">break-inside</span><span class="token punctuation">:</span> avoid<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// break-inside: avoid; box-shadow is not fully display</span>
+<span class="token comment">// [box-shadow partially broken](https://stackoverflow.com/questions/47310583/break-inside-avoid-not-working-with-padding-in-edge)</span>
+<span class="token comment">// backface-visibility:hidden; ---- not working</span>
+
+<span class="token comment">// fix  https://stackoverflow.com/questions/17881923/box-shadow-trimmed-in-css-columns-in-chrome</span>
+ <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div> <h2 id="remove-browser-autocomplete"><a href="#remove-browser-autocomplete" class="header-anchor">#</a> remove browser autocomplete</h2> <p>autocomplete 属性规定输入字段是否应该启用自动完成功能。</p> <p>自动完成允许浏览器预测对字段的输入。当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- 注释：autocomplete 属性适用于 &lt;form&gt;，以及下面的 &lt;input&gt; 类型：text, search, url, telephone, email, password, datepickers, range 以及 color。 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">autocomplete</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>off<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <div class="content_default-foot"><span class="last-update">last updated at: 3/9/2020, 6:13:59 PM</span></div></div> <div class="side-archives"><div class="total">
+      total blogs : 33
+    </div> <div class="group-by-month"><h4>group by month :</h4> </div> <div class="group-by-tags"><h4>group by tags :</h4> </div> <div class="group-by-categories"><h4> group by categories :</h4> </div></div></div> <div class="theme-footer"><p>created by <span>@paulxiaooo</span></p></div></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f3e98fbf.js" defer></script><script src="/assets/js/5.bc09d294.js" defer></script><script src="/assets/js/23.8254b09b.js" defer></script>
+  </body>
+</html>

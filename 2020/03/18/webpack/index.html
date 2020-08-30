@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>deep dive webpack | Paul&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/favicon.ico">
+    <script data-ad-client="ca-pub-2300280771526991" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="description" content="Just playing around">
+    <link rel="preload" href="/assets/css/2.styles.78ab0a71.css" as="style"><link rel="preload" href="/assets/js/app.f3e98fbf.js" as="script"><link rel="preload" href="/assets/js/5.bc09d294.js" as="script"><link rel="preload" href="/assets/js/12.0bca8c29.js" as="script"><link rel="prefetch" href="/assets/js/0.991a6d6e.js"><link rel="prefetch" href="/assets/js/10.91bc6baf.js"><link rel="prefetch" href="/assets/js/11.1468a42c.js"><link rel="prefetch" href="/assets/js/13.42d28948.js"><link rel="prefetch" href="/assets/js/14.4f0cb2c9.js"><link rel="prefetch" href="/assets/js/15.697a71da.js"><link rel="prefetch" href="/assets/js/16.dc82ee0d.js"><link rel="prefetch" href="/assets/js/17.60a60544.js"><link rel="prefetch" href="/assets/js/18.ef3c214a.js"><link rel="prefetch" href="/assets/js/19.71b3137d.js"><link rel="prefetch" href="/assets/js/20.95f47e45.js"><link rel="prefetch" href="/assets/js/21.d92a009d.js"><link rel="prefetch" href="/assets/js/22.1970eebb.js"><link rel="prefetch" href="/assets/js/23.8254b09b.js"><link rel="prefetch" href="/assets/js/24.2861530b.js"><link rel="prefetch" href="/assets/js/25.45bf7a69.js"><link rel="prefetch" href="/assets/js/26.6abb0a84.js"><link rel="prefetch" href="/assets/js/27.8f021992.js"><link rel="prefetch" href="/assets/js/28.2406f040.js"><link rel="prefetch" href="/assets/js/29.6830b354.js"><link rel="prefetch" href="/assets/js/3.b7f9c074.js"><link rel="prefetch" href="/assets/js/30.d1fc1ed5.js"><link rel="prefetch" href="/assets/js/31.a5b4e072.js"><link rel="prefetch" href="/assets/js/32.97fecdd9.js"><link rel="prefetch" href="/assets/js/33.c55ac730.js"><link rel="prefetch" href="/assets/js/34.1a730436.js"><link rel="prefetch" href="/assets/js/35.c8074cd0.js"><link rel="prefetch" href="/assets/js/36.f6c38866.js"><link rel="prefetch" href="/assets/js/37.1202de65.js"><link rel="prefetch" href="/assets/js/38.3604073c.js"><link rel="prefetch" href="/assets/js/39.1ff3165d.js"><link rel="prefetch" href="/assets/js/4.45dee9dd.js"><link rel="prefetch" href="/assets/js/40.3dad6a0f.js"><link rel="prefetch" href="/assets/js/41.f9e97dc4.js"><link rel="prefetch" href="/assets/js/42.4e8adcfe.js"><link rel="prefetch" href="/assets/js/43.f381bcf1.js"><link rel="prefetch" href="/assets/js/44.fc8cd635.js"><link rel="prefetch" href="/assets/js/45.48773abb.js"><link rel="prefetch" href="/assets/js/46.32f1e76e.js"><link rel="prefetch" href="/assets/js/47.e7933e68.js"><link rel="prefetch" href="/assets/js/48.f9ebe6b0.js"><link rel="prefetch" href="/assets/js/49.f4c1f820.js"><link rel="prefetch" href="/assets/js/50.9d6baf99.js"><link rel="prefetch" href="/assets/js/51.f0ef577a.js"><link rel="prefetch" href="/assets/js/52.90adbcc5.js"><link rel="prefetch" href="/assets/js/6.cf846793.js"><link rel="prefetch" href="/assets/js/7.d926660f.js"><link rel="prefetch" href="/assets/js/8.6ecad381.js"><link rel="prefetch" href="/assets/js/9.504e87d4.js">
+    <link rel="stylesheet" href="/assets/css/2.styles.78ab0a71.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><div class="theme-header"><div class="nav-bar"><span></span> <span></span> <span></span></div> <div class="left"><a href="/" class="router-link-active">Paul's Blog</a></div> <div class="nav"><div class="title"><h4>Menu</h4><div class="side-close"></div></div> <ul><li><a href="/archives">
+          Archives
+          </a></li><li><a href="/tags">
+          Tags
+          </a></li><li><a href="/about">
+          About
+          </a></li></ul> <div class="search-box"><input type="text" placeholder="Search" value=""> <!----></div></div></div> <div class="theme-content"><div class="content__default__wrap"><div class="content_default-title"><a href="/2020/03/18/webpack/" aria-current="page" class="title router-link-exact-active router-link-active">deep dive webpack</a> <small><span class="tags"><span class="tag">
+             #webpack
+          </span></span> <span class="categories"><span class="category"> @frontend</span></span></small></div> <div class="content__default"><blockquote><p>通过 webpack 的学习，掌握 web 工程化 (webpack 版本： 4.43.0)</p></blockquote> <p><img src="/assets/img/webpack.3c46de40.png" alt="image"></p> <h2 id="webpack-打包原理"><a href="#webpack-打包原理" class="header-anchor">#</a> webpack 打包原理</h2> <ol><li>初始化参数：从配置文件和 Shell 语句中读取与合并参数,得出最终的参数。</li> <li>开始编译：用上一步得到的参数初始化 Compiler 对象,加载所有配置的插件,执行对象的 run 方法开始执行编译。</li> <li>确定入口：根据配置中的 entry 找出所有的入口文件。</li> <li>编译模块：从入口文件出发,调用所有配置的 Loader 对模块进行翻译,再找出该模块依赖的模块,再递归本步骤直到所有入口依赖的文件都经过了本步骤的处理。</li> <li>完成模块编译：在经过第 4 步使用 Loader 翻译完所有模块后,得到了每个模块被翻译后的最终内容以及它们之间的依赖关系。</li> <li>输出资源：根据入口和模块之间的依赖关系,组装成一个个包含多个模块的 Chunk,再把每个 Chunk 转换成一个单独的文件加入到输出列表,这步是可以修改输出内容的最后机会。</li> <li>输出完成：在确定好输出内容后,根据配置确定输出的路径和文件名,把文件内容写入到文件系统。</li></ol> <div class="language-mermaid extra-class"><pre class="language-text"><code>graph LR
+A[方形] --&gt;B(圆角)
+    B --&gt; C{条件a}
+    C --&gt;|a=1| D[结果1]
+    C --&gt;|a=2| E[结果2]
+    F[横向流程图]
+</code></pre></div><div class="language-flow extra-class"><pre class="language-flow"><code>st<span class="token operator">=&gt;</span>start<span class="token operator">:</span> 开始框
+op<span class="token operator">=&gt;</span>operation<span class="token operator">:</span> 处理框
+cond<span class="token operator">=&gt;</span>condition<span class="token operator">:</span> <span class="token function">判断框</span><span class="token punctuation">(</span>是或否<span class="token operator">?</span><span class="token punctuation">)</span>
+sub1<span class="token operator">=&gt;</span>subroutine<span class="token operator">:</span> 子流程
+io<span class="token operator">=&gt;</span>inputoutput<span class="token operator">:</span> 输入输出框
+e<span class="token operator">=&gt;</span>end<span class="token operator">:</span> 结束框
+st<span class="token operator">-</span><span class="token operator">&gt;</span>op<span class="token operator">-</span><span class="token operator">&gt;</span>cond
+<span class="token function">cond</span><span class="token punctuation">(</span>yes<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>io<span class="token operator">-</span><span class="token operator">&gt;</span>e
+<span class="token function">cond</span><span class="token punctuation">(</span>no<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">sub1</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>op
+</code></pre></div><h2 id="webpack-插件开发"><a href="#webpack-插件开发" class="header-anchor">#</a> webpack 插件开发</h2> <div class="language-flow extra-class"><pre class="language-flow"><code>st<span class="token operator">=&gt;</span>start<span class="token operator">:</span> Start
+op<span class="token operator">=&gt;</span>operation<span class="token operator">:</span> Your Operation
+cond<span class="token operator">=&gt;</span>condition<span class="token operator">:</span> Yes or No<span class="token operator">?</span>
+e<span class="token operator">=&gt;</span>end
+st<span class="token operator">-</span><span class="token operator">&gt;</span>op<span class="token operator">-</span><span class="token operator">&gt;</span>cond
+<span class="token function">cond</span><span class="token punctuation">(</span>yes<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>e
+<span class="token function">cond</span><span class="token punctuation">(</span>no<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>op
+
+</code></pre></div><h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ol><li><a href="https://juejin.im/post/5e116fce6fb9a047ea7472a6" target="_blank" rel="noopener noreferrer">webpack 打包原理<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ol></div> <div class="content_default-foot"><span class="last-update">last updated at: 7/10/2020, 5:57:49 PM</span></div></div> <div class="side-archives"><div class="total">
+      total blogs : 33
+    </div> <div class="group-by-month"><h4>group by month :</h4> </div> <div class="group-by-tags"><h4>group by tags :</h4> </div> <div class="group-by-categories"><h4> group by categories :</h4> </div></div></div> <div class="theme-footer"><p>created by <span>@paulxiaooo</span></p></div></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f3e98fbf.js" defer></script><script src="/assets/js/5.bc09d294.js" defer></script><script src="/assets/js/12.0bca8c29.js" defer></script>
+  </body>
+</html>

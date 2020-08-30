@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue source code | Paul&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/favicon.ico">
+    <script data-ad-client="ca-pub-2300280771526991" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="description" content="Just playing around">
+    <link rel="preload" href="/assets/css/2.styles.78ab0a71.css" as="style"><link rel="preload" href="/assets/js/app.f3e98fbf.js" as="script"><link rel="preload" href="/assets/js/5.bc09d294.js" as="script"><link rel="preload" href="/assets/js/39.1ff3165d.js" as="script"><link rel="prefetch" href="/assets/js/0.991a6d6e.js"><link rel="prefetch" href="/assets/js/10.91bc6baf.js"><link rel="prefetch" href="/assets/js/11.1468a42c.js"><link rel="prefetch" href="/assets/js/12.0bca8c29.js"><link rel="prefetch" href="/assets/js/13.42d28948.js"><link rel="prefetch" href="/assets/js/14.4f0cb2c9.js"><link rel="prefetch" href="/assets/js/15.697a71da.js"><link rel="prefetch" href="/assets/js/16.dc82ee0d.js"><link rel="prefetch" href="/assets/js/17.60a60544.js"><link rel="prefetch" href="/assets/js/18.ef3c214a.js"><link rel="prefetch" href="/assets/js/19.71b3137d.js"><link rel="prefetch" href="/assets/js/20.95f47e45.js"><link rel="prefetch" href="/assets/js/21.d92a009d.js"><link rel="prefetch" href="/assets/js/22.1970eebb.js"><link rel="prefetch" href="/assets/js/23.8254b09b.js"><link rel="prefetch" href="/assets/js/24.2861530b.js"><link rel="prefetch" href="/assets/js/25.45bf7a69.js"><link rel="prefetch" href="/assets/js/26.6abb0a84.js"><link rel="prefetch" href="/assets/js/27.8f021992.js"><link rel="prefetch" href="/assets/js/28.2406f040.js"><link rel="prefetch" href="/assets/js/29.6830b354.js"><link rel="prefetch" href="/assets/js/3.b7f9c074.js"><link rel="prefetch" href="/assets/js/30.d1fc1ed5.js"><link rel="prefetch" href="/assets/js/31.a5b4e072.js"><link rel="prefetch" href="/assets/js/32.97fecdd9.js"><link rel="prefetch" href="/assets/js/33.c55ac730.js"><link rel="prefetch" href="/assets/js/34.1a730436.js"><link rel="prefetch" href="/assets/js/35.c8074cd0.js"><link rel="prefetch" href="/assets/js/36.f6c38866.js"><link rel="prefetch" href="/assets/js/37.1202de65.js"><link rel="prefetch" href="/assets/js/38.3604073c.js"><link rel="prefetch" href="/assets/js/4.45dee9dd.js"><link rel="prefetch" href="/assets/js/40.3dad6a0f.js"><link rel="prefetch" href="/assets/js/41.f9e97dc4.js"><link rel="prefetch" href="/assets/js/42.4e8adcfe.js"><link rel="prefetch" href="/assets/js/43.f381bcf1.js"><link rel="prefetch" href="/assets/js/44.fc8cd635.js"><link rel="prefetch" href="/assets/js/45.48773abb.js"><link rel="prefetch" href="/assets/js/46.32f1e76e.js"><link rel="prefetch" href="/assets/js/47.e7933e68.js"><link rel="prefetch" href="/assets/js/48.f9ebe6b0.js"><link rel="prefetch" href="/assets/js/49.f4c1f820.js"><link rel="prefetch" href="/assets/js/50.9d6baf99.js"><link rel="prefetch" href="/assets/js/51.f0ef577a.js"><link rel="prefetch" href="/assets/js/52.90adbcc5.js"><link rel="prefetch" href="/assets/js/6.cf846793.js"><link rel="prefetch" href="/assets/js/7.d926660f.js"><link rel="prefetch" href="/assets/js/8.6ecad381.js"><link rel="prefetch" href="/assets/js/9.504e87d4.js">
+    <link rel="stylesheet" href="/assets/css/2.styles.78ab0a71.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><div class="theme-header"><div class="nav-bar"><span></span> <span></span> <span></span></div> <div class="left"><a href="/" class="router-link-active">Paul's Blog</a></div> <div class="nav"><div class="title"><h4>Menu</h4><div class="side-close"></div></div> <ul><li><a href="/archives">
+          Archives
+          </a></li><li><a href="/tags">
+          Tags
+          </a></li><li><a href="/about">
+          About
+          </a></li></ul> <div class="search-box"><input type="text" placeholder="Search" value=""> <!----></div></div></div> <div class="theme-content"><div class="content__default__wrap"><div class="content_default-title"><a href="/2020/02/28/vue-source-code/" aria-current="page" class="title router-link-exact-active router-link-active">Vue source code</a> <small><span class="tags"><span class="tag">
+             #vue
+          </span></span> <span class="categories"><span class="category"> @frontend</span></span></small></div> <div class="content__default"><p><img src="/logo.png" alt="image"></p> <p>Vue-2.x and Vue-next source code compare
+</p> <h3 id="vue-2-x"><a href="#vue-2-x" class="header-anchor">#</a> Vue 2.x</h3> <p><strong>目录结构</strong></p> <div class="language- extra-class"><pre class="language-text"><code>├─benchmarks             # 存放用于评估性能的代码,用于其他框架对比
+├─dist                   # 项目构建后的文件
+├─scripts                # 与项目构建相关的脚本和配置文件
+├─flow                   # flow的类型声明文件
+├─src                    # 项目源代码
+│    ├─complier          # 与模板编译相关的代码
+│    ├─core              # 通用的、与运行平台无关的运行时代码
+│    │  ├─observe        # 实现变化侦测的代码
+│    │  ├─vdom           # 实现virtual dom的代码
+│    │  ├─instance       # Vue.js实例的构造函数和原型方法
+│    │  ├─global-api     # 全局api的代码
+│    │  └─components     # 内置组件的代码
+│    ├─server            # 与服务端渲染相关的代码
+│    ├─platforms         # 特定运行平台的代码，如weex
+│    ├─sfc               # 单文件组件的解析代码
+│    └─shared            # 项目公用的工具代码
+└─test                   # 项目测试代码
+</code></pre></div><blockquote><p><a href="https://flow.org/" target="_blank" rel="noopener noreferrer">flow<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>: Facebook 团队开发的静态类型检查工具, 用于Vue2.x, Vue3 开始用TS <small>(3)</small></p></blockquote> <h4 id="初始化vue实例"><a href="#初始化vue实例" class="header-anchor">#</a> 初始化VUE实例</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'./instance/index'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> initGlobalAPI <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./global-api/index'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> isServerRendering <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'core/util/env'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> FunctionalRenderContext <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'core/vdom/create-functional-component'</span>
+
+<span class="token function">initGlobalAPI</span><span class="token punctuation">(</span>Vue<span class="token punctuation">)</span>
+
+<span class="token comment">/*
+* Object.defineProperty(obj, prop, descriptor)  
+* obj 要在其上定义属性的对象。  
+* prop 要定义或修改的属性的名称。 
+* descriptor 将被定义或修改的属性描述符。   
+*/</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span><span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token string">'$isServer'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token keyword">get</span><span class="token operator">:</span> isServerRendering
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span><span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token string">'$ssrContext'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token keyword">get</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* istanbul ignore next */</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$vnode <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$vnode<span class="token punctuation">.</span>ssrContext
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// expose FunctionalRenderContext for ssr runtime helper installation</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>Vue<span class="token punctuation">,</span> <span class="token string">'FunctionalRenderContext'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> FunctionalRenderContext
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+Vue<span class="token punctuation">.</span>version <span class="token operator">=</span> <span class="token string">'__VERSION__'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Vue
+
+</code></pre></div><h4 id="instance-index-js"><a href="#instance-index-js" class="header-anchor">#</a> ./instance/index.js</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> initMixin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./init'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> stateMixin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./state'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> renderMixin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./render'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> eventsMixin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./events'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> lifecycleMixin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./lifecycle'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> warn <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../util/index'</span>
+
+<span class="token keyword">function</span> <span class="token function">Vue</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span> <span class="token operator">&amp;&amp;</span>
+    <span class="token operator">!</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token keyword">instanceof</span> <span class="token class-name">Vue</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">warn</span><span class="token punctuation">(</span><span class="token string">'Vue is a constructor and should be called with the `new` keyword'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_init</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">initMixin</span><span class="token punctuation">(</span>Vue<span class="token punctuation">)</span>
+<span class="token function">stateMixin</span><span class="token punctuation">(</span>Vue<span class="token punctuation">)</span>
+<span class="token function">eventsMixin</span><span class="token punctuation">(</span>Vue<span class="token punctuation">)</span>
+<span class="token function">lifecycleMixin</span><span class="token punctuation">(</span>Vue<span class="token punctuation">)</span>
+<span class="token function">renderMixin</span><span class="token punctuation">(</span>Vue<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Vue
+
+
+</code></pre></div><h4 id="mvvm"><a href="#mvvm" class="header-anchor">#</a> MVVM</h4> <blockquote><p>Model-View-ViewModel <small>(4)</small></p></blockquote> <p><img src="/mvvm.png" alt="image"> <img src="/vue.jpg" alt="image"></p> <ul><li>Observer：数据监听器，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者，内部采用Object.defineProperty的getter和setter来实现；</li> <li>Compile ：指令解析器，它的作用是对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定相应的更新函数；</li> <li>Watcher ：订阅者，作为连接 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数；</li> <li>Dep ：消息订阅器，内部维护了一个数组，用来收集订阅者（Watcher），数据变动触发notify 函数，再调用订阅者的 update 方法。</li></ul> <h4 id="响应式原理"><a href="#响应式原理" class="header-anchor">#</a> 响应式原理</h4> <p><img src="/reactive.jpg" alt="image"></p> <blockquote><p>异步更新队列</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#example'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    message<span class="token operator">:</span> <span class="token string">'123'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+vm<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'new message'</span> <span class="token comment">// 更改数据</span>
+vm<span class="token punctuation">.</span>$el<span class="token punctuation">.</span>textContent <span class="token operator">===</span> <span class="token string">'new message'</span> <span class="token comment">// false</span>
+Vue<span class="token punctuation">.</span><span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  vm<span class="token punctuation">.</span>$el<span class="token punctuation">.</span>textContent <span class="token operator">===</span> <span class="token string">'new message'</span> <span class="token comment">// true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+
+</code></pre></div><h4 id="问题驱动"><a href="#问题驱动" class="header-anchor">#</a> 问题驱动</h4> <blockquote><p>源码看不动了,怎么办?</p></blockquote> <hr> <h4 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h4> <ol><li><p><a href="https://github.com/answershuto/learnVue/blob/master/docs/%E4%BB%8E%E6%BA%90%E7%A0%81%E8%A7%92%E5%BA%A6%E5%86%8D%E7%9C%8B%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.MarkDown" target="_blank" rel="noopener noreferrer">https://github.com/answershuto/learnVue<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li> <li><p><a href="https://nlrx-wjc.github.io/Learn-Vue-Source-Code/" target="_blank" rel="noopener noreferrer">https://nlrx-wjc.github.io/Learn-Vue-Source-Code/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li> <li><p><a href="https://www.zhihu.com/question/46397274" target="_blank" rel="noopener noreferrer">https://www.zhihu.com/question/46397274<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li> <li><p><a href="https://medium.com/@gaogezhang/%E5%AD%A6%E7%82%B9%E5%84%BF%E6%8A%80%E6%9C%AF-mvvm%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-ce5a4c731079" target="_blank" rel="noopener noreferrer">what is MVVM<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li> <li><p><a href="https://cn.vuejs.org/v2/guide/reactivity.html" target="_blank" rel="noopener noreferrer">官方文档： 深入响应式原理<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li> <li><p><a href="https://ustbhuangyi.github.io/vue-analysis/" target="_blank" rel="noopener noreferrer">Vue.js 技术揭秘<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li></ol></div> <div class="content_default-foot"><span class="last-update">last updated at: 5/4/2020, 4:27:05 PM</span></div></div> <div class="side-archives"><div class="total">
+      total blogs : 33
+    </div> <div class="group-by-month"><h4>group by month :</h4> </div> <div class="group-by-tags"><h4>group by tags :</h4> </div> <div class="group-by-categories"><h4> group by categories :</h4> </div></div></div> <div class="theme-footer"><p>created by <span>@paulxiaooo</span></p></div></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f3e98fbf.js" defer></script><script src="/assets/js/5.bc09d294.js" defer></script><script src="/assets/js/39.1ff3165d.js" defer></script>
+  </body>
+</html>

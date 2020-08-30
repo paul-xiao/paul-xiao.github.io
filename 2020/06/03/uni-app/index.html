@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>uniapp开发常见问题汇总 | Paul&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/favicon.ico">
+    <script data-ad-client="ca-pub-2300280771526991" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="description" content="Just playing around">
+    <link rel="preload" href="/assets/css/2.styles.78ab0a71.css" as="style"><link rel="preload" href="/assets/js/app.f3e98fbf.js" as="script"><link rel="preload" href="/assets/js/5.bc09d294.js" as="script"><link rel="preload" href="/assets/js/52.90adbcc5.js" as="script"><link rel="prefetch" href="/assets/js/0.991a6d6e.js"><link rel="prefetch" href="/assets/js/10.91bc6baf.js"><link rel="prefetch" href="/assets/js/11.1468a42c.js"><link rel="prefetch" href="/assets/js/12.0bca8c29.js"><link rel="prefetch" href="/assets/js/13.42d28948.js"><link rel="prefetch" href="/assets/js/14.4f0cb2c9.js"><link rel="prefetch" href="/assets/js/15.697a71da.js"><link rel="prefetch" href="/assets/js/16.dc82ee0d.js"><link rel="prefetch" href="/assets/js/17.60a60544.js"><link rel="prefetch" href="/assets/js/18.ef3c214a.js"><link rel="prefetch" href="/assets/js/19.71b3137d.js"><link rel="prefetch" href="/assets/js/20.95f47e45.js"><link rel="prefetch" href="/assets/js/21.d92a009d.js"><link rel="prefetch" href="/assets/js/22.1970eebb.js"><link rel="prefetch" href="/assets/js/23.8254b09b.js"><link rel="prefetch" href="/assets/js/24.2861530b.js"><link rel="prefetch" href="/assets/js/25.45bf7a69.js"><link rel="prefetch" href="/assets/js/26.6abb0a84.js"><link rel="prefetch" href="/assets/js/27.8f021992.js"><link rel="prefetch" href="/assets/js/28.2406f040.js"><link rel="prefetch" href="/assets/js/29.6830b354.js"><link rel="prefetch" href="/assets/js/3.b7f9c074.js"><link rel="prefetch" href="/assets/js/30.d1fc1ed5.js"><link rel="prefetch" href="/assets/js/31.a5b4e072.js"><link rel="prefetch" href="/assets/js/32.97fecdd9.js"><link rel="prefetch" href="/assets/js/33.c55ac730.js"><link rel="prefetch" href="/assets/js/34.1a730436.js"><link rel="prefetch" href="/assets/js/35.c8074cd0.js"><link rel="prefetch" href="/assets/js/36.f6c38866.js"><link rel="prefetch" href="/assets/js/37.1202de65.js"><link rel="prefetch" href="/assets/js/38.3604073c.js"><link rel="prefetch" href="/assets/js/39.1ff3165d.js"><link rel="prefetch" href="/assets/js/4.45dee9dd.js"><link rel="prefetch" href="/assets/js/40.3dad6a0f.js"><link rel="prefetch" href="/assets/js/41.f9e97dc4.js"><link rel="prefetch" href="/assets/js/42.4e8adcfe.js"><link rel="prefetch" href="/assets/js/43.f381bcf1.js"><link rel="prefetch" href="/assets/js/44.fc8cd635.js"><link rel="prefetch" href="/assets/js/45.48773abb.js"><link rel="prefetch" href="/assets/js/46.32f1e76e.js"><link rel="prefetch" href="/assets/js/47.e7933e68.js"><link rel="prefetch" href="/assets/js/48.f9ebe6b0.js"><link rel="prefetch" href="/assets/js/49.f4c1f820.js"><link rel="prefetch" href="/assets/js/50.9d6baf99.js"><link rel="prefetch" href="/assets/js/51.f0ef577a.js"><link rel="prefetch" href="/assets/js/6.cf846793.js"><link rel="prefetch" href="/assets/js/7.d926660f.js"><link rel="prefetch" href="/assets/js/8.6ecad381.js"><link rel="prefetch" href="/assets/js/9.504e87d4.js">
+    <link rel="stylesheet" href="/assets/css/2.styles.78ab0a71.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><div class="theme-header"><div class="nav-bar"><span></span> <span></span> <span></span></div> <div class="left"><a href="/" class="router-link-active">Paul's Blog</a></div> <div class="nav"><div class="title"><h4>Menu</h4><div class="side-close"></div></div> <ul><li><a href="/archives">
+          Archives
+          </a></li><li><a href="/tags">
+          Tags
+          </a></li><li><a href="/about">
+          About
+          </a></li></ul> <div class="search-box"><input type="text" placeholder="Search" value=""> <!----></div></div></div> <div class="theme-content"><div class="content__default__wrap"><div class="content_default-title"><a href="/2020/06/03/uni-app/" aria-current="page" class="title router-link-exact-active router-link-active">uniapp开发常见问题汇总</a> <small><span class="tags"><span class="tag">
+             #uniapp
+          </span></span> <span class="categories"><span class="category"> @frontend</span></span></small></div> <div class="content__default"><h4 id="项目结构"><a href="#项目结构" class="header-anchor">#</a> 项目结构</h4> <div class="language- extra-class"><pre class="language-text"><code>┌─components            uni-app组件目录
+│  └─comp-a.vue         可复用的a组件
+├─hybrid                存放本地网页的目录
+├─platforms             存放各平台专用页面的目录
+├─pages                 业务页面文件存放的目录
+│  ├─index
+│  │  └─index.vue       index页面
+│  └─list
+│     └─list.vue        list页面
+├─static                存放应用引用静态资源（如图片、视频等）的目录，注意：静态资源只能存放于此
+├─wxcomponents          存放小程序组件的目录
+├─main.js               Vue初始化入口文件
+├─App.vue               应用配置，用来配置App全局样式以及监听 应用生命周期
+├─manifest.json         配置应用名称、appid、logo、版本等打包信息
+└─pages.json            配置页面路由、导航条、选项卡等页面类信息
+
+</code></pre></div><h4 id="custom-elements"><a href="#custom-elements" class="header-anchor">#</a> custom elements</h4> <ul><li>a ==&gt; navigator</li> <li>div ===&gt; view</li> <li>span ===&gt; text</li></ul> <h4 id="常用设置"><a href="#常用设置" class="header-anchor">#</a> 常用设置</h4> <ul><li>隐藏顶部菜单</li></ul> <h4 id="真机调试"><a href="#真机调试" class="header-anchor">#</a> 真机调试</h4> <ul><li>usb 直接安装 apk 文件</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 切换到sdk目录</span>
+<span class="token builtin class-name">cd</span> /path/to/sdk/platform-tools
+
+<span class="token comment"># 使用adb命令安装apk</span>
+adb <span class="token function">install</span> /path/to/name.apk
+
+<span class="token comment"># 命令行启动avd</span>
+android list avd
+emulator -avd 模拟器名称
+</code></pre></div><h2 id="广告"><a href="#广告" class="header-anchor">#</a> 广告</h2> <blockquote><p>uniad 分为基础广告和增强广告两类，其中基础广告没有限制可直接接入， 增强广告需要 app 上架应用市场</p></blockquote> <h3 id="开通增强广告"><a href="#开通增强广告" class="header-anchor">#</a> 开通增强广告</h3> <h4 id="生成自有证书"><a href="#生成自有证书" class="header-anchor">#</a> <a href="https://ask.dcloud.net.cn/article/35777" target="_blank" rel="noopener noreferrer">生成自有证书<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 安装jdk</span>
+<span class="token punctuation">..</span>.
+<span class="token comment"># 生成keystore文件</span>
+keytool -genkey -alias iamceo -keyalg RSA -keysize <span class="token number">2048</span> -validity <span class="token number">36500</span> -keystore iamceo.keystore
+<span class="token comment"># 查看内容 (密码：iamceo）</span>
+keytool -list -v -keystore iamceo.keystore
+查看包名
+<span class="token comment"># 切换到aapt目录</span>
+<span class="token builtin class-name">cd</span> path/to/sdk/build-tools/VERSION/
+<span class="token comment"># aapt</span>
+aapt dump badging D:<span class="token punctuation">\</span>__UNI__E958B35_0803094448.apk <span class="token operator">&gt;</span> D:<span class="token punctuation">\</span>log.txt
+<span class="token comment"># log.txt</span>
+package: <span class="token assign-left variable">name</span><span class="token operator">=</span><span class="token string">'uni.UNIE958B35'</span> <span class="token assign-left variable">versionCode</span><span class="token operator">=</span><span class="token string">'100'</span> <span class="token assign-left variable">versionName</span><span class="token operator">=</span><span class="token string">'1.0.0'</span> <span class="token assign-left variable">platformBuildVersionName</span><span class="token operator">=</span><span class="token string">'1.0.0'</span> <span class="token assign-left variable">compileSdkVersion</span><span class="token operator">=</span><span class="token string">'29'</span> <span class="token assign-left variable">compileSdkVersionCodename</span><span class="token operator">=</span><span class="token string">'10'</span>
+sdkVersion:<span class="token string">'19'</span>
+targetSdkVersion:<span class="token string">'26'</span>
+
+</code></pre></div><h4 id="上架应用市场"><a href="#上架应用市场" class="header-anchor">#</a> 上架应用市场</h4> <blockquote><p>多数应用市场上架 app 需要著作权,其中不需要著作权的市场：</p> <ol><li>酷安市场：审核较慢。(只能用于广点通审核)。</li> <li>Google Play：开发者账号收费 25 美元。</li> <li>豌豆荚：应用不涉及金融、贷款、医疗等特殊行业内容，可以暂时使用开发者声明代替。</li> <li>安智：包含推广的上架服务，费用为 5000 元。</li></ol></blockquote> <h3 id="广告接入"><a href="#广告接入" class="header-anchor">#</a> 广告接入</h3> <h4 id="应用内展示的广告组件"><a href="#应用内展示的广告组件" class="header-anchor">#</a> 应用内展示的广告组件</h4> <blockquote><p>新建广告位后，会生成对应的广告位 ID，即 adpid，需等待广告位审核通过。不同平台广告位的审核速度不一样。
+refs: https://ask.dcloud.net.cn/article/id-36769__page-5</p></blockquote> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- App平台 示例 1 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ad-view<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ad</span>
+    <span class="token attr-name">adpid</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1111111111<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">@load</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>onload<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">@close</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>onclose<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">@error</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>onerror<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">@downloadchange</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ondownloadchange<span class="token punctuation">&quot;</span></span>
+  <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ad</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+// 1111111111 为测试adpid， 打包后不能使用
+</code></pre></div><p><img src="https://uploader.shimo.im/f/gYv184Rt3MaNm9Wu.png" alt="image"></p> <h4 id="激励视频广告"><a href="#激励视频广告" class="header-anchor">#</a> 激励视频广告</h4> <ul><li>加载</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token keyword">let</span> rewardedVideoAd <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                title<span class="token operator">:</span> <span class="token string">'createRewardedVideoAd'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">onReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>uni<span class="token punctuation">.</span>createRewardedVideoAd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                rewardedVideoAd <span class="token operator">=</span> uni<span class="token punctuation">.</span><span class="token function">createRewardedVideoAd</span><span class="token punctuation">(</span><span class="token punctuation">{</span> adpid<span class="token operator">:</span> <span class="token string">'1507000689'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// 仅用于HBuilder基座调试 adpid: '1507000689'</span>
+                rewardedVideoAd<span class="token punctuation">.</span><span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'onLoad event'</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                rewardedVideoAd<span class="token punctuation">.</span><span class="token function">onError</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'onError event'</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                rewardedVideoAd<span class="token punctuation">.</span><span class="token function">onClose</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'onClose event'</span><span class="token punctuation">,</span> res<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><ul><li>显示</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>rewardedVideoAd<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="屏幕适配"><a href="#屏幕适配" class="header-anchor">#</a> 屏幕适配</h3> <blockquote><p>设计尺寸 375x812 (iphone X)</p></blockquote> <ul><li><a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/" target="_blank" rel="noopener noreferrer">ios 适配<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.jianshu.com/p/aa3bd45c26c7" target="_blank" rel="noopener noreferrer">安卓适配<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <h3 id="原生-tabbar-遮挡问题"><a href="#原生-tabbar-遮挡问题" class="header-anchor">#</a> 原生 tabbar 遮挡问题</h3> <blockquote><p>使用原生 view 增加遮罩
+<a href="https://www.cnblogs.com/fyhlz/p/11793986.html" target="_blank" rel="noopener noreferrer">弹窗无法遮挡 tabbar<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote></div> <div class="content_default-foot"><span class="last-update">last updated at: 8/28/2020, 10:36:52 AM</span></div></div> <div class="side-archives"><div class="total">
+      total blogs : 33
+    </div> <div class="group-by-month"><h4>group by month :</h4> </div> <div class="group-by-tags"><h4>group by tags :</h4> </div> <div class="group-by-categories"><h4> group by categories :</h4> </div></div></div> <div class="theme-footer"><p>created by <span>@paulxiaooo</span></p></div></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f3e98fbf.js" defer></script><script src="/assets/js/5.bc09d294.js" defer></script><script src="/assets/js/52.90adbcc5.js" defer></script>
+  </body>
+</html>
