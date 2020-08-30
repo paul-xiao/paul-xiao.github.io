@@ -1,18 +1,15 @@
 body
   margin: 0
   color: $font-color
-  background: $bg-color
   line-height: normal
   font-family: Roboto,sans-serif
 .theme-container
-  background: $bg-color
 .theme-content
   min-height: "calc(100vh - %s)" % ($head-height*2 + $base-padding*2) 
   padding: $base-padding
   background: $base-color
   max-width: 1000px
   margin: 0 auto
-  box-shadow: 0px 10px 10px 0px #ccc
   .list-wrap
     flex:1
   .archives
@@ -118,28 +115,28 @@ body
             width: 200px
             vertical-align: middle
             display: block
+// 头
+         
 .theme-header 
   background $base-color
   display flex
-  height: $head-height
-  line-height: $head-height
+  flex-direction: column
   padding: 0 $base-padding
-  border-bottom: 1px solid $border-color
   max-width: 1000px
   margin: 0 auto
-  box-shadow: 0px 10px 10px 0px #ccc
   .left
       flex 1
       a
        color: $link-color
        font-family: Copperplate, "Copperplate Gothic Light", fantasy
        font-size: 2.5em
+       line-height: 100px
   .nav
       flex 1
-      text-align: right
+      text-align: left
       display: flex
-      justify-content: flex-end
       position: relative
+      align-items: center
       .title
         display: none  
       .search-box
@@ -170,10 +167,13 @@ body
             color: lighten($link-color, 50%)
       ul
         margin 0
+        padding: 0
         li
           list-style none
           display inline
           padding: 0 15px
+          &:first-child
+            padding-left: 0
           a
            text-decoration: none
            color: $font-color
@@ -192,7 +192,6 @@ body
   text-align: center
   padding: 0 $base-padding
   border-top: 1px solid $border-color
-  box-shadow: 0px 10px 10px 0px #ccc
   p
    margin: 0
    color: $font-color

@@ -2,7 +2,15 @@ module.exports = {
   title: `Paul's Blog`,
   description: 'Just playing around',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+
+    ["script",
+    {
+      "data-ad-client": "ca-pub-2300280771526991",
+      async: true,
+      src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    }
+  ]
   ],
   themeConfig: {
     // logo: '/assets/img/logo.png',
