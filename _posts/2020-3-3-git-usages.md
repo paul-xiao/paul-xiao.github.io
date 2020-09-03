@@ -2,16 +2,15 @@
 title: Git Usages
 date: 2020-3-3 10:17
 tags:
-- git
+  - git
 categories:
-- frontend
+  - frontend
 comments: true
 ---
 
 #### [How to update GitHub forked repository](https://blog.csdn.net/king4ant/article/details/7407424)
 
 git remote add upstream git://github.com/whoever/whatever.git
-
 
 #### git delete branch
 
@@ -27,4 +26,18 @@ git branch -D branch_name
 git reset --hard commit
 
 git push -f origin branch
+```
+
+### tag
+
+```sh
+# 新增标签并添加注释
+git tag -a v1.0.0 -m 'anotate'
+
+# 追加标签
+git tag -a v0.9 85fc7e7
+
+# decorate
+git log --oneline --decorate --graph
+
 ```

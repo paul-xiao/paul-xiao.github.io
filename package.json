@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/paul-xiao/paul-xiao.github.io#readme",
   "dependencies": {
+    "prettier": "^2.1.1",
     "sass-loader": "^8.0.2"
   },
   "devDependencies": {
