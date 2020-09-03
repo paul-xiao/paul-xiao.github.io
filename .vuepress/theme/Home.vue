@@ -1,6 +1,11 @@
 <template>
  <BaseLayout>
- <List :pages="pages" @filter="handleFilter"/>
+  <div class="banner">
+    <div class="intro">
+      <div class="main">xx</div>
+      <div class="sub">sub</div>
+    </div>
+  </div>
 </BaseLayout>
 </template>
 <script>

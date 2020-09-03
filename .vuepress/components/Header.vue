@@ -1,6 +1,7 @@
 <template>
   <div class="theme-header" v-if="site">
-    <div class="nav-bar" @click="sideOn = true">
+    <div class="inner">
+      <div class="nav-bar" @click="sideOn = true">
         <span></span>
         <span></span>
         <span></span>
@@ -16,11 +17,14 @@
             {{item.text}}
             </router-link>
           </li>
+          <li><i class="fa fa-search"></i></li>
+          <li>EN  |  CN</li>
         </ul>
-        <div class="search-box" v-click-outside="clearSearchVal">
+        <!-- <div class="search-box" v-click-outside="clearSearchVal">
           <input type="text" @keyup.prevent="handleKeyUp" v-model="searchVal" placeholder="Search">
           <SearchResult :result="result"/>
-        </div>
+        </div> -->
+    </div>
     </div>
   </div>
 </template>

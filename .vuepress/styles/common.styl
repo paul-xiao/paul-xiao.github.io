@@ -10,6 +10,8 @@ p
 ul
   margin: 0
   padding-inline-start: 20px;
+  li
+    list-style none
 blockquote
   margin: $base-padding 0
   border-left: 3px solid darksalmon
@@ -23,3 +25,24 @@ blockquote
   border-radius: 4px
   padding: 2px 4px
   color: #FFF
+  
+// flex layout
+.flex
+  display flex
+  justify-content: center
+  align-items: center
+.flex-col
+  display flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+// font
+.h2
+  font-size: 20px
+  font-weight: bold
+  margin: $base-padding 0;
+.h4
+  font-size: 16px
+  font-weight: bold
+  margin: $base-padding/2  0;  

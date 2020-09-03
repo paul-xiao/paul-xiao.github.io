@@ -3,7 +3,6 @@ module.exports = {
   description: 'Just playing around',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-
     ["script",
     {
       "data-ad-client": "ca-pub-2300280771526991",
@@ -15,8 +14,9 @@ module.exports = {
   themeConfig: {
     // logo: '/assets/img/logo.png',
     nav: [
-      { text: 'Archives', link: '/archives' },
-      { text: 'Tags', link: '/tags' },
+      { text: 'Home', link: '/' },
+      { text: 'Blog', link: '/blog' },
+      { text: 'Gallery', link: '/gallery' },
       { text: 'About', link: '/about' }
     ],
     displayAllHeaders: true,

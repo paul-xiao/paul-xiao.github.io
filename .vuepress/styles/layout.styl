@@ -6,10 +6,11 @@ body
 .theme-container
 .theme-content
   min-height: "calc(100vh - %s)" % ($head-height*2 + $base-padding*2) 
-  padding: $base-padding
   background: $base-color
-  max-width: 1000px
   margin: 0 auto
+  .banner
+    background: url('~/public/bg.png')
+    width: 100%
   .list-wrap
     flex:1
   .archives
@@ -119,11 +120,14 @@ body
          
 .theme-header 
   background $base-color
-  display flex
-  flex-direction: column
   padding: 0 $base-padding
-  max-width: 1000px
   margin: 0 auto
+  border-bottom: 1px solid #f2f2f2
+  .inner{
+      display flex
+      max-width 1000px
+      margin: 0 auto
+    }
   .left
       flex 1
       a
@@ -137,6 +141,7 @@ body
       display: flex
       position: relative
       align-items: center
+      justify-content: flex-end
       .title
         display: none  
       .search-box
@@ -184,15 +189,30 @@ body
               border-bottom: 2px solid $link-hover-color
              }
 .theme-footer
-  max-width: 1000px
   margin: 0 auto
-  height: $head-height
-  line-height: $head-height
-  background: $base-color
+  background: #000;
   text-align: center
-  padding: 0 $base-padding
   border-top: 1px solid $border-color
-  p
-   margin: 0
-   color: $font-color
-   font-size: 12px           
+  color:#f2f2f2
+  .inner
+    padding: $base-padding
+    max-width 1000px
+    margin: 0 auto
+    .contact
+      flex: 1
+      .title
+       font-weight: bold
+      &-item
+        text-align: left 
+    .nav
+      flex: 1
+    .latest-posts
+      flex:1
+      text-align: right  
+    .copyright
+      padding: $base-padding
+      margin: 0
+      color: $base-color
+      font-size: 12px           
+    
+  
