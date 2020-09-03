@@ -1,6 +1,6 @@
 {
   "name": "paul-xiao.github.io",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "来点干货",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/paul-xiao/paul-xiao.github.io#readme",
   "dependencies": {
+    "prettier": "^2.1.1",
     "sass-loader": "^8.0.2"
   },
   "devDependencies": {

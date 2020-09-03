@@ -1,0 +1,16 @@
+{
+    "name":"pwa",
+    "manifest_version": 2,
+    "version": "0.1",
+    "short_name":"Blog",
+    "display":"standalone",
+    "default_locale": "en",
+    "description": "a pwa app",
+    "start_url":"/",
+    "theme_color":"lightblue",
+    "background_color":"cyan",
+    "icons": {
+        "48": "logo.png",
+        "96": "logo.png"
+      }
+}
