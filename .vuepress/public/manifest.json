@@ -9,8 +9,8 @@
     "start_url":"/",
     "theme_color":"lightblue",
     "background_color":"cyan",
-    "icons": {
-        "48": "logo.png",
-        "96": "logo.png"
-      }
+    "icons": [{
+        "src": "logo.png",
+        "type": "image/png"
+    }]
 }
