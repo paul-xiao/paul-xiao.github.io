@@ -27,8 +27,15 @@ module.exports = {
       { text: 'Gallery', link: '/gallery' },
       { text: 'About', link: '/about' }
     ],
+    footNav: [
+      { text: 'Home', link: '/' },
+      { text: 'Blog', link: '/blog' },
+      { text: 'Gallery', link: '/gallery' },
+      { text: 'About', link: '/about' }
+    ],
     displayAllHeaders: true,
-    sidebar: 'auto'
+    sidebar: 'auto',
+    companyName: 'Company name'
   },
   plugins: [
     '@vuepress/last-updated',

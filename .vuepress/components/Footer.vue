@@ -55,7 +55,7 @@
 
     <div class="copyright">
       copyright &copy; 2020
-      <span>paulxiaooo</span>
+      <span>{{$themeConfig.companyName}}</span> All rights reserved
     </div>
   </div>
 </template>
@@ -65,6 +65,10 @@ export default {
   data() {
     return {};
   },
-  props: {},
+  computed: {
+    companyName() {
+      return this.$themeConfig.companyName;
+    },
+  },
 };
 </script>
