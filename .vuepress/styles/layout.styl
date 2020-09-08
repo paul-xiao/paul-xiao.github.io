@@ -123,11 +123,10 @@ body
   padding: 0 $base-padding
   margin: 0 auto
   border-bottom: 1px solid #f2f2f2
-  .inner{
-      display flex
-      max-width 1000px
-      margin: 0 auto
-    }
+  .inner
+    display: flex
+    max-width 1000px
+    margin: 0 auto
   .left
       flex 1
       a
@@ -182,20 +181,20 @@ body
           a
            text-decoration: none
            color: $font-color
-           transition: all ease-in-out 0.2s
+           border-bottom: 2px solid $white
+           transition: border-color ease-in-out 0.25s
            padding: 5px 0
            &:active, &:hover, &.active{
               color: lighten($font-color, 10%)
-              border-bottom: 2px solid $link-hover-color
+              border-bottom-color: $link-hover-color
              }
 .theme-footer
   margin: 0 auto
   background: #000;
   text-align: center
-  border-top: 1px solid $border-color
   color:#f2f2f2
   .inner
-    padding: $base-padding
+    padding: $base-padding*4 
     max-width 1000px
     margin: 0 auto
     .contact

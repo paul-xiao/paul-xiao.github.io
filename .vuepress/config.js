@@ -1,5 +1,5 @@
 module.exports = {
-  title: `Paul's Blog`,
+  title: `Bootstrap`,
   description: 'Just playing around',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
@@ -12,12 +12,12 @@ module.exports = {
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }], //win8磁贴图像
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],//Windows 8 磁贴颜色
     ["script",
-    {
-      "data-ad-client": "ca-pub-2300280771526991",
-      async: true,
-      src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-    }
-  ]
+      {
+        "data-ad-client": "ca-pub-2300280771526991",
+        async: true,
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      }
+    ]
   ],
   themeConfig: {
     // logo: '/assets/img/logo.png',
@@ -43,7 +43,7 @@ module.exports = {
         background: '#000',
       }
     }],
-    ['@vuepress/blog',{
+    ['@vuepress/blog', {
       directories: [
         {
           id: 'post',
@@ -60,7 +60,7 @@ module.exports = {
     ['@vuepress/pwa', {
       serviceWorker: true,
       updatePopup: true
-  }]
+    }]
   ],
   globalUIComponents: []
 }
