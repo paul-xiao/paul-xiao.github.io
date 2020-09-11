@@ -1,217 +1,345 @@
-body
-  margin: 0
-  color: $font-color
-  line-height: normal
-  font-family: Roboto,sans-serif
-.theme-container
-.theme-content
-  min-height: "calc(100vh - %s)" % ($head-height*2 + $base-padding*2) 
-  background: $base-color
-  margin: 0 auto
-  .banner
-    background: url('/bg.png')
-    width: 100%
-  .list-wrap
-    flex:1
-  .archives
-    .total
-      color: lighten($font-color, 20%)
-    .archive
-      &-title
-        color: $font-color
-      &-item
-        display: block
-        padding: 5px 0
-        color: $font-color
-        &:hover
-          color: $link-hover-color
-          transform: translateX(10px)
-          transition: all ease 0.5s
-  &>.tags
-    .tag
-      background: $tag-color
-      margin: 5px
-      padding: 5px 15px
-      display: inline-block
-      color: $base-color
-      cursor: pointer
-      &:hover
-        transform: scale(1.1)
-        transition: all ease-in 0.5s
-    .category
-      background: $category-color
-      margin: 5px
-      padding: 5px 15px
-      display: inline-block
-      color: $base-color
-      cursor: pointer
-      &:hover
-        transform: scale(1.1)
-        transition: all ease-out 0.5s
-  .pagination
-    width: 200px
-    margin: 10px 0
-    .page
-      border: 1px solid $border-color
-      cursor: pointer
-      padding: 0 10px
-      margin: 5px
-      color: $font-color
-      &.active
-        background: $border-color
-  .list
-    display: flex
-    flex-direction: row
-    .archives
-      margin: 10px 0
-      width: 200px
-      padding: $base-padding
-      .title
-        margin: 0
-      .total
-        color: lighten($font-color, 20%)
-      .archive
-        &-title
-          color: $font-color
-        &-item
-          display: block
-          padding: 5px 0
-          color: $font-color
-          &:hover
-            color: $link-hover-color
-            transform: translateX(10px)
-            transition: all ease 0.5s
-    &-inner
-      flex:1
-    &-item
-      padding: $base-padding 0
-      margin: 10px 0
-      &-head
-        line-height: 30px
-        .title
-          text-decoration: none
-          color: $link-color
-          font-size: $title-font-size
-        small
-          font-size: 12px
-          color: $font-color
-          .publish-date{
-           float right
+body {
+  margin: 0;
+  color: $font-color;
+  line-height: normal;
+  font-family: Roboto, sans-serif;
+}
+
+.theme-container, .theme-content {
+  min-height: 'calc(100vh - %s)' % ($head-height * 2 + $base-padding * 2);
+  background: $base-color;
+  margin: 0 auto;
+
+  .banner {
+    bg('/hero.jpg');
+    width: 100%;
+    container();
+
+    &-intro {
+      padding: 200px 40px;
+      width: 500px;
+    }
+  }
+
+  .container {
+    container();
+    padding: 15px;
+
+    .row {
+      grid();
+    }
+  }
+
+  .list-wrap {
+    flex: 1;
+  }
+
+  .archives {
+    .total {
+      color: lighten($font-color, 20%);
+    }
+
+    .archive {
+      &-title {
+        color: $font-color;
+      }
+
+      &-item {
+        display: block;
+        padding: 5px 0;
+        color: $font-color;
+
+        &:hover {
+          color: $link-hover-color;
+          transform: translateX(10px);
+          transition: all ease 0.5s;
+        }
+      }
+    }
+  }
+
+  &>.tags {
+    .tag {
+      background: $tag-color;
+      margin: 5px;
+      padding: 5px 15px;
+      display: inline-block;
+      color: $base-color;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all ease-in 0.5s;
+      }
+    }
+
+    .category {
+      background: $category-color;
+      margin: 5px;
+      padding: 5px 15px;
+      display: inline-block;
+      color: $base-color;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all ease-out 0.5s;
+      }
+    }
+  }
+
+  .pagination {
+    width: 200px;
+    margin: 10px 0;
+
+    .page {
+      border: 1px solid $border-color;
+      cursor: pointer;
+      padding: 0 10px;
+      margin: 5px;
+      color: $font-color;
+
+      &.active {
+        background: $border-color;
+      }
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: row;
+
+    .archives {
+      margin: 10px 0;
+      width: 200px;
+      padding: $base-padding;
+
+      .title {
+        margin: 0;
+      }
+
+      .total {
+        color: lighten($font-color, 20%);
+      }
+
+      .archive {
+        &-title {
+          color: $font-color;
+        }
+
+        &-item {
+          display: block;
+          padding: 5px 0;
+          color: $font-color;
+
+          &:hover {
+            color: $link-hover-color;
+            transform: translateX(10px);
+            transition: all ease 0.5s;
           }
-          .tag
-           cursor: pointer
-           color: $tag-color
-           &:active, &:focus, &:hover
-             color: $tag-color
-          .category
-           cursor: pointer
-           color: $category-color
-           &:active, &:focus, &:hover
-             color: $category-color
-      &-excerpt
-        &>p
-          margin: 0  
-          padding: 10px 0
-          img
-            width: 200px
-            vertical-align: middle
-            display: block
+        }
+      }
+    }
+
+    &-inner {
+      flex: 1;
+    }
+
+    &-item {
+      padding: $base-padding 0;
+      margin: 10px 0;
+
+      &-head {
+        line-height: 30px;
+
+        .title {
+          text-decoration: none;
+          color: $link-color;
+          font-size: $title-font-size;
+        }
+
+        small {
+          font-size: 12px;
+          color: $font-color;
+
+          .publish-date {
+            float: right;
+          }
+
+          .tag {
+            cursor: pointer;
+            color: $tag-color;
+
+            &:active, &:focus, &:hover {
+              color: $tag-color;
+            }
+          }
+
+          .category {
+            cursor: pointer;
+            color: $category-color;
+
+            &:active, &:focus, &:hover {
+              color: $category-color;
+            }
+          }
+        }
+      }
+
+      &-excerpt {
+        &>p {
+          margin: 0;
+          padding: 10px 0;
+
+          img {
+            width: 200px;
+            vertical-align: middle;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
 // 头
-         
-.theme-header 
-  background $base-color
-  padding: 0 $base-padding
-  margin: 0 auto
-  border-bottom: 1px solid #f2f2f2
-  .inner
-    display: flex
-    max-width 1000px
-    margin: 0 auto
-  .left
-      flex 1
-      a
-       color: $link-color
-       font-family: Copperplate, "Copperplate Gothic Light", fantasy
-       font-size: 2.5em
-       line-height: 100px
-  .nav
-      flex 1
-      text-align: left
-      display: flex
-      position: relative
-      align-items: center
-      justify-content: flex-end
-      .title
-        display: none  
-      .search-box
-        input
-          height: 30px
-          width: 200px
-          outline: none
-          padding: 0 5px
-          font-size: 15px
-          color: $font-color
-          background: $base-color
-          border: 1px solid $border-color
-          border-radius: 15px
-          text-indent: 10px
-      .search-result
-        min-width: 180px
-        height: auto
-        padding: $base-padding
-        border: 1px solid $border-color
-        background: $base-color
-        position: absolute
-        top: 50px
-        text-align: left
-        line-height: 35px
-        &-item
-          line-height: 35px
-          & a:hover
-            color: lighten($link-color, 50%)
-      ul
-        margin 0
-        padding: 0
-        li
-          list-style none
-          display inline
-          padding: 0 15px
-          &:first-child
-            padding-left: 0
-          a
-           text-decoration: none
-           color: $font-color
-           border-bottom: 2px solid $white
-           transition: border-color ease-in-out 0.25s
-           padding: 5px 0
-           &:active, &:hover, &.active{
-              color: lighten($font-color, 10%)
-              border-bottom-color: $link-hover-color
-             }
-.theme-footer
-  margin: 0 auto
+.theme-header {
+  background: $base-color;
+  padding: 0 $base-padding;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+
+  .inner {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .left {
+    flex: 1;
+
+    a {
+      color: $link-color;
+      font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+      font-size: 2.5em;
+      line-height: 100px;
+    }
+  }
+
+  .nav {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+
+    .title {
+      display: none;
+    }
+
+    .search-box {
+      input {
+        height: 30px;
+        width: 200px;
+        outline: none;
+        padding: 0 5px;
+        font-size: 15px;
+        color: $font-color;
+        background: $base-color;
+        border: 1px solid $border-color;
+        border-radius: 15px;
+        text-indent: 10px;
+      }
+    }
+
+    .search-result {
+      min-width: 180px;
+      height: auto;
+      padding: $base-padding;
+      border: 1px solid $border-color;
+      background: $base-color;
+      position: absolute;
+      top: 50px;
+      text-align: left;
+      line-height: 35px;
+
+      &-item {
+        line-height: 35px;
+
+        & a:hover {
+          color: lighten($link-color, 50%);
+        }
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        display: inline;
+        padding: 0 15px;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        a {
+          text-decoration: none;
+          color: $font-color;
+          border-bottom: 2px solid $white;
+          transition: border-color ease-in-out 0.25s;
+          padding: 5px 0;
+
+          &:active, &:hover, &.active {
+            color: lighten($font-color, 10%);
+            border-bottom-color: $link-hover-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.theme-footer {
+  margin: 0 auto;
   background: #000;
-  text-align: center
-  color:#f2f2f2
-  .inner
-    padding: $base-padding*4 
-    max-width 1000px
-    margin: 0 auto
-    .contact
-      flex: 1
-      .title
-       font-weight: bold
-      &-item
-        text-align: left 
-    .nav
-      flex: 1
-    .latest-posts
-      flex:1
-      text-align: right  
-    .copyright
-      padding: $base-padding
-      margin: 0
-      color: $base-color
-      font-size: 12px           
-    
-  
+  text-align: center;
+  color: #f2f2f2;
+
+  .inner {
+    padding: $base-padding * 4;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .contact {
+      flex: 1;
+
+      .title {
+        font-weight: bold;
+      }
+
+      &-item {
+        text-align: left;
+      }
+    }
+
+    .nav {
+      flex: 1;
+    }
+
+    .latest-posts {
+      flex: 1;
+      text-align: right;
+    }
+
+    .copyright {
+      padding: $base-padding;
+      margin: 0;
+      color: $base-color;
+      font-size: 12px;
+    }
+  }
+}

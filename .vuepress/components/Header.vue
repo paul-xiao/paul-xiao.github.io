@@ -16,7 +16,7 @@
           <li v-for="item in config.nav" class="nav-list-item">
             <router-link
               :to="item.link"
-              :class="{'active': $route.path.includes(item.link) }"
+              :class="{'active': $route.path.split('.')[0] === item.link }"
             >{{item.text}}</router-link>
           </li>
           <li class="nav-list-item">

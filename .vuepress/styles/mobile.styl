@@ -1,60 +1,81 @@
-$mobile-font = 1rem
-@media (max-width: 1024px)
-  html,body,#app
-    font-size:$mobile-font
-    width: 100%
-    height 100%
-    overflow-x hidden
-    position fixed
-    top 0
-    left 0
-  .theme-container
-    height 100%
+$mobile-font = 1rem;
 
+@media (max-width: 1024px) {
+  html, body, #app {
+    font-size: $mobile-font;
+    width: 100%;
+  }
 
+  .theme-container {
     // header
-    .theme-header
-      width: 100%
-      padding: 0
-      text-align: center
-      .inner
-        display block
-      .head
-        display flex
-      .left a
-        font-size: 1rem
-        line-height: 60px
-      .nav-bar
-        width: 60px
-        height: 60px
-        display: flex
-        justify-content: center
-        align-items: center
-        flex-direction: column
-        span
-          background: #777
-          width: 20px
-          height: 2px
-          display block
-          margin-top: 3px
-      .nav
-        background: #fff
-        position relative
-        transition: left ease-in-out 0.1s
-        .nav-list
-          border-top: 1px solid #f2f2f2
-          flex:1
-          height 0
-          transition: height ease-in-out 0.5s
-          overflow hidden
-          &.show
-            height 260px
-          &-item
-            padding: $base-padding
-            display block
-    .theme-footer
-      .flex
-        flex-direction: column
-        align-items: flex-start
-        .contact
-          margin-bottom: $base-padding*2
+    .theme-header {
+      width: 100%;
+      padding: 0;
+      text-align: center;
+
+      .inner {
+        display: block;
+      }
+
+      .head {
+        display: flex;
+      }
+
+      .left a {
+        font-size: 1rem;
+        line-height: 60px;
+      }
+
+      .nav-bar {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        span {
+          background: #777;
+          width: 20px;
+          height: 2px;
+          display: block;
+          margin-top: 3px;
+        }
+      }
+
+      .nav {
+        background: #fff;
+        position: relative;
+        transition: left ease-in-out 0.1s;
+
+        .nav-list {
+          border-top: 1px solid #f2f2f2;
+          flex: 1;
+          height: 0;
+          transition: height ease-in-out 0.5s;
+          overflow: hidden;
+
+          &.show {
+            height: 260px;
+          }
+
+          &-item {
+            padding: $base-padding;
+            display: block;
+          }
+        }
+      }
+    }
+
+    .theme-footer {
+      .flex {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .contact {
+          margin-bottom: $base-padding * 2;
+        }
+      }
+    }
+  }
+}
