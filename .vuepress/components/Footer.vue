@@ -3,10 +3,10 @@
     <div class="inner flex">
       <div class="contact">
         <div class="contact-item">
-          <div class="h4">Paulxiaooo</div>
-          <div class="addr">Base: 四川,成都</div>
-          <div class="tel">Phone: 18980822098</div>
-          <div class="tel">Email: paulxiaooo@gmail.com</div>
+          <div class="h4">Bootstrap</div>
+          <div class="addr">53 Broadway, Broklyn, NY 11249</div>
+          <div class="tel">Phone: (020) 123 456 789</div>
+          <div class="tel">Email: Info@Company.com</div>
           <span>
             <i class="fa fa-wechat"></i>
             <i class="fa fa-github"></i>
@@ -15,9 +15,13 @@
       </div>
       <div class="nav">
         <ul>
-          <li>Blog</li>
+          <li>My Account</li>
           <li>Gallery</li>
           <li>About</li>
+          <li>Our Partners</li>
+          <li>Contact</li>
+          <li>FAQ</li>
+          <li>How It Works</li>
         </ul>
       </div>
       <div class="latest-posts">

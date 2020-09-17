@@ -61,6 +61,10 @@ blockquote {
   align-items: center;
   flex-direction: column;
 }
+.space-between{
+  display: flex;
+  justify-content: space-between
+}
 
 // font
 .h4 {
@@ -73,8 +77,26 @@ blockquote {
   font-size: 30px;
   font-weight: bold;
   margin: $base-padding 0;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
-
+.h4-bold {
+  font-size: 14px;
+  font-weight: bold;
+  margin: $base-padding 0;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.h4-bold + .h2-bold {
+ margin-top: 0; 
+}
+.text{
+      font-weight: 400;
+    color: #777;
+    font-size: 0.95em;
+    }
 .text-white {
   color: #FFF;
 }
@@ -93,15 +115,26 @@ blockquote {
   text-decoration: underline;
 }
 
-.container {
+.container, .container-fluid {
   container();
   padding: 15px;
-
   .row {
     grid();
+    &.reverse{
+    flex-direction: row-reverse;
+    }
   }
 }
+.container-fluid{
+  padding: 0;
+  }
 
 .pd-15 {
   padding: 15px;
+}
+.pdv-15{
+ padding: 15px 0;
+}
+.pdh-15{
+ padding:0 15px;
 }
