@@ -89,7 +89,7 @@
     <section class="gallery">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-3" v-for="(item, index) of gallery" :key="index">
+          <div class="mix col-lg-3" v-for="(item, index) of gallery" :key="index">
             <img :src="item.url" alt width="100%" />
           </div>
         </div>

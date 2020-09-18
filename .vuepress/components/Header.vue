@@ -1,5 +1,5 @@
 <template>
-  <div class="theme-header" v-if="site">
+  <div class="theme-header container" v-if="site">
     <div class="inner">
       <div class="head">
         <div class="nav-bar" @click="show = !show">

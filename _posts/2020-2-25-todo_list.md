@@ -1,13 +1,16 @@
 ---
 title: Todo List
 date: 2020-2-25 11:15
-stick: true
+stick: false
 tags:
 - todo
 categories:
 - other
 comments: true
 ---
+
+
+<!-- more -->
 
 #### Todo List
 
@@ -19,5 +22,3 @@ comments: true
 - [ ] web architecture
 - [ ] 小程序
 
-
-<!-- more -->

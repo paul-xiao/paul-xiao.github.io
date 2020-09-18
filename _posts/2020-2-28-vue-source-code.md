@@ -7,8 +7,8 @@ tags:
 categories:
 - frontend
 comments: true
+url: 'blog-3.jpg'
 ---
-![image](/logo.png)
 
 Vue-2.x and Vue-next source code compare
 <!-- more -->

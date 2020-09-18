@@ -10,6 +10,7 @@ comments: true
 ---
 
 when we execute _yarn build_, we can see a lots of thing have been done automaticly, let's check the source code step-by-step, see what is going on...
+<!-- more -->
 
 ```js
 wait Extracting site metadata...
@@ -35,7 +36,7 @@ wait Rendering static HTML...
 success Generated static files in .vuepress/dist.
 ```
 
-<!-- more -->
+
 
 #### deep dive **yarn build**
 

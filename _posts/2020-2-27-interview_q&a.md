@@ -9,9 +9,7 @@ categories:
 comments: true
 ---
 
-![image](./assets/images/qna.jpeg)
-
-> checked ali p6 front-end interview questions today, seems lots of questions not able to answer it, still much to learn, so make a Q&A collection here, hope we can get something when all these questions are answered.
+checked ali p6 front-end interview questions today, seems lots of questions not able to answer it, still much to learn, so make a Q&A collection here, hope we can get something when all these questions are answered.
 
 <!-- more -->
 

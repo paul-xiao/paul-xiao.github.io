@@ -5,11 +5,7 @@ body {
   font-family: Roboto, sans-serif;
 }
 
-.theme-container, .theme-content {
-  min-height: 'calc(100vh - %s)' % ($head-height * 2 + $base-padding * 2);
-  background: $base-color;
-  margin: 0 auto;
-
+.theme-content {
   .banner {
     bg('/hero.jpg');
     width: 100%;
@@ -41,187 +37,120 @@ body {
     }
   .list-wrap {
     flex: 1;
+    overflow hidden
   }
 
-  .archives {
-    .total {
-      color: lighten($font-color, 20%);
-    }
 
-    .archive {
-      &-title {
-        color: $font-color;
-      }
-
-      &-item {
-        display: block;
-        padding: 5px 0;
-        color: $font-color;
-
-        &:hover {
-          color: $link-hover-color;
-          transform: translateX(10px);
-          transition: all ease 0.5s;
-        }
-      }
-    }
-  }
-
-  &>.tags {
-    .tag {
-      background: $tag-color;
-      margin: 5px;
-      padding: 5px 15px;
-      display: inline-block;
-      color: $base-color;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.1);
-        transition: all ease-in 0.5s;
-      }
-    }
-
-    .category {
-      background: $category-color;
-      margin: 5px;
-      padding: 5px 15px;
-      display: inline-block;
-      color: $base-color;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.1);
-        transition: all ease-out 0.5s;
-      }
-    }
-  }
 
   .pagination {
-    width: 200px;
-    margin: 10px 0;
-
+    padding: 15px
+    text-align: center;
     .page {
-      border: 1px solid $border-color;
-      cursor: pointer;
-      padding: 0 10px;
-      margin: 5px;
-      color: $font-color;
+     width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50% !important;
+    border: none;
+    color: #555;
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
 
-      &.active {
+      &.active,&:hover,&:focus,&:active {
         background: $border-color;
+        cursor: pointer;
       }
     }
   }
 
-  .list {
-    display: flex;
-    flex-direction: row;
 
-    .archives {
-      margin: 10px 0;
-      width: 200px;
-      padding: $base-padding;
-
-      .title {
-        margin: 0;
-      }
-
-      .total {
-        color: lighten($font-color, 20%);
-      }
-
-      .archive {
-        &-title {
-          color: $font-color;
-        }
-
-        &-item {
-          display: block;
-          padding: 5px 0;
-          color: $font-color;
-
-          &:hover {
-            color: $link-hover-color;
-            transform: translateX(10px);
-            transition: all ease 0.5s;
+  .side-archives {
+    .widget {
+        margin-bottom: 40px;
+        padding: 30px;
+        border: 1px solid #eee;
+        &.search{
+          input {
+            
+          width: 100%;
+          height: 40px;
+          line-height: 40px;
+          border: none;
+          border-bottom: 1px solid #ddd;
+          font-size: 0.95em;
+          font-family: "Open Sans", sans-serif;
+          font-weight: 400;
+          background: none;
+          outline: none;
+          -webkit-appearance:none;
+          &::-webkit-search-cancel-button {display: none;}
           }
+          .submit{
+                height: 40px;
+                padding: 0;
+                line-height: 40px;
+                background: none;
+                border: none;
+                color: #555;
+                font-size: 0.9em;
+                position: absolute;
+                top: 0;
+                right: 0;
+           }
+          }
+    }
+    .group-by-month {
+      span {
+        display: block;
+        margin: 2px;
+        cursor: pointer;
+
+        &:hover {
+          color: $tag-color;
         }
       }
     }
 
-    &-inner {
-      flex: 1;
-    }
+    .group-by-tags {
+      .tag {
+        background: $tag-color;
+        margin: 2px;
+        padding: 2px 5px;
+        display: inline-block;
+        color: $base-color;
+        cursor: pointer;
 
-    &-item {
-      padding: $base-padding 0;
-      margin: 10px 0;
-
-      &-head {
-        line-height: 30px;
-
-        .title {
-          text-decoration: none;
-          color: $link-color;
-          font-size: $title-font-size;
-        }
-
-        small {
-          font-size: 12px;
-          color: $font-color;
-
-          .publish-date {
-            float: right;
-          }
-
-          .tag {
-            cursor: pointer;
-            color: $tag-color;
-
-            &:active, &:focus, &:hover {
-              color: $tag-color;
-            }
-          }
-
-          .category {
-            cursor: pointer;
-            color: $category-color;
-
-            &:active, &:focus, &:hover {
-              color: $category-color;
-            }
-          }
+        &:hover {
+          background: darken($tag-color, 20%);
         }
       }
+    }
 
-      &-excerpt {
-        &>p {
-          margin: 0;
-          padding: 10px 0;
+    .group-by-categories {
+      .category {
+        background: $category-color;
+        margin: 2px;
+        padding: 2px 5px;
+        display: inline-block;
+        color: $base-color;
+        cursor: pointer;
 
-          img {
-            width: 200px;
-            vertical-align: middle;
-            display: block;
-          }
+        &:hover {
+          background: lighten($category-color, 20%);
         }
       }
     }
   }
+
+
+
 }
 
 // 头
 .theme-header {
   background: $base-color;
-  padding: 0 $base-padding;
-  margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
-
   .inner {
     display: flex;
-    max-width: 1000px;
-    margin: 0 auto;
   }
 
   .left {

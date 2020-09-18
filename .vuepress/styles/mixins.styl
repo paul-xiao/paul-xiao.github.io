@@ -1,19 +1,26 @@
 container() {
-    @media (max-width: $xl) {
-        max-width: 1200px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    @media (min-width: $sm) {
+        max-width: 540px;
     }
-
-    @media (max-width: $lg) {
+    @media (min-width: $md) {
+        max-width: 720px;
+    }
+    @media (min-width: $lg) {
         max-width: 960px;
     }
 
-    @media (max-width: $md) {
-        max-width: 720px;
+    
+     @media (min-width: $xl) {
+        max-width: 1140px;
     }
 
-    @media (max-width: $sm) {
-        max-width: 540px;
-    }
+
+    
 }
 
 grid() {
@@ -22,9 +29,12 @@ grid() {
 }
 
 cell($size, $colum) {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
     flex: 0 0 100%;
     max-width: 100%;
-
     if ($size == 'lg') {
         @media (min-width: $lg) {
             flex: 0 0 'calc(100% * %s)' % ($colum / $columns);
