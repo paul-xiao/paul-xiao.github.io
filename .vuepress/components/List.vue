@@ -5,7 +5,7 @@
         <div class="post col-lg-6" v-for="page in list">
           <div class="post-thumbnail">
             <router-link :to="page.path">
-              <img :src="page.frontmatter.url || 'blog-1.jpg'" alt />
+              <img :src="page.frontmatter.thumbnail || 'blog-1.jpg'" alt />
             </router-link>
           </div>
           <div class="post-details pdv-15">

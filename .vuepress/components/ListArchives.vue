@@ -10,24 +10,36 @@
       </div>
     </div>
     <div class="widget group-by-month">
-      <div class="h4-bold">Search Post</div>
-      <span
-        v-for="month in monthes"
-        class="month"
-        @click="handleClick(month[0])"
-      >{{`${month[0]} ${month[1].length}`}}</span>
+      <div class="h4-bold">Latest Posts</div>
+      <div class="latest-posts">
+        <div v-for="(post, index) of pages" :key="post.title" v-if="index < 3">  
+         <router-link :to="post.path" class="latest-post">
+           <div class="img">
+           <img :src="post.frontmatter.thumbnail || '/blog-1.jpg'" alt="">
+         </div>
+         <div class="roundup">
+           <h4 class="title">{{post.title}}</h4>
+           <span class="text"><i class="fa fa-eye"></i> 12</span> 
+           <span class="text"><i class="fa fa-comment-o"></i> 12</span>
+         </div>
+         </router-link>
+        </div>
+      </div>
     </div>
-    <div class="widget group-by-tags">
-      <h4>group by tags :</h4>
-      <span v-for="tag in tags" class="tag" @click="handleClick(tag[0])">{{`${tag[0]} ${tag[1]}`}}</span>
-    </div>
+
+    
     <div class="widget group-by-categories">
-      <h4>group by categories :</h4>
-      <span
+      <h4>Categories :</h4>
+      <div
         v-for="category in categories"
         class="category"
         @click="handleClick(category[0])"
-      >{{`${category[0]} ${category[1]}`}}</span>
+      ><span class="text-dark">{{`${category[0]} `}}</span>
+      <span>{{`${category[1]}`}}</span></div>
+    </div>
+    <div class="widget group-by-tags">
+      <h4>Tags :</h4>
+      <span v-for="tag in tags" class="tag" @click="handleClick(tag[0])">{{`#${tag[0]}`}}</span>
     </div>
   </div>
 </template>
@@ -41,12 +53,12 @@ export default {
       monthly: null,
     };
   },
+  props: {
+    pages: {
+      type:Array
+    }
+  },
   computed: {
-    pages() {
-      return this.$site.pages
-        .filter((e) => e.id === "post")
-        .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-    },
     monthes() {
       const map = new Map();
       this.pages.forEach((e) => {
@@ -92,6 +104,9 @@ export default {
       });
       return map;
     },
+  },
+  mounted() {
+    console.log(this.pages)
   },
   methods: {
     handleClick(filter) {

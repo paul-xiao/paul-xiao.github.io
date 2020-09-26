@@ -5,6 +5,7 @@ tags:
   - css
 categories:
   - frontend
+thumbnail: 'blog-3.jpg'
 ---
 
 ## column layout

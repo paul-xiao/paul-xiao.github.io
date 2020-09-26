@@ -6,7 +6,7 @@
           <List :pages="pages" />
         </div>
         <div class="col-lg-4">
-          <ListArchives />
+          <ListArchives :pages="pages" />
         </div>
       </div>
     </div>

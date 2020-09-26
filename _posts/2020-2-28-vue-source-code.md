@@ -7,7 +7,7 @@ tags:
 categories:
 - frontend
 comments: true
-url: 'blog-3.jpg'
+thumbnail: '/blog-3.jpg'
 ---
 
 Vue-2.x and Vue-next source code compare

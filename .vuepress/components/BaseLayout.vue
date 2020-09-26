@@ -4,7 +4,7 @@
     <div class="theme-content">
       <slot></slot>
     </div>
-    <Footer />
+    <Footer/>
   </div>
 </template>
 <script>

@@ -13,46 +13,30 @@
           </span>
         </div>
       </div>
-      <div class="nav">
-        <ul>
-          <li>My Account</li>
-          <li>Gallery</li>
-          <li>About</li>
-          <li>Our Partners</li>
-          <li>Contact</li>
-          <li>FAQ</li>
-          <li>How It Works</li>
+      <div class="nav container">
+        <ul class="row">
+          <li class="col-lg-6">My Account</li>
+          <li class="col-lg-6">Gallery</li>
+          <li class="col-lg-6">About</li>
+          <li class="col-lg-6">Our Partners</li>
+          <li class="col-lg-6">Contact</li>
+          <li class="col-lg-6">FAQ</li>
+          <li class="col-lg-6">How It Works</li>
         </ul>
       </div>
       <div class="latest-posts">
-        <ul class="bottom-posts">
-          <li>
-            <div class="img">
-              <img src alt />
-            </div>
-            <div class="desc">
-              <div class="h4">Hotels For All Budgets</div>
-              <div class="date">October 26, 2020</div>
-            </div>
-          </li>
-          <li>
-            <div class="img">
-              <img src alt />
-            </div>
-            <div class="desc">
-              <div class="h4">Hotels For All Budgets</div>
-              <div class="date">October 26, 2020</div>
-            </div>
-          </li>
-          <li>
-            <div class="img">
-              <img src alt />
-            </div>
-            <div class="desc">
-              <div class="h4">Hotels For All Budgets</div>
-              <div class="date">October 26, 2020</div>
-            </div>
-          </li>
+        <ul>
+               <li v-for="(post, index) of pages" :key="post.title" v-if="index < 3">  
+         <router-link :to="post.path" class="latest-post">
+           <div class="img">
+           <img :src="post.frontmatter.thumbnail || '/blog-1.jpg'" alt="">
+         </div>
+         <div class="roundup">
+           <h4 class="title">{{post.title}}</h4>
+           <span class="text">{{post.lastUpdated}}</span> 
+         </div>
+         </router-link>
+        </li>
         </ul>
       </div>
     </div>
@@ -72,6 +56,28 @@ export default {
   computed: {
     companyName() {
       return this.$themeConfig.companyName;
+    },
+      pages() {
+      const data = this.$site.pages
+        .filter((e) => e.id === "post")
+        .sort(
+          (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+        );
+      const sticked = data.filter((e) => e.frontmatter.stick);
+      const notsticked = data.filter((e) => !e.frontmatter.stick);
+      const blogs = sticked.concat(notsticked);
+      if (this.filter) {
+        return blogs.filter(
+          (e) =>
+            (e.frontmatter.tags && e.frontmatter.tags.includes(this.filter)) ||
+            (e.frontmatter.categories &&
+              e.frontmatter.categories.includes(this.filter)) ||
+            (e.frontmatter.date &&
+              moment(e.frontmatter.date).getMonth().includes(this.filter))
+        );
+      } else {
+        return blogs;
+      }
     },
   },
 };

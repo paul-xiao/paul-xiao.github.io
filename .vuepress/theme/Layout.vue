@@ -1,6 +1,9 @@
 <template>
   <BaseLayout>
-    <div class="content__default__wrap container">
+     <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+            <div class="content__default__wrap container">
       <div class="content_default-title">
         <router-link :to="page.path" class="title">{{page.title}}</router-link>
         <small>
@@ -17,7 +20,12 @@
         <span class="last-update">last updated at: {{$page.lastUpdated}}</span>
       </div>
     </div>
-    <ListArchives />
+        </div>
+        <div class="col-lg-4">
+          <ListArchives :pages="pages" />
+        </div>
+      </div>
+    </div>
   </BaseLayout>
 </template>
 <script>
@@ -38,6 +46,29 @@ export default {
     page() {
       return this.$page;
     },
+      pages() {
+      const data = this.$site.pages
+        .filter((e) => e.id === "post")
+        .sort(
+          (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+        );
+      const sticked = data.filter((e) => e.frontmatter.stick);
+      const notsticked = data.filter((e) => !e.frontmatter.stick);
+      const blogs = sticked.concat(notsticked);
+      if (this.filter) {
+        return blogs.filter(
+          (e) =>
+            (e.frontmatter.tags && e.frontmatter.tags.includes(this.filter)) ||
+            (e.frontmatter.categories &&
+              e.frontmatter.categories.includes(this.filter)) ||
+            (e.frontmatter.date &&
+              moment(e.frontmatter.date).getMonth().includes(this.filter))
+        );
+      } else {
+        return blogs;
+      }
+    },
+        
   },
   methods: {
     publishDate(publishDate) {
