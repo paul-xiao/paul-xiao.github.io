@@ -103,7 +103,7 @@ blockquote {
 .h4 {
   font-size: 16px;
   font-weight: bold;
-  margin: $base-padding / 2 0;
+  margin: $base-padding*0.5 0;
 }
 
 .h2-bold {
@@ -132,6 +132,19 @@ blockquote {
     color: #777;
     font-size: 0.95em;
     }
+.small{
+      font-weight: 400;
+    color: #999;
+    text-transform: capitalize;
+   .gutter{
+      &:after{
+      content: '|';
+    display: inline-block;
+    margin: 0 7px;
+    font-size: 0.9em;
+    color: #ccc;}
+    }
+    } 
 .text-white {
   color: #FFF;
 }
@@ -186,6 +199,9 @@ blockquote {
 }
 .pdh-15{
  padding:0 15px;
+}
+.pdh-5{
+ padding:0 5px;
 }
 .form-group{
  position: relative;

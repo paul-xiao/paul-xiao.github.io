@@ -17,6 +17,19 @@ module.exports = {
         async: true,
         src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       }
+    ],
+    [
+      "script",
+      {},
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1aa269616ba669c5073e38f431ecbfe4";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+        `
     ]
   ],
   themeConfig: {

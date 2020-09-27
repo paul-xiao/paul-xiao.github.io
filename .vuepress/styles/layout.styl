@@ -6,6 +6,9 @@ body {
 }
 
 .theme-content {
+  .main, .aside{
+   padding-bottom: 50px;  
+  }
   .banner {
     bg('/hero.jpg');
     width: 100%;
@@ -14,6 +17,9 @@ body {
       padding: 200px 40px;
       max-width: 500px;
     }
+  }
+  .latest{
+   margin-bottom: 50px;
   }
 
   .intro{
@@ -258,9 +264,11 @@ body {
     padding: $base-padding * 4;
     max-width: 1000px;
     margin: 0 auto;
-
+    align-items: flex-start;
+    
     .contact {
       flex: 1;
+      margin-bottom: 30px
 
       .title {
         font-weight: bold;
@@ -274,9 +282,11 @@ body {
     .nav {
       flex: 1;
       text-align: left;
+      margin-bottom: 30px
     }
 
     .latest-posts {
+      margin-bottom: 30px
       flex: 1;
       text-align: left;
        .latest-post{
@@ -295,11 +305,14 @@ body {
        }
     }
 
-    .copyright {
-      padding: $base-padding;
+   
+  }
+   .copyright {
+      padding: $base-padding*2;
       margin: 0;
       color: $base-color;
       font-size: 12px;
+      text-transform: capitalize;
+      border-top: 1px solid #333;
     }
-  }
 }

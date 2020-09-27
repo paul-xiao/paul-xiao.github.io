@@ -2,7 +2,9 @@
   <BaseLayout>
     <section class="banner">
       <div class="banner-intro">
-        <div class="h2-bold text-white">Bootstrap 4 Blog - A free template by Bootstrap Temple</div>
+        <div class="h2-bold text-white">
+          Bootstrap 4 Blog - A free template by Bootstrap Temple
+        </div>
         <div class="link">Discover More</div>
       </div>
     </section>
@@ -11,9 +13,13 @@
       <div class="intro row">
         <div class="col-lg-6">
           <div class="h2-bold">Some great intro here</div>
-          <div
-            class="text-big"
-          >Place a nice introduction here to catch reader's attention. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi.</div>
+          <div class="text-big">
+            Place a nice introduction here to catch reader's attention. Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud nisi ut aliquip ex ea commodo consequat. Duis
+            aute irure dolor in reprehenderi.
+          </div>
         </div>
       </div>
       <!-- TOP 3 POSTS start -->
@@ -21,21 +27,21 @@
         class="row top3"
         v-for="(post, index) of top3Posts"
         :key="post.title"
-        :class="{'reverse': index % 2 !== 0}"
+        :class="{ reverse: index % 2 !== 0 }"
       >
         <div class="col-lg-7">
           <div class="pd-15">
-            <div class="h4-bold">{{post.category}}</div>
-            <div class="h2-bold">{{post.title}}</div>
-            <div class="text">{{post.desc}}</div>
+            <div class="h4-bold">{{ post.category }}</div>
+            <div class="h2-bold">{{ post.title }}</div>
+            <div class="text">{{ post.desc }}</div>
             <div class="footer">
               <div class="date">
                 <i class="fa fa-clock-o"></i>
-                <span>{{post.date}}</span>
+                <span>{{ post.date }}</span>
               </div>
               <div class="comments">
                 <i class="fa fa-comment-o"></i>
-                <span>{{post.comments}}</span>
+                <span>{{ post.comments }}</span>
               </div>
             </div>
           </div>
@@ -47,22 +53,32 @@
       <!-- TOP 3 POSTS  end -->
     </section>
     <!-- divider banner -->
-    <section class="banner" :style="{'background-image': `url(/divider-bg.jpg)`}">
+    <section
+      class="banner"
+      :style="{ 'background-image': `url(/divider-bg.jpg)` }"
+    >
       <div class="banner-intro">
-        <div
-          class="h2-bold text-white"
-        >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
+        <div class="h2-bold text-white">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua
+        </div>
         <div class="link">Discover More</div>
       </div>
     </section>
     <!-- divider banner -->
     <!-- latest posts -->
-    <section class="latest-posts">
+    <section class="latest">
       <div class="container">
         <div class="h2-bold">Latest Posts</div>
-        <div class="text-big">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+        <div class="text-big">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </div>
         <div class="row">
-          <div class="col-lg-3" v-for="(post, index) of latestPosts" :key="post.title">
+          <div
+            class="col-lg-3"
+            v-for="(post, index) of latestPosts"
+            :key="post.title"
+          >
             <div class="container">
               <div class="img">
                 <img :src="post.pic" alt width="100%" />
@@ -70,15 +86,15 @@
               <div class="space-between text pdv-15">
                 <div class="date">
                   <i class="fa fa-clock-o"></i>
-                  <span>{{post.date}}</span>
+                  <span>{{ post.date }}</span>
                 </div>
                 <div class="comments">
                   <i class="fa fa-comment-o"></i>
-                  <span>{{post.comments}}</span>
+                  <span>{{ post.comments }}</span>
                 </div>
               </div>
-              <div class="h2-bold">{{post.title}}</div>
-              <div class="text">{{post.desc}}</div>
+              <div class="h2-bold">{{ post.title }}</div>
+              <div class="text">{{ post.desc }}</div>
             </div>
           </div>
         </div>
@@ -89,7 +105,11 @@
     <section class="gallery">
       <div class="container-fluid">
         <div class="row">
-          <div class="mix col-lg-3" v-for="(item, index) of gallery" :key="index">
+          <div
+            class="mix col-lg-3"
+            v-for="(item, index) of gallery"
+            :key="index"
+          >
             <img :src="item.url" alt width="100%" />
           </div>
         </div>

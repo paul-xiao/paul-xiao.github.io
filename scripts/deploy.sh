@@ -17,12 +17,12 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:paul-xiao/paul-xiao.github.io.git master
+git push -f git@github.com:paul-xiao/paul-xiao.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
 
 # deploy to server
-git push -f ssh://paul@144.34.184.214:28080/home/paul/blog.git master
+#git push -f ssh://paul@144.34.184.214:28080/home/paul/blog.git master
 
 cd -

@@ -9,6 +9,7 @@
 
 .content__default, .list-item-excerpt {
   flex: 1;
+  margin-top: 20px;
 
   img {
     width: 300px;
@@ -128,7 +129,39 @@
 }
 
 .content_default-foot {
-  text-align: right;
+  .tags{
+  margin: 40px 0;
+    .small{
+      border: 1px solid #eee;
+      padding: 5px 10px;
+      border-radius: 15px;
+      display: inline-block;
+      margin-bottom: 10px;
+       margin-right: 10px; 
+      }
+   
+  }
+  .prev, .next{
+   display: flex;  
+   border: 1px solid #eee;
+   margin-bottom: 10px;
+   padding: 5px 15px;
+   .arrow{
+     width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    }
+
+  }
+      .next{
+     justify-content: flex-end;
+     .arrow{
+       margin-right:0;
+       margin-left:15px;
+       }
+    }
 }
 
 .last-update {
