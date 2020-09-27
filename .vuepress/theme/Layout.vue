@@ -27,7 +27,9 @@
                 <span class="gutter"></span>
                 <span>
                   <i class="fa fa-eye"></i>
-                  <span>12</span>
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv">0</span>
+                  </span>
                 </span>
                 <span class="gutter"></span>
                 <span>

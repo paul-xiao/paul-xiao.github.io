@@ -26,24 +26,32 @@
       </div>
       <div class="latest-posts">
         <ul>
-               <li v-for="(post, index) of pages" :key="post.title" v-if="index < 3">  
-         <router-link :to="post.path" class="latest-post">
-           <div class="img">
-           <img :src="post.frontmatter.thumbnail || '/blog-1.jpg'" alt="">
-         </div>
-         <div class="roundup">
-           <h4 class="title">{{post.title}}</h4>
-           <span class="text">{{post.lastUpdated}}</span> 
-         </div>
-         </router-link>
-        </li>
+          <li v-for="(post, index) of pages" :key="post.title" v-if="index < 3">
+            <router-link :to="post.path" class="latest-post">
+              <div class="img">
+                <img
+                  :src="post.frontmatter.thumbnail || '/blog-1.jpg'"
+                  alt=""
+                />
+              </div>
+              <div class="roundup">
+                <h4 class="title">{{ post.title }}</h4>
+                <span class="text">{{ post.lastUpdated }}</span>
+              </div>
+            </router-link>
+          </li>
         </ul>
       </div>
     </div>
 
     <div class="copyright">
-      copyright &copy; 2020
-      <span>{{$themeConfig.companyName}}</span> All rights reserved
+      <p id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv">0</span>次
+      </p>
+      <p>
+        copyright &copy; 2020 <span>{{ $themeConfig.companyName }}</span> All
+        rights reserved
+      </p>
     </div>
   </div>
 </template>
@@ -57,7 +65,7 @@ export default {
     companyName() {
       return this.$themeConfig.companyName;
     },
-      pages() {
+    pages() {
       const data = this.$site.pages
         .filter((e) => e.id === "post")
         .sort(

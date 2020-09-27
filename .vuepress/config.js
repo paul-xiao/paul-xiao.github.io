@@ -30,6 +30,14 @@ module.exports = {
         s.parentNode.insertBefore(hm, s);
       })();
         `
+    ],
+    //不蒜子
+    [
+      "script",
+      {
+        async: true,
+        src: "//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+      }
     ]
   ],
   themeConfig: {
