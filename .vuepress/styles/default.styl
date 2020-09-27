@@ -143,16 +143,37 @@
   }
   .prev, .next{
    display: flex;  
+   align-items: center;
    border: 1px solid #eee;
    margin-bottom: 10px;
    padding: 5px 15px;
+ 
    .arrow{
-     width: 60px;
+     width:35px;
+     height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 15px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    font-size: 1.2em;
+    transition: all 0.2s;
+    i{
+      color: #ccc;
     }
+    }
+
+      &:active,&:hover {
+     border-color: #777;
+     .arrow{
+       background: #777;
+       i{
+         color:#fff;
+       }
+       
+    }
+     }
 
   }
       .next{

@@ -51,7 +51,7 @@
                 <div class="row">
                   <div class="col-lg-6" v-if="prev">
                     <router-link :to="prev.path" class="prev">
-                      <div class="arrow"><i class="fa fa-arrow-left"></i></div>
+                      <div class="arrow"><i class="fa fa-angle-left"></i></div>
                       <div>
                         <div class="small">previous post</div>
                         <div class="h4">{{ prev.title }}</div>
@@ -64,7 +64,7 @@
                         <div class="small">next post</div>
                         <div class="h4">{{ next.title }}</div>
                       </div>
-                      <div class="arrow"><i class="fa fa-arrow-right"></i></div>
+                      <div class="arrow"><i class="fa fa-angle-right"></i></div>
                     </router-link>
                   </div>
                 </div>
