@@ -5,11 +5,12 @@ tags:
  - heroku
 categories:
  - deploy
+thumbnail: '/thumbnails/heroku.jpg'  
 ---
-
-
-#### get started with nodejs
+heroku 部署node app
 <!-- more -->
+#### get started with nodejs
+
 ```bash
 
 # install

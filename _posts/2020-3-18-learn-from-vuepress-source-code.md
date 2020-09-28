@@ -7,6 +7,7 @@ tags:
 categories:
   - frontend
 comments: true
+thumbnail: '/thumbnails/vuepress.jpg'
 ---
 
 when we execute _yarn build_, we can see a lots of thing have been done automaticly, let's check the source code step-by-step, see what is going on...

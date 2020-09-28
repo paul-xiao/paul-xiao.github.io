@@ -1,12 +1,14 @@
 ---
-title: how does react serviceWorker works
+title: how react serviceWorker works
 date: 2019-08-08 10:38:25
 tags:
  - react
 categories:
  - framework
+thumbnail: '/thumbnails/service_worker.jpg' 
 ---
 
+<!-- more -->
 #### serviceWorker 
 > https://zhuanlan.zhihu.com/p/23966686
 
@@ -26,4 +28,3 @@ categories:
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 ```
-<!-- more -->

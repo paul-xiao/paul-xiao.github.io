@@ -7,6 +7,7 @@ tags:
 categories:
   - frontend
 comments: true
+thumbnail: '/thumbnails/ipfs.jpg'
 ---
 
 #### todos

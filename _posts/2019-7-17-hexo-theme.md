@@ -9,6 +9,7 @@ categories:
 - frontend
 tags:
 - hexo
+thumbnail: '/thumbnails/hexo.jpg'
 ---
 *customeize hexo theme arrange (a group of people or things) in classes or categories according to shared qualities or characteristics.*
 <!-- more -->

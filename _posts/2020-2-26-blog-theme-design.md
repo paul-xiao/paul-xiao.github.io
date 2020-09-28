@@ -6,6 +6,7 @@ tags:
 categories:
 - design
 comments: true
+thumbnail: '/thumbnails/design.jpg'  
 ---
 
 ![image](/bg.png)

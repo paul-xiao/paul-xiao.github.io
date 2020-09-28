@@ -6,6 +6,7 @@ tags:
 categories:
   - database
 comments: true
+thumbnail: '/thumbnails/mysql.jpg'
 ---
 
 <p class="text-big">mysql</p>

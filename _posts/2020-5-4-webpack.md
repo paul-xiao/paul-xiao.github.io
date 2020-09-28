@@ -6,6 +6,7 @@ tags:
 categories:
   - frontend
 comments: true
+thumbnail: '/thumbnails/webpack.jpg'
 ---
 
 > 通过 webpack 的学习，掌握 web 工程化 (webpack 版本： 4.43.0)

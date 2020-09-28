@@ -6,8 +6,10 @@ tags:
 categories:
   - frontend
 comments: true
+thumbnail: '/thumbnails/git.jpg'
 ---
-
+如何规范git提交内容
+<!-- more -->
 <img src="./assets/images/git.png" width = "300" height = "200"/>
 
 ### refs

@@ -9,8 +9,10 @@ tags:
 categories:
  - CI
  - Docker
+thumbnail: '/thumbnails/cicd.jpg' 
 ---
-
+gitlab-ci 与 circle-ci 对比
+<!-- more -->
 # GitLab CI VS Circle CI
 
 
@@ -19,7 +21,7 @@ categories:
 
 > *for me i'm use linux, so just tested on linux locally*
 
-<!-- more -->
+
 ####  1 .gitlab-ci.yml config
 
 ```yml

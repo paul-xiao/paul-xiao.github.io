@@ -5,8 +5,10 @@ tags:
  - mongoose
 categories:
  - database
+thumbnail: '/thumbnails/mongo.jpg' 
 ---
-
+mongoose useages
+<!-- more -->
 #### Schemas
 
 ```js
@@ -30,7 +32,7 @@ var Test = new Schema({
 module.exports = mongoose.model('Test', Test);
 
 ```
-<!-- more -->
+
 #### three way to get req parameters
 > https://i5ting.github.io/node-http/#106
 

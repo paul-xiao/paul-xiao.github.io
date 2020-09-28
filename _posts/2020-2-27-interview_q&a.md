@@ -6,11 +6,11 @@ tags:
   - interview
 categories:
   - other
-comments: true
+comments: false
+thumbnail: '/thumbnails/interview.jpg'  
 ---
 
-checked ali p6 front-end interview questions today, seems lots of questions not able to answer it, still much to learn, so make a Q&A collection here, hope we can get something when all these questions are answered.
-
+查漏补缺
 <!-- more -->
 
 ### SPA

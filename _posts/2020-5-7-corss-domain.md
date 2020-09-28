@@ -6,8 +6,10 @@ tags:
 categories:
   - frontend
 comments: true
+thumbnail: '/thumbnails/cross_domain.jpg'
 ---
 跨域（corss-domain） ： 浏览器在Ajax调接口时，请求了一个不同源的 地址 就回出现跨域问题
+<!-- more -->
 
 #### 什么是同源
 

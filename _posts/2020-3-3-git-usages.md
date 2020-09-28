@@ -6,8 +6,10 @@ tags:
 categories:
   - frontend
 comments: true
+thumbnail: '/thumbnails/git.jpg' 
 ---
-
+git 常用命令
+<!-- more -->
 #### [How to update GitHub forked repository](https://blog.csdn.net/king4ant/article/details/7407424)
 
 git remote add upstream git://github.com/whoever/whatever.git

@@ -6,6 +6,7 @@ tags:
 categories:
   - frontend
 comments: true
+thumbnail: '/thumbnails/axios.jpg'
 ---
 
 > few tips for axios reqest cancellation

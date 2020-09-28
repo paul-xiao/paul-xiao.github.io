@@ -5,12 +5,13 @@ tags:
  - vscode
 categories:
  - tools
+thumbnail: '/thumbnails/vscode.jpg' 
 ---
-
-
+vscode 常用插件
+<!-- more -->
 ## Vscode Plugins
 
-<!-- more -->
+
 #### Autoprefixer
 
 *Useage*

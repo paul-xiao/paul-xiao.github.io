@@ -6,6 +6,7 @@ tags:
 categories:
   - frontend
 comments: true
+thumbnail: '/thumbnails/chrome.jpg'
 ---
 
 > popstate event in Vue only triggers when *history.pushState(null, null, document.URL); is called*  ==> need more prove

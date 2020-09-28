@@ -1,13 +1,16 @@
 ---
 title: css tricks
 date: 2019-07-17 17:55:17
+stick: true
 tags:
   - css
 categories:
   - frontend
-thumbnail: 'blog-3.jpg'
+thumbnail: '/thumbnails/css3.jpg'
 ---
 
+css3 tricks
+<!-- more -->
 ## column layout
 
 ```less
@@ -28,7 +31,7 @@ thumbnail: 'blog-3.jpg'
  transform: translateZ(0);
 
 ```
-<!-- more -->
+
 ## remove browser autocomplete
 
 autocomplete 属性规定输入字段是否应该启用自动完成功能。

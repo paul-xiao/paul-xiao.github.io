@@ -7,6 +7,7 @@ tags:
  - compatibility
 categories:
  - frontend
+thumbnail: '/thumbnails/bowser.jpg' 
 ---
 
 **collection for all browser compatibility issues**

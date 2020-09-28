@@ -6,6 +6,7 @@ tags:
 categories:
 - frontend
 comments: true
+thumbnail: '/thumbnails/media.jpg' 
 ---
 
 #### Best practices for media queries

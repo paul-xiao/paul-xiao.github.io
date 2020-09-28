@@ -6,6 +6,7 @@ tags:
 categories:
   - frontend
 comments: true
+thumbnail: '/thumbnails/es6.jpg'
 ---
 
 

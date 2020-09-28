@@ -6,6 +6,7 @@ tags:
 categories:
 - OS
 comments: true
+thumbnail: '/thumbnails/linux.jpg'
 ---
 
 #### change CentOs 7 GUI to Mate-desktop

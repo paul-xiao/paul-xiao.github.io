@@ -5,14 +5,15 @@ tags:
  - restful api
 categories:
  - nodejs
+thumbnail: '/thumbnails/rest.jpg'
 ---
-
+node restfull api
+<!-- more -->
 #### build dev env
 
 - nodemon
 > https://github.com/remy/nodemon
 
-<!-- more -->
 ```js
 
 // nodeamon
