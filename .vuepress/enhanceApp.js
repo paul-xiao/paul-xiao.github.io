@@ -5,6 +5,7 @@ export default ({
   siteData // site metadata
 }) => {
   // ...apply enhancements to the app
+  //https://wyydsb.xin/javaScript/comment.html gitalk
   Vue.directive('click-outside', {
     bind: function (el, binding, vnode) {
       el.event = function (event) {

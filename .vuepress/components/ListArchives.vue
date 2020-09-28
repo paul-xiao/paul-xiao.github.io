@@ -12,40 +12,45 @@
     <div class="widget group-by-month">
       <div class="h4-bold">Latest Posts</div>
       <div class="latest-posts">
-        <div v-for="(post, index) of pages" :key="post.title" v-if="index < 3">  
-         <router-link :to="post.path" class="latest-post">
-           <div class="img">
-           <img :src="post.frontmatter.thumbnail || '/blog-1.jpg'" alt="">
-         </div>
-         <div class="roundup">
-           <h4 class="title">{{post.title}}</h4>
-           <span class="text"><i class="fa fa-eye"></i> 12</span> 
-           <span class="text"><i class="fa fa-comment-o"></i> 12</span>
-         </div>
-         </router-link>
+        <div v-for="(post, index) of pages" :key="post.title" v-if="index < 3">
+          <router-link :to="post.path" class="latest-post">
+            <div class="img">
+              <img :src="post.frontmatter.thumbnail || '/blog-1.jpg'" alt="" />
+            </div>
+            <div class="roundup">
+              <h4 class="title">{{ post.title }}</h4>
+              <span class="small"
+                ><i class="fa fa-clock-o"></i> {{ lastUpdated(post) }}</span
+              >
+            </div>
+          </router-link>
         </div>
       </div>
     </div>
 
-    
     <div class="widget group-by-categories">
       <h4>Categories :</h4>
       <div
         v-for="category in categories"
         class="category"
         @click="handleClick(category[0])"
-      ><span class="text-dark">{{`${category[0]} `}}</span>
-      <span>{{`${category[1]}`}}</span></div>
+      >
+        <span class="text-dark">{{ `${category[0]} ` }}</span>
+        <span>{{ `${category[1]}` }}</span>
+      </div>
     </div>
     <div class="widget group-by-tags">
       <h4>Tags :</h4>
-      <span v-for="tag in tags" class="tag" @click="handleClick(tag[0])">{{`#${tag[0]}`}}</span>
+      <span v-for="tag in tags" class="tag" @click="handleClick(tag[0])">{{
+        `#${tag[0]}`
+      }}</span>
     </div>
   </div>
 </template>
 
 <script>
 import moment from "../utils/moment";
+import timeDiff from "../utils/timeDiff";
 export default {
   name: "ListArchives",
   data() {
@@ -55,8 +60,8 @@ export default {
   },
   props: {
     pages: {
-      type:Array
-    }
+      type: Array,
+    },
   },
   computed: {
     monthes() {
@@ -106,16 +111,19 @@ export default {
     },
   },
   mounted() {
-    console.log(this.pages)
+    console.log(this.pages);
   },
   methods: {
     handleClick(filter) {
       this.$router.push({
-        path: "/",
+        path: "/blog.html",
         query: {
           filter: filter,
         },
       });
+    },
+    lastUpdated(post) {
+      return timeDiff(post.lastUpdated);
     },
     handleMoment(date) {
       return moment(date).date;

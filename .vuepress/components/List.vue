@@ -12,26 +12,42 @@
             <div class="space-between text">
               <span>
                 <span class="date">
-                  <i class="fa fa-clock-o"></i>
-                  <span>{{publishDate(page.frontmatter.date)}}</span>
-                </span>
-                <span class="comments">
-                  <i class="fa fa-comment-o"></i>
-                  <span>12</span>
+                  <span>{{ publishDate(page.frontmatter.date) }}</span>
                 </span>
               </span>
               <small>
                 <span class="tags" v-for="tag in page.frontmatter.tags">
-                  <span class="tag" @click="handleClick(tag)">{{` #${tag}`}}</span>
+                  <span class="tag" @click="handleClick(tag)">{{
+                    ` #${tag}`
+                  }}</span>
                 </span>
-                <span class="categories" v-for="category in page.frontmatter.categories">
-                  <span class="category" @click="handleClick(category)">{{` @${category}`}}</span>
+                <span
+                  class="categories"
+                  v-for="category in page.frontmatter.categories"
+                >
+                  <span class="category" @click="handleClick(category)">{{
+                    ` @${category}`
+                  }}</span>
                 </span>
-                <span class="sticked" v-if="page.frontmatter.stick">sticked</span>
+                <span class="sticked" v-if="page.frontmatter.stick"
+                  >sticked</span
+                >
               </small>
             </div>
-            <div class="h2-bold">{{page.frontmatter.title}}</div>
+            <div class="h2-bold">{{ page.frontmatter.title }}</div>
             <div v-html="page.excerpt" class="text-big"></div>
+            <div class="text pdv-15">
+              <span>
+                <span class="date">
+                  <i class="fa fa-clock-o"></i>
+                  <span>{{ timeDiff(page.lastUpdated) }}</span>
+                </span>
+                <span class="comments">
+                  <i class="fa fa-comment-o"></i>
+                  <span>12</span>
+                </span></span
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -41,6 +57,7 @@
 </template>
 <script>
 import moment from "../utils/moment";
+import timeDiff from "../utils/timeDiff";
 import Pagination from "./Pagination";
 import Breadcrumbs from "./Breadcrumbs";
 import ListArchives from "./ListArchives";
@@ -50,6 +67,7 @@ export default {
     return {
       defaultNumPerPage: 10,
       currentPage: 0,
+      timeDiff: timeDiff,
     };
   },
   props: {

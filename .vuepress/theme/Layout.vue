@@ -5,7 +5,7 @@
         <div class="col-lg-8 main">
           <div class="content__default__wrap container">
             <div class="content_default-banner">
-              <img :src="page.frontmatter.thunbnail || '/blog-1.jpg'" alt="" />
+              <img :src="page.frontmatter.thumbnail" />
             </div>
             <div class="page-category">
               <span

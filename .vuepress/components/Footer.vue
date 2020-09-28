@@ -36,7 +36,7 @@
               </div>
               <div class="roundup">
                 <h4 class="title">{{ post.title }}</h4>
-                <span class="text">{{ post.lastUpdated }}</span>
+                <span class="text">{{ timeDiff(post.lastUpdated) }}</span>
               </div>
             </router-link>
           </li>
@@ -56,10 +56,13 @@
   </div>
 </template>
 <script>
+import timeDiff from "../utils/timeDiff";
 export default {
   name: "Footer",
   data() {
-    return {};
+    return {
+      timeDiff: timeDiff,
+    };
   },
   computed: {
     companyName() {
