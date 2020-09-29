@@ -110,9 +110,6 @@ export default {
       return map;
     },
   },
-  mounted() {
-    console.log(this.pages);
-  },
   methods: {
     handleClick(filter) {
       this.$router.push({

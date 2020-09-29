@@ -5,21 +5,17 @@
         <div class="h2-bold text-white">
           Bootstrap 4 Blog - A free template by Bootstrap Temple
         </div>
-        <div class="link">Discover More</div>
+        <div class="link">
+          <router-link to="/blog.html">Discover More</router-link>
+        </div>
       </div>
     </section>
     <section class="container">
       <!-- intro -->
       <div class="intro row">
         <div class="col-lg-6">
-          <div class="h2-bold">Some great intro here</div>
-          <div class="text-big">
-            Place a nice introduction here to catch reader's attention. Lorem
-            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud nisi ut aliquip ex ea commodo consequat. Duis
-            aute irure dolor in reprehenderi.
-          </div>
+          <div class="h2-bold">intro</div>
+          <div class="text-big">recod coding skills and issues</div>
         </div>
       </div>
       <!-- TOP 3 POSTS start -->
@@ -31,23 +27,23 @@
       >
         <div class="col-lg-7">
           <div class="pd-15">
-            <div class="h4-bold">{{ post.category }}</div>
-            <div class="h2-bold">{{ post.title }}</div>
-            <div class="text">{{ post.desc }}</div>
+            <div class="h4-bold">{{ post.frontmatter.category }}</div>
+            <div class="h2-bold">{{ post.frontmatter.title }}</div>
+            <div v-html="post.excerpt" class="text-big"></div>
             <div class="footer">
               <div class="date">
                 <i class="fa fa-clock-o"></i>
-                <span>{{ post.date }}</span>
+                <span>{{ publishDate(post.frontmatter.date) }}</span>
               </div>
-              <div class="comments">
+              <!-- <div class="comments">
                 <i class="fa fa-comment-o"></i>
                 <span>{{ post.comments }}</span>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
         <div class="col-lg-5">
-          <img :src="post.pic" alt />
+          <img :src="post.frontmatter.thumbnail" alt />
         </div>
       </div>
       <!-- TOP 3 POSTS  end -->
@@ -59,8 +55,7 @@
     >
       <div class="banner-intro">
         <div class="h2-bold text-white">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua
+          gallery: collection of awesome projects
         </div>
         <div class="link">Discover More</div>
       </div>
@@ -81,20 +76,20 @@
           >
             <div class="container">
               <div class="img">
-                <img :src="post.pic" alt width="100%" />
+                <img :src="post.frontmatter.thumbnail" alt width="100%" />
               </div>
               <div class="space-between text pdv-15">
                 <div class="date">
                   <i class="fa fa-clock-o"></i>
-                  <span>{{ post.date }}</span>
+                  <span>{{ publishDate(post.frontmatter.date) }}</span>
                 </div>
-                <div class="comments">
+                <!-- <div class="comments">
                   <i class="fa fa-comment-o"></i>
                   <span>{{ post.comments }}</span>
-                </div>
+                </div> -->
               </div>
-              <div class="h2-bold">{{ post.title }}</div>
-              <div class="text">{{ post.desc }}</div>
+              <div class="h2-bold">{{ post.frontmatter.title }}</div>
+              <div v-html="post.excerpt" class="text-big"></div>
             </div>
           </div>
         </div>
@@ -132,73 +127,6 @@ export default {
       filter: "",
       currentPage: 1,
       pageNum: 1,
-      top3Posts: [
-        {
-          category: "BUSINESS TECHNOLOGY",
-          title: "Alberto Savoia Can Teach You About Interior",
-          desc:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.",
-          date: "2020-10-1",
-          comments: "12",
-          pic: require("../public/blog-1.jpg"),
-        },
-        {
-          category: "BUSINESS TECHNOLOGY",
-          title: "Alberto Savoia Can Teach You About Interior",
-          desc:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.",
-          date: "2020-10-1",
-          comments: "12",
-          pic: require("../public/blog-2.jpg"),
-        },
-        {
-          category: "BUSINESS TECHNOLOGY",
-          title: "Alberto Savoia Can Teach You About Interior",
-          desc:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.",
-          date: "2020-10-1",
-          comments: "12",
-          pic: require("../public/blog-3.jpg"),
-        },
-      ],
-      latestPosts: [
-        {
-          category: "BUSINESS TECHNOLOGY",
-          title: "Alberto Savoia Can Teach You About Interior",
-          desc:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.",
-          date: "2020-10-1",
-          comments: "12",
-          pic: require("../public/blog-1.jpg"),
-        },
-        {
-          category: "BUSINESS TECHNOLOGY",
-          title: "Alberto Savoia Can Teach You About Interior",
-          desc:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.",
-          date: "2020-10-1",
-          comments: "12",
-          pic: require("../public/blog-2.jpg"),
-        },
-        {
-          category: "BUSINESS TECHNOLOGY",
-          title: "Alberto Savoia Can Teach You About Interior",
-          desc:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.",
-          date: "2020-10-1",
-          comments: "12",
-          pic: require("../public/blog-3.jpg"),
-        },
-        {
-          category: "BUSINESS TECHNOLOGY",
-          title: "Alberto Savoia Can Teach You About Interior",
-          desc:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.",
-          date: "2020-10-1",
-          comments: "12",
-          pic: require("../public/blog-3.jpg"),
-        },
-      ],
       gallery: [
         {
           url: require("../public/gallery-1.jpg"),
@@ -255,8 +183,18 @@ export default {
         return blogs;
       }
     },
+    top3Posts() {
+      console.log(this.pages);
+      return this.pages.filter((e) => e.frontmatter.stick);
+    },
+    latestPosts() {
+      return this.pages.filter((e, index) => index < 4);
+    },
   },
   methods: {
+    publishDate(publishDate) {
+      return moment(publishDate).date;
+    },
     handleFilter(filter) {
       this.filter = filter;
       this.$router.push({
