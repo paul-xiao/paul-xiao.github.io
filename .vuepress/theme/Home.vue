@@ -55,7 +55,7 @@
     >
       <div class="banner-intro">
         <div class="h2-bold text-white">
-          gallery: collection of awesome projects
+          gallery: collection of awesome projects and solutions
         </div>
         <div class="link">Discover More</div>
       </div>

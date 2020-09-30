@@ -2,12 +2,18 @@
   <div class="side-archives">
     <div class="widget search">
       <div class="h4-bold">Search Post</div>
-      <div class="form-group">
-        <input type="search" placeholder="What are you looking for?" />
+      <div class="form-group" v-click-outside="clearSearchVal">
+        <input
+          type="search"
+          @keyup.prevent="handleKeyUp"
+          v-model="searchVal"
+          placeholder="What are you looking for?"
+        />
         <span class="submit">
           <i class="fa fa-search"></i>
         </span>
       </div>
+      <SearchResult :result="result" />
     </div>
     <div class="widget group-by-month">
       <div class="h4-bold">Latest Posts</div>
@@ -56,6 +62,8 @@ export default {
   data() {
     return {
       monthly: null,
+      searchVal: null,
+      result: [],
     };
   },
   props: {
@@ -125,6 +133,25 @@ export default {
     handleMoment(date) {
       return moment(date).date;
     },
+    handleKeyUp(e) {
+      const { value } = e.target;
+      this.result =
+        value.length > 2
+          ? this.pages.filter((e) =>
+              e.title.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+            )
+          : [];
+    },
+    clearSearchVal(e) {
+      if (!e.key || e.key === "Escape") {
+        this.searchVal = "";
+        this.result = [];
+      }
+    },
+  },
+  beforeDestory() {
+    this.searchVal = "";
+    this.result = [];
   },
 };
 </script>
