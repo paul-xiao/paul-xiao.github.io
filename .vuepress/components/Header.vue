@@ -81,8 +81,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$route.path);
-
     document.addEventListener("keyup", this.clearSearchVal);
   },
   computed: {

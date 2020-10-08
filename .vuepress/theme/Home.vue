@@ -3,7 +3,7 @@
     <section class="banner">
       <div class="banner-intro container">
         <div class="h2-bold text-white">
-          Hi，i'am Paul<br/>
+          Hi，i'am Paul<br />
           欢迎来到我的博客
         </div>
         <div class="link">
@@ -29,17 +29,37 @@
         <div class="col-lg-7">
           <div class="pd-15">
             <div class="h4-bold">{{ post.frontmatter.category }}</div>
-            <div class="h2-bold"><router-link :to="post.path">{{ post.frontmatter.title }}</router-link></div>
+            <div class="h2-bold">
+              <router-link :to="post.path">{{
+                post.frontmatter.title
+              }}</router-link>
+            </div>
             <div v-html="post.excerpt" class="text-big"></div>
             <div class="footer">
               <div class="date">
                 <i class="fa fa-clock-o"></i>
                 <span>{{ publishDate(post.frontmatter.date) }}</span>
               </div>
-              <!-- <div class="comments">
-                <i class="fa fa-comment-o"></i>
-                <span>{{ post.comments }}</span>
-              </div> -->
+
+              <div class="comments">
+                <span>
+                  <i class="fa fa-eye"></i>
+                  <!-- id 将作为查询条件 -->
+                  <span
+                    :id="post.path"
+                    class="leancloud_visitors"
+                    :data-flag-title="post.title"
+                  >
+                    <i class="leancloud-visitors-count">0</i>
+                  </span>
+                </span>
+                <span>
+                  <i class="fa fa-comment-o"></i>
+                  <span class="valine-comment-count" :data-xid="post.path"
+                    >0</span
+                  ></span
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -58,7 +78,9 @@
         <div class="h2-bold text-white">
           gallery: 收集的一些优秀项目和解决方案
         </div>
-        <div class="link"><router-link to="/gallery.html">了解更多</router-link></div>
+        <div class="link">
+          <router-link to="/gallery.html">了解更多</router-link>
+        </div>
       </div>
     </section>
     <!-- divider banner -->
@@ -81,12 +103,33 @@
                   <i class="fa fa-clock-o"></i>
                   <span>{{ publishDate(post.frontmatter.date) }}</span>
                 </div>
-                <!-- <div class="comments">
-                  <i class="fa fa-comment-o"></i>
-                  <span>{{ post.comments }}</span>
-                </div> -->
+                <div class="comments">
+                  <div class="comments">
+                    <span>
+                      <i class="fa fa-eye"></i>
+                      <!-- id 将作为查询条件 -->
+                      <span
+                        :id="post.path"
+                        class="leancloud_visitors"
+                        :data-flag-title="post.title"
+                      >
+                        <i class="leancloud-visitors-count">0</i>
+                      </span>
+                    </span>
+                    <span>
+                      <i class="fa fa-comment-o"></i>
+                      <span class="valine-comment-count" :data-xid="post.path"
+                        >0</span
+                      ></span
+                    >
+                  </div>
+                </div>
               </div>
-              <div class="h2-bold"><router-link :to="post.path">{{ post.frontmatter.title }}</router-link></div>
+              <div class="h2-bold">
+                <router-link :to="post.path">{{
+                  post.frontmatter.title
+                }}</router-link>
+              </div>
               <div v-html="post.excerpt" class="text-big"></div>
             </div>
           </div>
@@ -115,6 +158,7 @@ import BaseLayout from "../components/BaseLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
 import List from "../components/List";
 import moment from "../utils/moment";
+import Valine from "valine";
 export default {
   components: {
     [BaseLayout.name]: BaseLayout,
@@ -125,6 +169,7 @@ export default {
       filter: "",
       currentPage: 1,
       pageNum: 1,
+      valine: null,
       gallery: [
         {
           url: require("../public/gallery-1.jpg"),
@@ -151,6 +196,17 @@ export default {
   mounted() {
     const { filter } = this.$route.query;
     this.filter = filter ? filter : "";
+    let vm = this;
+    vm.$nextTick(() => {
+      vm.valine = new Valine({
+        el: "#vcomments",
+        appId: "DL6xLRPiyl7jbfePYNNM2mFv-gzGzoHsz",
+        appKey: "tJQrcE9KKCzYS8NFr4NokDzN",
+        visitor: true,
+        path: vm.$route.path,
+      });
+    });
+    
   },
   computed: {
     site() {
@@ -182,7 +238,6 @@ export default {
       }
     },
     top3Posts() {
-      console.log(this.pages);
       return this.pages.filter((e) => e.frontmatter.stick);
     },
     latestPosts() {

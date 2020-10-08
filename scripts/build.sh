@@ -4,9 +4,9 @@ echo 'building start...'
 echo 'compress image...'
 
 # navigate into the build output directory
-cd .vuepress/plugins
+#cd .vuepress/plugins
 
-pwd
+# pwd
 # compress
 # node ./image-compress.js
 

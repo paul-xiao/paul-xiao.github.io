@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev .",
-    "build": "sh scripts/build.sh",
+    "build": "vuepress build .",
     "deploy": "sh scripts/deploy.sh",
     "changelog": "standard-version"
   },
@@ -22,10 +22,9 @@
   "homepage": "https://github.com/paul-xiao/paul-xiao.github.io#readme",
   "dependencies": {
     "font-awesome": "^4.7.0",
-    "gitalk": "^1.6.2",
     "prettier": "^2.1.1",
     "sass-loader": "^8.0.2",
-    "vuepress-plugin-comment": "^0.7.3"
+    "valine": "^1.4.14"
   },
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.4.0",

@@ -45,7 +45,7 @@
                  <span>
                   <i class="fa fa-eye"></i>
                  <!-- id 将作为查询条件 -->
-              <span :id="page.path" class="leancloud_visitors" data-flag-title="Your Article Title">
+              <span :id="page.path" class="leancloud_visitors" :data-flag-title="page.title">
                   <i class="leancloud-visitors-count">0</i>
               </span>
                 </span>
@@ -91,12 +91,6 @@ export default {
         this.currentPage * this.defaultNumPerPage,
         (this.currentPage + 1) * this.defaultNumPerPage
       );
-    },
-    counts() {
-      const dom = document.getElementsByClassName('.gt-link-counts')
-      console.log(dom)
-      const c = dom && dom[0] && dom[0].textContent
-      return c || 0
     }
   },
   methods: {

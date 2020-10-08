@@ -80,6 +80,9 @@ module.exports = {
           pagination: {
             perPagePosts: 2,
           },
+          frontmatter:{ //Front matter for entry page.
+            comment: false
+          },
           layout: 'Home',
           itemLayout: 'Layout',
         },
@@ -89,20 +92,20 @@ module.exports = {
       serviceWorker: true,
       updatePopup: true
     }],
-    [
-      'vuepress-plugin-comment',
-      {
-        choosen: 'valine', 
-        // options选项中的所有参数，会传给Valine的配置
-        options: {
-          el: '#valine-vuepress-comment',
-          appId: 'DL6xLRPiyl7jbfePYNNM2mFv-gzGzoHsz',
-          appKey: 'tJQrcE9KKCzYS8NFr4NokDzN',
-          path: '<%- frontmatter.to.path %>',
-          visitor: true // 阅读量统计
-        }
-      }
-    ]
+    // [
+    //   'vuepress-plugin-comment',
+    //   {
+    //     choosen: 'valine', 
+    //     // options选项中的所有参数，会传给Valine的配置
+    //     options: {
+    //       el: '#valine-vuepress-comment',
+    //       appId: 'DL6xLRPiyl7jbfePYNNM2mFv-gzGzoHsz',
+    //       appKey: 'tJQrcE9KKCzYS8NFr4NokDzN',
+    //       path: '<%- frontmatter.to.path %>',
+    //       visitor: true // 阅读量统计
+    //     }
+    //   }
+    // ]
   ],
   globalUIComponents: []
 }

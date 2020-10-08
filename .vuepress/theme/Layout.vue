@@ -27,15 +27,22 @@
                 <span class="gutter"></span>
                 <span>
                   <i class="fa fa-eye"></i>
-                 <!-- id 将作为查询条件 -->
-              <span :id="page.path" class="leancloud_visitors" data-flag-title="Your Article Title">
-                  <i class="leancloud-visitors-count">0</i>
-              </span>
+                  <!-- id 将作为查询条件 -->
+                  <span
+                    :id="page.path"
+                    class="leancloud_visitors"
+                    :data-flag-title="page.title"
+                  >
+                    <i class="leancloud-visitors-count">0</i>
+                  </span>
                 </span>
                 <span class="gutter"></span>
                 <span>
                   <i class="fa fa-comment-o"></i>
-                  <span class="valine-comment-count" :data-xid="page.path"></span>
+                  <span
+                    class="valine-comment-count"
+                    :data-xid="page.path"
+                  ></span>
                 </span>
               </span>
             </div>
@@ -73,7 +80,7 @@
                 </div>
               </div>
             </div>
-           <main class="page" ref="comment"></main>
+            <div id="vcomments" ref="comment"></div>
           </div>
         </div>
         <div class="col-lg-4 aside">
@@ -86,13 +93,15 @@
 <script>
 import moment from "../utils/moment";
 import ListArchives from "../components/ListArchives";
+import Valine from "valine";
 // import "gitalk/dist/gitalk.css";
 // import Gitalk from "gitalk";
 export default {
   data() {
     return {
-      show: true
-    }
+      show: true,
+      valine: null,
+    };
   },
   computed: {
     site() {
@@ -133,21 +142,39 @@ export default {
     next() {
       const current = this.pages.findIndex((e) => e.title === this.page.title);
       return this.pages[current + 1];
-    }
+    },
   },
   watch: {
-    $route() {
-      // const dom = this.$refs.comment
-      // console.log(dom)
-      // dom.innerHtml = ''
-    }
+    $route(to, from) {
+      if (from.path != to.path) {
+        try {
+          this.initComment()
+          console.log(this.valine);
+          console.log(to.path);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    },
   },
   mounted() {
-   console.log('mounted');
+    this.initComment()
   },
   methods: {
+    initComment(){
+      let vm = this;
+     vm.$nextTick(() => {
+      vm.valine = new Valine({
+        el: "#vcomments",
+        appId: "DL6xLRPiyl7jbfePYNNM2mFv-gzGzoHsz",
+        appKey: "tJQrcE9KKCzYS8NFr4NokDzN",
+        visitor: true,
+        path: vm.$route.path,
+      });
+    });
+    },
     publishDate(publishDate) {
-      return moment(publishDate).date;
+      return publishDate && moment(publishDate).date;
     },
     handleClick(filter) {
       this.$router.push({

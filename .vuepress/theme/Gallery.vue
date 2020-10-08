@@ -16,10 +16,7 @@
 <script>
 import BaseLayout from "../components/BaseLayout";
 export default {
-  name: "About",
-  mounted() {
-    console.log(this.$page);
-  },
+  name: "About"
 };
 </script>
 <style lang="stylus" scoped>

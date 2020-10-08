@@ -16,8 +16,15 @@
 import BaseLayout from "../components/BaseLayout";
 import List from "../components/List";
 import ListArchives from "../components/ListArchives";
+import Valine from "valine";
+
 export default {
   name: "Blog",
+  data() {
+    return {
+      valine: null,
+    }
+  },
   computed: {
     pages() {
       const data = this.$site.pages
@@ -41,6 +48,18 @@ export default {
         return blogs;
       }
     },
+  },
+   mounted() {
+    let vm = this;
+    vm.$nextTick(() => {
+      vm.valine = new Valine({
+        el: "#vcomments",
+        appId: "DL6xLRPiyl7jbfePYNNM2mFv-gzGzoHsz",
+        appKey: "tJQrcE9KKCzYS8NFr4NokDzN",
+        visitor: true,
+        path: vm.$route.path,
+      });
+    });
   },
 };
 </script>
