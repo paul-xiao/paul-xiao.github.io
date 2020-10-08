@@ -1,6 +1,7 @@
 ---
 title: MySQL数据表结构设计
 date: 2020-9-11 11:00 AM
+stick: true
 tags:
   - mysql
 categories:

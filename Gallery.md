@@ -3,9 +3,7 @@ title: Home
 lang: en-US
 layout: Gallery
 thumbnail: '/divider-bg.png'
-projects:
-  - a
-  - b
+comment: false
 ---
 
 ## Awesome Projects

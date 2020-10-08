@@ -42,9 +42,16 @@
                   <i class="fa fa-clock-o"></i>
                   <span>{{ timeDiff(page.lastUpdated) }}</span>
                 </span>
+                 <span>
+                  <i class="fa fa-eye"></i>
+                 <!-- id 将作为查询条件 -->
+              <span :id="page.path" class="leancloud_visitors" data-flag-title="Your Article Title">
+                  <i class="leancloud-visitors-count">0</i>
+              </span>
+                </span>
                 <span class="comments">
                   <i class="fa fa-comment-o"></i>
-                  <span>12</span>
+                  <span class="valine-comment-count" :data-xid="page.path">0</span>
                 </span></span
               >
             </div>
@@ -85,6 +92,12 @@ export default {
         (this.currentPage + 1) * this.defaultNumPerPage
       );
     },
+    counts() {
+      const dom = document.getElementsByClassName('.gt-link-counts')
+      console.log(dom)
+      const c = dom && dom[0] && dom[0].textContent
+      return c || 0
+    }
   },
   methods: {
     publishDate(publishDate) {

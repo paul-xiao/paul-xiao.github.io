@@ -1,7 +1,7 @@
 ---
 title: 前端面试问题及答案汇总
 date: 2020-2-27 11:04
-stick: true
+stick: false
 tags:
   - interview
 categories:

@@ -35,7 +35,7 @@
         <i class="fa fa-close"></i>
       </div>
       <div class="container">
-        <div class="col-lg-8">
+        <div class="">
           <div class="form-group">
             <input
               type="text"
