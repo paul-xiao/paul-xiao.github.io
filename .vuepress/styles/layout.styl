@@ -14,22 +14,24 @@ body {
     width: 100%;
 
     &-intro {
-      padding: 200px 40px;
-      max-width: 500px;
+      padding: 200px 30px;
     }
   }
   .latest{
    margin-bottom: 50px;
+   .img{
+     height: 150px;
+    }
   }
 
   .intro{
-     padding: 100px 50px;
+     padding: 15px;
      overflow-x: hidden
     }
   .top3{
     padding: 15px 0;
     @media(min-width: 1200px){
-      padding: 15px 50px;  
+      padding: 15px;  
     }
     .footer{
       display:flex;
@@ -45,6 +47,8 @@ body {
     flex: 1;
     overflow hidden
   }
+  .post-thumbnail{
+    height:180px;}
 
 
 
@@ -316,3 +320,12 @@ body {
       border-top: 1px solid #333;
     }
 }
+
+//wechat img
+
+.wechat{
+  margin: 15px 0;
+  width:200px;
+  height: 0;
+  transition: height ease-in-out 0.3s;
+   }

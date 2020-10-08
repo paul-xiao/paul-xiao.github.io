@@ -1,12 +1,13 @@
 <template>
   <BaseLayout>
     <section class="banner">
-      <div class="banner-intro">
+      <div class="banner-intro container">
         <div class="h2-bold text-white">
-          Bootstrap 4 Blog - A free template by Bootstrap Temple
+          Hi，i'am Paul<br/>
+          欢迎来到我的博客
         </div>
         <div class="link">
-          <router-link to="/blog.html">Discover More</router-link>
+          <router-link to="/blog.html">了解更多</router-link>
         </div>
       </div>
     </section>
@@ -14,8 +15,8 @@
       <!-- intro -->
       <div class="intro row">
         <div class="col-lg-6">
-          <div class="h2-bold">intro</div>
-          <div class="text-big">recod coding skills and issues</div>
+          <div class="h2-bold">热门推荐</div>
+          <div class="text-big">最近关心的一些问题及其解决方案</div>
         </div>
       </div>
       <!-- TOP 3 POSTS start -->
@@ -28,7 +29,7 @@
         <div class="col-lg-7">
           <div class="pd-15">
             <div class="h4-bold">{{ post.frontmatter.category }}</div>
-            <div class="h2-bold">{{ post.frontmatter.title }}</div>
+            <div class="h2-bold"><router-link :to="post.path">{{ post.frontmatter.title }}</router-link></div>
             <div v-html="post.excerpt" class="text-big"></div>
             <div class="footer">
               <div class="date">
@@ -53,21 +54,18 @@
       class="banner"
       :style="{ 'background-image': `url(/divider-bg.jpg)` }"
     >
-      <div class="banner-intro">
+      <div class="banner-intro container">
         <div class="h2-bold text-white">
-          gallery: collection of awesome projects and solutions
+          gallery: 收集的一些优秀项目和解决方案
         </div>
-        <div class="link">Discover More</div>
+        <div class="link"><router-link to="/gallery.html">了解更多</router-link></div>
       </div>
     </section>
     <!-- divider banner -->
     <!-- latest posts -->
     <section class="latest">
       <div class="container">
-        <div class="h2-bold">Latest Posts</div>
-        <div class="text-big">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </div>
+        <div class="h2-bold pd-15">最近更新</div>
         <div class="row">
           <div
             class="col-lg-3"
@@ -78,7 +76,7 @@
               <div class="img">
                 <img :src="post.frontmatter.thumbnail" alt width="100%" />
               </div>
-              <div class="space-between text pdv-15">
+              <div class="space-between text">
                 <div class="date">
                   <i class="fa fa-clock-o"></i>
                   <span>{{ publishDate(post.frontmatter.date) }}</span>
@@ -88,7 +86,7 @@
                   <span>{{ post.comments }}</span>
                 </div> -->
               </div>
-              <div class="h2-bold">{{ post.frontmatter.title }}</div>
+              <div class="h2-bold"><router-link :to="post.path">{{ post.frontmatter.title }}</router-link></div>
               <div v-html="post.excerpt" class="text-big"></div>
             </div>
           </div>

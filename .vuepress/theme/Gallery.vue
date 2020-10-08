@@ -1,10 +1,14 @@
 <template>
   <BaseLayout>
-    <div class="container main">
-      <div
+   <div
         class="banner"
         :style="{ 'baclground-image': `url(${$page.frontmatter.thumbnail})` }"
-      ></div>
+      >
+      <div class="intro container">
+        优秀项目与解决方案
+      </div>
+      </div>
+    <div class="container main">
       <Content />
     </div>
   </BaseLayout>
@@ -23,9 +27,12 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 300px;
   width: auto;
-  margin-right: -15px;
-  margin-left: -15px;
+  .intro{
+   padding:200px 30px;   
+   font-size:30px;
+   font-weight:bold;
+   color: #fff;
+  }
 }
 </style>

@@ -3,25 +3,24 @@
     <div class="inner flex">
       <div class="contact">
         <div class="contact-item">
-          <div class="h4">Bootstrap</div>
-          <div class="addr">53 Broadway, Broklyn, NY 11249</div>
-          <div class="tel">Phone: (020) 123 456 789</div>
-          <div class="tel">Email: Info@Company.com</div>
+          <div class="h4">Paul's Blog</div>
+          <div class="addr">四川.成都</div>
+          <div class="tel">Email: paulxiaooo@gmail.com</div>
           <span>
-            <i class="fa fa-wechat"></i>
-            <i class="fa fa-github"></i>
+            <span @click="wechat = !wechat"><i class="fa fa-wechat"></i></span>
+            <a href="https://github.com/paul-xiao" target="blank" ><i class="fa fa-github"></i></a>
           </span>
+          <div class="wechat" :style="{'height': wechat ? '200px' : 0}">
+              <img src="/wechat.jpg"alt="">
+            </div>
         </div>
       </div>
       <div class="nav container">
         <ul class="row">
-          <li class="col-lg-6">My Account</li>
-          <li class="col-lg-6">Gallery</li>
-          <li class="col-lg-6">About</li>
-          <li class="col-lg-6">Our Partners</li>
-          <li class="col-lg-6">Contact</li>
-          <li class="col-lg-6">FAQ</li>
-          <li class="col-lg-6">How It Works</li>
+          <li class="col-lg-12"><router-link to="/" class="text-white">Home</router-link></li>
+          <li class="col-lg-12"><router-link to="/blog.html" class="text-white">Blog</router-link></li>
+          <li class="col-lg-12"><router-link to="/gallery.html" class="text-white">Gallery</router-link></li>
+          <li class="col-lg-12"><router-link to="/about.html" class="text-white">About</router-link></li>
         </ul>
       </div>
       <div class="latest-posts">
@@ -62,6 +61,7 @@ export default {
   data() {
     return {
       timeDiff: timeDiff,
+      wechat: false
     };
   },
   computed: {

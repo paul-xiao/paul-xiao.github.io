@@ -1,7 +1,7 @@
 ---
 title: css tricks
 date: 2019-07-17 17:55:17
-stick: true
+stick: false
 tags:
   - css
 categories:

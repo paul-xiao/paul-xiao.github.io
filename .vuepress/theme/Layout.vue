@@ -27,14 +27,15 @@
                 <span class="gutter"></span>
                 <span>
                   <i class="fa fa-eye"></i>
-                  <span id="busuanzi_container_page_pv">
-                    <span id="busuanzi_value_page_pv">0</span>
-                  </span>
+                 <!-- id 将作为查询条件 -->
+              <span :id="page.path" class="leancloud_visitors" data-flag-title="Your Article Title">
+                  <i class="leancloud-visitors-count">0</i>
+              </span>
                 </span>
                 <span class="gutter"></span>
                 <span>
                   <i class="fa fa-comment-o"></i>
-                  <span>12</span>
+                  <span class="valine-comment-count" :data-xid="page.path"></span>
                 </span>
               </span>
             </div>
@@ -72,7 +73,7 @@
                 </div>
               </div>
             </div>
-            <div id="gitalk-container"></div>
+           <main class="page" ref="comment"></main>
           </div>
         </div>
         <div class="col-lg-4 aside">
@@ -85,12 +86,13 @@
 <script>
 import moment from "../utils/moment";
 import ListArchives from "../components/ListArchives";
-import "gitalk/dist/gitalk.css";
-import Gitalk from "gitalk";
+// import "gitalk/dist/gitalk.css";
+// import Gitalk from "gitalk";
 export default {
-  mounted() {
-    // console.log('this.$page')
-    // console.log(this.$page)
+  data() {
+    return {
+      show: true
+    }
   },
   computed: {
     site() {
@@ -131,30 +133,17 @@ export default {
     next() {
       const current = this.pages.findIndex((e) => e.title === this.page.title);
       return this.pages[current + 1];
-    },
+    }
   },
-
-  // https://api.github.com/repos/paul-xiao/paul-xiao.github.io/issues?per_page=100&sort=comments 获取所有评论
-  // https://api.github.com/repos/paul-xiao/paul-xiao.github.io/issues/1/comments  获取评论数
-  // http://www.bubuko.com/infodetail-3195459.html 参考
+  watch: {
+    $route() {
+      // const dom = this.$refs.comment
+      // console.log(dom)
+      // dom.innerHtml = ''
+    }
+  },
   mounted() {
-    console.log(this.page);
-    console.log(this.pages);
-    this.$nextTick(() => {
-      const gitalk = new Gitalk({
-        clientID: "7bf19641bb93106024b9",
-        clientSecret: "c7d431c1bd1ed93cb4d0cd22e3b7ab62ede1a93c",
-        repo: "paul-xiao.github.io", // The repository of store comments,
-        owner: "paul-xiao",
-        admin: ["paul-xiao"],
-        id: location.pathname, // Ensure uniqueness and length less than 50
-        distractionFreeMode: false, // Facebook-like distraction free mode
-      });
-
-      setTimeout(() => {
-        gitalk.render("gitalk-container");
-      }, 500);
-    });
+   console.log('mounted');
   },
   methods: {
     publishDate(publishDate) {
