@@ -148,7 +148,7 @@ export default {
     $route(to, from) {
       if (from.path != to.path) {
         try {
-          this.initComment()
+          this.initComment();
           console.log(this.valine);
           console.log(to.path);
         } catch (error) {
@@ -158,20 +158,23 @@ export default {
     },
   },
   mounted() {
-    this.initComment()
+    this.initComment();
   },
   methods: {
-    initComment(){
+    initComment() {
+      console.log("init");
       let vm = this;
-     vm.$nextTick(() => {
-      vm.valine = new Valine({
-        el: "#vcomments",
-        appId: "DL6xLRPiyl7jbfePYNNM2mFv-gzGzoHsz",
-        appKey: "tJQrcE9KKCzYS8NFr4NokDzN",
-        visitor: true,
-        path: vm.$route.path,
+      vm.$nextTick(() => {
+        vm.valine = new Valine({
+          el: "#vcomments",
+          appId: "DL6xLRPiyl7jbfePYNNM2mFv-gzGzoHsz",
+          appKey: "tJQrcE9KKCzYS8NFr4NokDzN",
+          visitor: true,
+          path: vm.$route.path,
+        });
+
+        console.log(vm.valine);
       });
-    });
     },
     publishDate(publishDate) {
       return publishDate && moment(publishDate).date;

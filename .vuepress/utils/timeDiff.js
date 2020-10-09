@@ -2,7 +2,7 @@ module.exports = (post_modified) => {
     // 拿到当前时间戳和发布时的时间戳，然后得出时间戳差
     var curTime = new Date();
 
-    var postTime = new Date(post_modified.replace(/\-/g, '/'));
+    var postTime = new Date(post_modified && post_modified.replace(/\-/g, '/'));
     var timeDiff = curTime.getTime() - postTime.getTime();
 
     // 单位换算

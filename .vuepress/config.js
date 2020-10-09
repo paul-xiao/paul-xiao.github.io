@@ -11,13 +11,13 @@ module.exports = {
     ['link', { rel: 'mask-icon', href: '/logo.png', color: '#3eaf7c' }], //safari-pinned-tab
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }], //win8磁贴图像
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],//Windows 8 磁贴颜色
-    ["script",
-      {
-        "data-ad-client": "ca-pub-2300280771526991",
-        async: true,
-        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      }
-    ],
+    // ["script",
+    //   {
+    //     "data-ad-client": "ca-pub-2300280771526991",
+    //     async: true,
+    //     src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    //   }
+    // ],
     [
       "script",
       {},
@@ -80,7 +80,7 @@ module.exports = {
           pagination: {
             perPagePosts: 2,
           },
-          frontmatter:{ //Front matter for entry page.
+          frontmatter: { //Front matter for entry page.
             comment: false
           },
           layout: 'Home',
