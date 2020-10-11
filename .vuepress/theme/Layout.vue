@@ -184,7 +184,7 @@ export default {
         if (!target) {
           timmer = setTimeout(() => {
             setTimer();
-          }, 500);
+          }, 200);
         } else {
           clearTimeout(timmer);
           vm.valine = new Valine(opt);

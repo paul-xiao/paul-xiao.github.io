@@ -50,16 +50,22 @@ export default {
     },
   },
    mounted() {
-    let vm = this;
-    vm.$nextTick(() => {
-      vm.valine = new Valine({
+    this.initComment()
+  },
+  methods: {
+      initComment() {
+      let vm = this;
+      const opt = {
         el: "#vcomments",
         appId: "DL6xLRPiyl7jbfePYNNM2mFv-gzGzoHsz",
         appKey: "tJQrcE9KKCzYS8NFr4NokDzN",
         visitor: true,
         path: vm.$route.path,
-      });
-    });
-  },
+      };
+      setTimeout(() => {
+        vm.valine = new Valine(opt);
+      },200)
+    },
+  }
 };
 </script>
