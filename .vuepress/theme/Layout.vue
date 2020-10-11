@@ -144,34 +144,53 @@ export default {
       return this.pages[current + 1];
     },
   },
+  mounted() {
+    console.log("mounted");
+    this.initComment();
+  },
   watch: {
     $route(to, from) {
       if (from.path != to.path) {
-        try {
-          this.initComment()
-          console.log(this.valine);
-          console.log(to.path);
-        } catch (error) {
-          console.error(error);
-        }
+       this.$nextTick(() => {
+        const opt = {
+          el: "#vcomments",
+          appId: "DL6xLRPiyl7jbfePYNNM2mFv-gzGzoHsz",
+          appKey: "tJQrcE9KKCzYS8NFr4NokDzN",
+          visitor: true,
+          path: this.$route.path,
+        };
+        this.valine = new Valine(opt);
+       })
       }
     },
   },
-  mounted() {
-    this.initComment()
-  },
+
   methods: {
-    initComment(){
+    initComment() {
       let vm = this;
-     vm.$nextTick(() => {
-      vm.valine = new Valine({
+      const opt = {
         el: "#vcomments",
         appId: "DL6xLRPiyl7jbfePYNNM2mFv-gzGzoHsz",
         appKey: "tJQrcE9KKCzYS8NFr4NokDzN",
         visitor: true,
         path: vm.$route.path,
-      });
-    });
+      };
+
+      //轮询
+      let target;
+      let timmer;
+      let setTimer = () => {
+        target = document.querySelector("#vcomments");
+        if (!target) {
+          timmer = setTimeout(() => {
+            setTimer();
+          }, 500);
+        } else {
+          clearTimeout(timmer);
+          vm.valine = new Valine(opt);
+        }
+      };
+      setTimer();
     },
     publishDate(publishDate) {
       return publishDate && moment(publishDate).date;
